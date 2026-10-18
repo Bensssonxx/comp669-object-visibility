@@ -1,0 +1,9 @@
+name: comp669-object-visibility-reference
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.12.2
+  - pillow=10.4.0=py312h80987f9_0
+  - jpeg=9e=h80987f9_3
+  - pip

@@ -59,5 +59,15 @@
       "byte_identical": true,
       "note": "First 100 regular JPEGs available in partial official archive; complete mirror split/labels verified separately."
     }
+  },
+  "reference_decoder": {
+    "jpeg_version": "9e",
+    "jpeg_build": "h80987f9_3",
+    "pillow_build": "10.4.0-py312h80987f9_0",
+    "jpeg_url": "https://repo.anaconda.com/pkgs/main/osx-arm64/jpeg-9e-h80987f9_3.conda",
+    "jpeg_sha256": "e506c1e03673c365e5be4f8b31c000159c0f6d6aa559a458aa9dbc0223edab34",
+    "pillow_url": "https://repo.anaconda.com/pkgs/main/osx-arm64/pillow-10.4.0-py312h80987f9_0.conda",
+    "pillow_sha256": "77195b6a7345501e8f7732d6e0a05979d5ec583eb0f69233f3d3d16cbfd5652b",
+    "audit": "docs/REFERENCE_REPLAY_CHECK.json"
   }
 }

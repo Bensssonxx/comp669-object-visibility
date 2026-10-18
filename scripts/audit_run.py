@@ -42,6 +42,7 @@ for image_id, rows in conditions.groupby("image_id", sort=False):
         assert matched.object_visibility.max() - matched.object_visibility.min() <= config["pair_caliper"] + 1e-10
         assert np.allclose(matched.fraction, .75)
 predictions = []
+reproduced_classifiers = []
 for model in ["aimv2", "dinov2"]:
     path = out / f"{model}_predictions.csv"
     if not path.exists():
@@ -54,11 +55,25 @@ for model in ["aimv2", "dinov2"]:
         assert data[col].tolist() == conditions[col].tolist(), (model, col)
     assert np.array_equal(data.correct, (data.prediction == data.label).astype(int))
     assert np.isfinite(data.target_probability).all() and data.target_probability.between(0, 1).all()
+    saved_head = out / "classifiers" / f"{model}_linear.npz"
+    saved_features = out / "features" / f"{model}_evaluation.npy"
+    if saved_head.exists() and saved_features.exists():
+        head = np.load(saved_head)
+        features = np.load(saved_features, mmap_mode="r")
+        assert features.shape == (len(data), 1024) and np.isfinite(features).all()
+        logits = features @ head["coef"].T + head["intercept"]
+        reconstructed = head["classes"][logits.argmax(axis=1)]
+        assert np.array_equal(reconstructed, data.prediction), model
+        probabilities = np.exp(logits - logits.max(axis=1, keepdims=True))
+        probabilities /= probabilities.sum(axis=1, keepdims=True)
+        assert np.allclose(probabilities[np.arange(len(data)), data.label], data.target_probability, atol=1e-10), model
+        reproduced_classifiers.append(model)
     predictions.append(model)
 audit = {"passed": True, "split_counts": dict(Counter(r["split"] for r in manifest)),
     "all_37_classes_balanced": True, "exact_duplicate_bytes_across_samples": False,
     "condition_rows": len(conditions), "all_stored_coverage_recomputed": True,
     "matched_caliper_verified": True, "completed_prediction_models": predictions,
+    "cached_classifier_prediction_reproduction_verified": reproduced_classifiers,
     "zero_foreground_annotation_exclusions": len(json.loads((out / "annotation_exclusions.json").read_text()))}
 (out / "integration_audit.json").write_text(json.dumps(audit, indent=2))
 print(json.dumps(audit, indent=2))

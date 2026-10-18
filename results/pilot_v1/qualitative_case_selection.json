@@ -1,0 +1,142 @@
+{
+  "selection": "Two largest max cross-model absolute target-probability changes, prioritizing correctness flips; plus smallest-change nonflip example. Illustrative, post-hoc, not prevalence evidence.",
+  "selected": [
+    {
+      "image_id": "basset_hound_60",
+      "max_target_probability_change": 0.4415713728472045,
+      "any_correctness_flip": true
+    },
+    {
+      "image_id": "basset_hound_9",
+      "max_target_probability_change": 0.4391928680557273,
+      "any_correctness_flip": true
+    },
+    {
+      "image_id": "american_pit_bull_terrier_50",
+      "max_target_probability_change": 0.0026005555646179956,
+      "any_correctness_flip": false
+    }
+  ],
+  "rows": [
+    {
+      "image_id": "basset_hound_60",
+      "model": "aimv2",
+      "role": "a",
+      "object_visibility": 0.7359230220955096,
+      "true_label": "basset_hound",
+      "prediction": "american_bulldog",
+      "correct": 0,
+      "target_probability": 0.0942979768384504
+    },
+    {
+      "image_id": "basset_hound_60",
+      "model": "dinov2",
+      "role": "a",
+      "object_visibility": 0.7359230220955096,
+      "true_label": "basset_hound",
+      "prediction": "basset_hound",
+      "correct": 1,
+      "target_probability": 0.3251574154370877
+    },
+    {
+      "image_id": "basset_hound_60",
+      "model": "aimv2",
+      "role": "b",
+      "object_visibility": 0.7115110477548111,
+      "true_label": "basset_hound",
+      "prediction": "basset_hound",
+      "correct": 1,
+      "target_probability": 0.5358693496856549
+    },
+    {
+      "image_id": "basset_hound_60",
+      "model": "dinov2",
+      "role": "b",
+      "object_visibility": 0.7115110477548111,
+      "true_label": "basset_hound",
+      "prediction": "basset_hound",
+      "correct": 1,
+      "target_probability": 0.3663950661240448
+    },
+    {
+      "image_id": "basset_hound_9",
+      "model": "aimv2",
+      "role": "a",
+      "object_visibility": 0.5234251117197636,
+      "true_label": "basset_hound",
+      "prediction": "beagle",
+      "correct": 0,
+      "target_probability": 0.1071487812958956
+    },
+    {
+      "image_id": "basset_hound_9",
+      "model": "dinov2",
+      "role": "a",
+      "object_visibility": 0.5234251117197636,
+      "true_label": "basset_hound",
+      "prediction": "basset_hound",
+      "correct": 1,
+      "target_probability": 0.1698800978066679
+    },
+    {
+      "image_id": "basset_hound_9",
+      "model": "aimv2",
+      "role": "b",
+      "object_visibility": 0.5260198933256451,
+      "true_label": "basset_hound",
+      "prediction": "basset_hound",
+      "correct": 1,
+      "target_probability": 0.3913292741268422
+    },
+    {
+      "image_id": "basset_hound_9",
+      "model": "dinov2",
+      "role": "b",
+      "object_visibility": 0.5260198933256451,
+      "true_label": "basset_hound",
+      "prediction": "basset_hound",
+      "correct": 1,
+      "target_probability": 0.6090729658623952
+    },
+    {
+      "image_id": "american_pit_bull_terrier_50",
+      "model": "aimv2",
+      "role": "a",
+      "object_visibility": 0.7282001457371873,
+      "true_label": "american_pit_bull_terrier",
+      "prediction": "american_pit_bull_terrier",
+      "correct": 1,
+      "target_probability": 0.2013419303920614
+    },
+    {
+      "image_id": "american_pit_bull_terrier_50",
+      "model": "dinov2",
+      "role": "a",
+      "object_visibility": 0.7282001457371873,
+      "true_label": "american_pit_bull_terrier",
+      "prediction": "boxer",
+      "correct": 0,
+      "target_probability": 0.0346924807902268
+    },
+    {
+      "image_id": "american_pit_bull_terrier_50",
+      "model": "aimv2",
+      "role": "b",
+      "object_visibility": 0.7109545785766335,
+      "true_label": "american_pit_bull_terrier",
+      "prediction": "american_pit_bull_terrier",
+      "correct": 1,
+      "target_probability": 0.2001713467963927
+    },
+    {
+      "image_id": "american_pit_bull_terrier_50",
+      "model": "dinov2",
+      "role": "b",
+      "object_visibility": 0.7109545785766335,
+      "true_label": "american_pit_bull_terrier",
+      "prediction": "boxer",
+      "correct": 0,
+      "target_probability": 0.0320919252256088
+    }
+  ]
+}

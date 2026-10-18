@@ -1,0 +1,13 @@
+{
+  "models": [
+    "aimv2",
+    "dinov2"
+  ],
+  "test_images": 185,
+  "prediction_rows": 8510,
+  "matched_eligible_images": 185,
+  "prediction_tables_aligned": true,
+  "random_repeats_averaged_within_image": true,
+  "uncertainty": "2000 original-image bootstrap resamples; conditional on fixed probe and checkpoints",
+  "caveat": "Exploratory, single-dataset, 5 test images/class. Pixel visibility is not semantic information or a causal pretraining comparison."
+}

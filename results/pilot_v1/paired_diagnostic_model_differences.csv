@@ -1,0 +1,2 @@
+metric,n_images,aim_minus_dino,ci_low,ci_high
+matched_correctness_flip_rate,185,0.021621621621621623,-0.03783783783783784,0.08108108108108109

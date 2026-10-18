@@ -13,6 +13,8 @@ audit = json.loads((out / "integration_audit.json").read_text())
 assert set(audit["completed_prediction_models"]) == {"aimv2", "dinov2"}
 clean = summary[summary.pattern == "clean"].set_index("model")
 half = summary[summary.fraction == .5].set_index(["model", "pattern"])
+quarter = summary[summary.fraction == .25].set_index(["model", "pattern"])
+random_difference = pd.read_csv(out / "paired_model_differences.csv").query("pattern == 'random' and fraction == .25").iloc[0]
 contrast = pairs[pairs.pair_type == "object_contrast"].set_index("model")
 matched = pairs[pairs.pair_type == "visibility_matched"].set_index("model")
 def pct(x): return f"{x*100:.1f}%"
@@ -33,9 +35,17 @@ missing_budgets = ", ".join(f"{v:.0%}" for v in no_support) or "none"
 support_note = f"{len(estimable)} pattern estimates have the prespecified common-bin support. Non-estimable visible-image budgets: {missing_budgets}. At supported budgets, the retained groups can still be small; consult visibility_standardization.csv and visibility_bin_counts.csv for bins and counts. These coarse-bin descriptive estimates do not equal exact foreground matching or causal mediation."
 reports = root / "reports"
 reports.mkdir(exist_ok=True)
+supplement = pd.read_csv(out / 'probe_regularization_sensitivity.csv') if (out / 'probe_regularization_sensitivity.csv').exists() else None
+supplement_table = ''
+if supplement is not None:
+    supplement_table = '| Model | C | Clean validation | Clean test | Random 25% | Center 25% | Matched flips |\n| --- | ---: | ---: | ---: | ---: | ---: | ---: |\n'
+    for r in supplement.itertuples():
+        supplement_table += f'| {r.model} | {r.C:g} | {pct(r.validation_accuracy)} | {pct(r.clean_accuracy)} | {pct(r.random_25_accuracy)} | {pct(r.center_25_accuracy)} | {pct(r.matched_correctness_flip_rate)} |\n'
 common_en = """## Design and interpretation
 
 The pilot uses 1,480 training, 370 validation and 185 official-test images across 37 Oxford-IIIT Pet breeds. Fourteen invalid empty-foreground annotations were excluded before sampling (7 official trainval, 7 test). Both frozen L/14 encoders use mean final patch pooling plus L2 normalization, and separate clean-only logistic classifiers. C is chosen using clean validation labels only. Test labels never select masks or hyperparameters.
+
+Both original validation searches selected C=10, the upper boundary of the prespecified grid. The labeled post-hoc supplement explores C=10,100,1000 while retaining all original main estimates. Pooling and wider probe choices remain unresolved; these scores do not rank general encoder quality. The shared mean-patch recipe can suit the encoders differently.
 
 Visible area is 100/75/50/25%; patterns are raster prefix, suffix, center-nearest and three deterministic random repetitions. Hidden pixels use RGB 128 and no tokens are removed. Same-image square-occluder pairs fix hidden area to 25% and shape to 8x8 patches. Matched pairs differ by at most 0.03 in foreground visibility and are selected from annotations without model outputs.
 
@@ -44,6 +54,8 @@ This is a diagnostic replication/extension of existing foreground/background occ
 ## What these results can support
 
 The measured image-area budgets and foreground-coverage distributions describe this dataset and masking implementation. Paired differences describe responses to the specified pixel interventions within each fixed model. A residual difference at matched foreground coverage does not uniquely identify a spatial mechanism: head visibility, object parts, texture and background can still change. An average signed paired difference near zero does not establish invariance; inspect discordance and cases.
+
+A lower correctness-flip rate alone is not better robustness: two wrong predictions also produce no correctness flip. The paired table therefore includes both-correct, both-wrong and one-correct counts. Probe target probabilities are descriptive responses, not calibrated reliability scores.
 
 Uncertainty resamples original images (all repeated masks travel with their image), conditional on fixed probes. Only 5 test images/class are included. Grayscale squares are not real-world occluders; full-frame square resizing distorts aspect ratio; pretraining overlap is unknown. A second fill, larger test set, second dataset and pooling/preprocessing sensitivity remain future work.
 
@@ -67,6 +79,8 @@ Executed 2026-10-18. All numbers below come from saved model predictions, not ex
 
 {table}
 
+A descriptive ordering change appears at 25% visible area: under random masks, AIMv2 reaches {pct(quarter.loc[('aimv2','random'),'accuracy'])} and DINOv2 {pct(quarter.loc[('dinov2','random'),'accuracy'])}; the paired AIMv2-minus-DINOv2 difference is {pp(random_difference.aim_minus_dino)} percentage points (95% image-bootstrap CI {pp(random_difference.ci_low)} to {pp(random_difference.ci_high)}). Under center-nearest visibility at the same image-area budget, AIMv2 reaches {pct(quarter.loc[('aimv2','center'),'accuracy'])} and DINOv2 {pct(quarter.loc[('dinov2','center'),'accuracy'])}. These conditions retain different foreground distributions. This is a checkpoint-and-probe-specific pattern, not a pretraining-causality finding or a general model ranking.
+
 At the same 50% visible image area, the center-nearest mask preserves an average {pct(fg_center)} of labeled foreground versus {pct(fg_random)} for the random condition. This is an input-composition finding, not by itself a new model-robustness result.
 
 {chr(10).join(details_en)}
@@ -74,6 +88,16 @@ At the same 50% visible image area, the center-nearest mask preserves an average
 Exploratory standardization: {support_note}
 
 {common_en}
+
+## Post-hoc probe sensitivity
+
+Both original validation searches ended at the C-grid boundary. The following supplement reports every tested C rather than choosing test-favorable results. Expanded-grid choices use clean validation only. The random-versus-center ordering persists across these C values, but matched correctness-flip rates change. This is not a pooling or pretraining-control experiment.
+
+{supplement_table}
+
+## Numeric reference environment
+
+The original images use the Conda Pillow 10.4.0 build with libjpeg 9e. A pip wheel with libjpeg-turbo decoded different pixels despite the same Pillow version. A second decoder-pinned reference environment reproduced all 2,035 selected RGB/trimap fingerprints and the first 8 conditions per encoder with zero feature difference. Saved classifier coefficients reproduce all 8,510 main prediction rows. This is not a second full independent experiment. Use environment.reference.yml and the input-fingerprint gate before reusing caches.
 
 ## Evidence
 
@@ -102,6 +126,8 @@ zh = f"""# 项目第一轮真实实验结果：pilot v1
 
 {table}
 
+有一个值得继续研究的描述性结果：只保留 25% 图像时，random 条件下 AIMv2 为 {pct(quarter.loc[('aimv2','random'),'accuracy'])}，DINOv2 为 {pct(quarter.loc[('dinov2','random'),'accuracy'])}；AIMv2 减 DINOv2 的成对差为 {pp(random_difference.aim_minus_dino)} 个百分点，95% 区间 [{pp(random_difference.ci_low)}, {pp(random_difference.ci_high)}]。但相同可见面积的 center 条件下，AIMv2 为 {pct(quarter.loc[('aimv2','center'),'accuracy'])}，DINOv2 为 {pct(quarter.loc[('dinov2','center'),'accuracy'])}，排序相反。各条件保留的主体分布不同，所以这是特定 checkpoint、分类器和数据上的现象，不能归因于训练机制，也不是模型总体质量排名。
+
 同样保留 50% 的图像面积，center 平均保留了 {pct(fg_center)} 的已标注主体，而 random 平均保留了 {pct(fg_random)}。这说明输入条件的组成不同；这个观察本身并不是首次发现的新规律。
 
 {chr(10).join(details_zh)}
@@ -118,12 +144,24 @@ zh = f"""# 项目第一轮真实实验结果：pilot v1
 - 不能从平均差值接近零推断没有影响；必须同时看正确性翻转、预测变化和案例。
 - 95% 区间按原始图片 bootstrap，随机遮挡先在图内平均；它不包括分类器重新训练和换数据集的不确定性。
 - 只有每类 5 张测试图片。这是 single-dataset pilot，灰色像素遮挡也不等于真实物体遮挡。预训练重叠未知，整图缩放有宽高比失真。
+- 两个分类器的原验证集选择都到达了 C 网格上界 10。已另做 C=10、100、1000 的事后敏感性检查，主结果未替换；pooling 和更广的分类器选择仍未排查，不能据此排名模型总体质量。
+- 翻转率低并不自动代表更鲁棒：两个版本都预测错误，也不会发生正确性翻转。成对表另外记录了都对、都错和仅一个对的数量。分类器输出的概率也不是经过校准的可靠性分数。
 
 ## 下一步
 
 优先扩大测试集、换一种填充颜色，检查结果是否稳定；对主体面积相近但预测不同的样本做具体部位分析。头部框在当前下载的官方标注中仅覆盖训练划分，本轮 185 张测试图没有头部 XML，因此不能假装已经控制或量化头部可见程度。后续可以在独立标注子集或新的划分中检查。
 
 已有 PatchDrop 与背景挑战研究区分过前景／背景，因此项目定位为复现与扩展。贡献是当前模型上的可复现评估、主体可见性量化、同图匹配诊断与清楚的解释边界，尚不声称论文级新颖性。
+
+## 事后分类器敏感性补充
+
+因为原验证集选择都到达 C 网格上界，另外检查了下表所有 C 值。扩展网格仍只由完整验证集选择，测试结果全部报告，不用于选择有利结论，也不替换主结果。random 与 center 的模型排序在这些值下保持，但正确性翻转率会变化，因此不能单独用翻转率排名鲁棒性。
+
+{supplement_table}
+
+## 数值复现环境
+
+原实验使用 Conda Pillow 10.4.0 + libjpeg 9e。相同 Pillow 版本的 pip wheel 使用 libjpeg-turbo，会产生不同 JPEG 像素。已在另一个锁定解码器的参考环境中，核对全部 2,035 张预处理 RGB／标注指纹一致，两个模型各抽查前 8 个条件的特征差为零；保存的分类器可重放全部 8,510 行主预测。这不是第二次全量独立实验。复现时使用 environment.reference.yml，并先通过输入指纹检查。
 
 ## Milestone 怎么讲
 

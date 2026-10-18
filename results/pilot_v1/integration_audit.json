@@ -11,7 +11,12 @@
   "all_stored_coverage_recomputed": true,
   "matched_caliper_verified": true,
   "completed_prediction_models": [
-    "aimv2"
+    "aimv2",
+    "dinov2"
+  ],
+  "cached_classifier_prediction_reproduction_verified": [
+    "aimv2",
+    "dinov2"
   ],
   "zero_foreground_annotation_exclusions": 14
 }

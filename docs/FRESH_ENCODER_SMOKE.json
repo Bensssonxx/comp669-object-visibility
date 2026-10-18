@@ -1,0 +1,15 @@
+{
+  "scope": "first 8 saved conditions, fresh environment; not a full independent rerun",
+  "single_max_abs_difference": 0.0031223297119140625,
+  "single_cosine_similarity": 0.9998250603675842,
+  "same_batch_max_abs_difference": 0.011241793632507324,
+  "same_batch_min_cosine_similarity": 0.99970942735672,
+  "same_batch_matches_at_atol_1e_4": false,
+  "fresh_torch_git": "08187d9e0fba026dc8217405802ab5381dc88d90",
+  "fresh_jpeg": "6.2",
+  "fresh_libjpeg_turbo": "3.0.3",
+  "pixel_array_max_difference": 15,
+  "pixel_channel_values_different": 230570,
+  "same_original_pixels_max_feature_difference": 0.0,
+  "same_original_pixels_match_at_atol_1e_4": true
+}

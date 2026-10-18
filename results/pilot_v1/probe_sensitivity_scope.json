@@ -1,0 +1,12 @@
+{
+  "post_hoc": true,
+  "trigger": "Both original clean validation searches selected the prespecified C-grid upper boundary.",
+  "grid": [
+    10,
+    100,
+    1000
+  ],
+  "selection": "Expanded-grid choice uses clean validation only; every test result is reported and none replaces the original pilot.",
+  "original_results_changed": false,
+  "limitation": "Not a pooling sensitivity study or a general model ranking."
+}

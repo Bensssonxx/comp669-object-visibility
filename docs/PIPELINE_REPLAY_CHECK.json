@@ -1,0 +1,42 @@
+{
+  "setup_command": "bash scripts/setup_reference.sh",
+  "setup_exit_code": 0,
+  "runner_command": "bash scripts/run_pilot.sh",
+  "runner_exit_code": 0,
+  "device": "Apple MPS, GPU-enabled host execution",
+  "tests_passed": 26,
+  "inputs_verified": 2035,
+  "prediction_rows": 8510,
+  "reuse_scope": "Previously computed source-bound and input-verified feature caches; probes refitted and all analysis/audits rerun. Not a second full independent feature extraction.",
+  "aimv2_labels_changed_vs_original_committed_predictions": 0,
+  "aimv2_max_target_probability_difference_vs_original": 2.134958876354176e-13,
+  "slide_summary_and_pair_tables_match_replay_at_atol": 1e-12,
+  "integration_audit": {
+    "passed": true,
+    "split_counts": {
+      "train": 1480,
+      "val": 370,
+      "test": 185
+    },
+    "all_37_classes_balanced": true,
+    "exact_duplicate_bytes_across_samples": false,
+    "condition_rows": 4255,
+    "all_stored_coverage_recomputed": true,
+    "matched_caliper_verified": true,
+    "completed_prediction_models": [
+      "aimv2",
+      "dinov2"
+    ],
+    "cached_classifier_prediction_reproduction_verified": [
+      "aimv2",
+      "dinov2"
+    ],
+    "zero_foreground_annotation_exclusions": 14
+  },
+  "prediction_sha256": {
+    "aimv2": "793b558d9a6d8c65e66f4324a2433de87e05580e35b1dd52d1a779a2b87282ff",
+    "dinov2": "989c5515f80100c1decc645b4b7735960bdeccb6d75cbe2410766aa843325208"
+  },
+  "setup_scope": "The reference environment already existed from a separately created Conda environment; the documented setup command successfully reinstalled pinned editable packages and verified source revisions.",
+  "prediction_sha256_format": "Git-normalized LF bytes"
+}

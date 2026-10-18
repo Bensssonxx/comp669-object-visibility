@@ -1,0 +1,24 @@
+{
+  "fresh_environment_without_system_site_packages": true,
+  "python": "3.12.2",
+  "versions": {
+    "torch": "2.14.0",
+    "torchvision": "0.29.0",
+    "numpy": "1.26.4",
+    "scikit-learn": "1.7.1",
+    "Pillow": "10.4.0",
+    "matplotlib": "3.10.5",
+    "pandas": "2.3.2",
+    "sympy": "1.14.0",
+    "safetensors": "0.6.2",
+    "huggingface_hub": "0.35.3",
+    "pytest": "8.4.2",
+    "pyarrow": "19.0.1",
+    "einops": "0.8.1"
+  },
+  "project_and_official_aim_imports": true,
+  "mps_available": true,
+  "test_summary": "26 passed, 14 warnings in 4.26s",
+  "numeric_reference": false,
+  "reason": "Pip Pillow uses libjpeg-turbo; see decoder investigation and reference Conda replay."
+}

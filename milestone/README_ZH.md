@@ -19,7 +19,7 @@
 
 ## 文件
 
-- `COMP669_Object_Visibility_Milestone_v1.pptx` 或后续明确标注的修订版本：可编辑的英文汇报，含英文讲稿与来源说明。
+- `COMP669_Object_Visibility_Milestone_v4.pptx`：可编辑的英文汇报，含英文讲稿与来源说明。
 - `SPEAKER_NOTES_EN.md`：按页讲稿，便于练习。需要用自己的话解释并核对实际结果。
 - `slide_data.json`：PPT 所用真实统计数值。
 - `assets/`：根据已审计结果和实际输入生成的图，不是生成式示意图片。
@@ -31,11 +31,11 @@
 
 ```bash
 source scripts/env.sh
-.venv/bin/python scripts/analyze.py --run pilot_v1
-.venv/bin/python scripts/audit_run.py --require-predictions
-.venv/bin/python scripts/qualitative_cases.py
-.venv/bin/python scripts/write_reports.py
-.venv/bin/python scripts/prepare_slide_assets.py
+.reference-conda/bin/python scripts/analyze.py --run pilot_v1
+.reference-conda/bin/python scripts/audit_run.py --require-predictions
+.reference-conda/bin/python scripts/qualitative_cases.py
+.reference-conda/bin/python scripts/write_reports.py
+.reference-conda/bin/python scripts/prepare_slide_assets.py
 ```
 
 PPT 使用 Codex 随附的 `@oai/artifact-tool`。将 `scripts/build_milestone.mjs` 复制到 `.build-presentation/`，该目录的 `node_modules` 链接到随附 Node 包后运行；具体主机路径见该脚本。它与科学实验的 Python 环境分开。每次修订用新的 `MILESTONE_VERSION`，保留前一版供核对。

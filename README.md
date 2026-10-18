@@ -2,6 +2,8 @@
 
 **COMP 669 research project, Boshen Yang.** A reproducible, annotation-aware evaluation of frozen AIMv2-L/14 and DINOv2-L/14. The question is whether location/pattern comparisons change when we explicitly measure how much of the target foreground remains visible.
 
+Pilot v1 is complete for both models. Start with the [Chinese report](reports/PILOT_REPORT_ZH.md), [English report](reports/PILOT_REPORT_EN.md), and [milestone materials](milestone/README_ZH.md). The final reviewed presentation is `milestone/COMP669_Object_Visibility_Milestone_v4.pptx`.
+
 This is a course-scale replication and extension of prior occlusion work, including [Intriguing Properties of Vision Transformers / PatchDrop](https://arxiv.org/abs/2105.10497). We do not claim that separating foreground/background occlusion is new, nor that cross-model differences identify the effect of prefix attention.
 
 ## Read first
@@ -23,29 +25,35 @@ Evaluate clean images and 75%/50%/25% visible area under prefix, suffix, center-
 
 ## Reproduce
 
-Python 3.12 is the tested version. `requirements.txt` pins the two core encoder libraries to the versions actually used; package availability on another host must be checked. Apple MPS is the pilot device; for CUDA or CPU create a versioned config changing `device` and `run_name`. Assets require about 5 GB including extracted data and checkpoints, plus the environment.
+Python 3.12 is the tested version. **The numeric reference is macOS arm64 with Pillow 10.4.0 built against libjpeg 9e**, pinned in `environment.reference.yml`. A plain pip Pillow wheel uses libjpeg-turbo and produces different JPEG pixels despite the same Pillow version. We verified all 2,035 selected RGB/trimap inputs against a second reference environment and replayed 8 conditions per encoder with zero feature difference; see [reference replay evidence](docs/REFERENCE_REPLAY_CHECK.json). This is not a second full experiment.
+
+Apple MPS is the pilot device; for CUDA or CPU create a separately versioned experiment. Assets require about 5 GB including extracted data and checkpoints, plus the environment. Install Conda before running the reference setup.
 
 ```bash
-bash scripts/setup.sh
+bash scripts/setup_reference.sh
 bash scripts/run_pilot.sh
 ```
 
-Or run steps separately:
+The runner defaults to `.reference-conda/bin/python`. `PROJECT_PYTHON` can select another interpreter, but the canonical decoded-input hash check must pass before any feature cache is reused. `scripts/setup.sh` remains a generic pip environment for code development and tests, not exact replication of the reference JPEG decoding.
+
+Or run steps separately (reference interpreter):
 
 ```bash
 source scripts/env.sh
-.venv/bin/python scripts/download_assets.py
-.venv/bin/python scripts/import_pet_mirror.py
-.venv/bin/python -m occlusion_visibility.experiment prepare
-.venv/bin/python scripts/preview_inputs.py
-.venv/bin/python -m occlusion_visibility.experiment run --model aimv2
-.venv/bin/python -m occlusion_visibility.experiment run --model dinov2
-.venv/bin/python scripts/analyze.py --run pilot_v1
-.venv/bin/python scripts/audit_run.py --require-predictions
-.venv/bin/python scripts/write_reports.py
+.reference-conda/bin/python scripts/download_assets.py
+.reference-conda/bin/python scripts/import_pet_mirror.py
+.reference-conda/bin/python -m occlusion_visibility.experiment prepare
+.reference-conda/bin/python scripts/verify_preprocessing.py
+.reference-conda/bin/python scripts/preview_inputs.py
+.reference-conda/bin/python -m occlusion_visibility.experiment run --model aimv2
+.reference-conda/bin/python -m occlusion_visibility.experiment run --model dinov2
+.reference-conda/bin/python scripts/analyze.py --run pilot_v1
+.reference-conda/bin/python scripts/audit_run.py --require-predictions
+.reference-conda/bin/python scripts/qualitative_cases.py
+.reference-conda/bin/python scripts/write_reports.py
 ```
 
-Feature extraction resumes at saved finite batches. Caches are bound to configuration, row order, image/annotation hashes, encoder source and checkpoint hash. A changed experiment must use a new run name. Stop on checksum mismatch, missing foreground, cross-split duplicate image bytes, stale cache or non-finite features; never silently substitute a smaller checkpoint.
+Feature extraction resumes at saved finite batches. Caches are bound to configuration, row order, image/annotation hashes, encoder source and checkpoint hash. The runner separately checks every decoded input against the stored RGB/trimap fingerprints; the legacy v1 cache metadata alone does not identify the JPEG decoder. A changed experiment must use a new run name. Stop on checksum mismatch, input-fingerprint mismatch, missing foreground, cross-split duplicate image bytes, stale cache or non-finite features; never silently substitute a smaller checkpoint.
 
 ## Outputs
 
@@ -60,7 +68,7 @@ Bootstrap confidence intervals resample original test images, not individual mas
 ## Validation
 
 ```bash
-.venv/bin/python -m pytest -q
+.reference-conda/bin/python -m pytest -q
 ```
 
-Tests cover exact visible budgets, annotation semantics, pixel preservation, deterministic shared masks, diagnostic-pair area/caliper constraints and unsafe archive rejection. Integration audits check official filenames/labels/splits, cross-model mask identity and image-level sampling.
+Tests cover exact visible budgets, annotation semantics, pixel preservation, deterministic shared masks, diagnostic-pair area/caliper constraints and unsafe archive rejection. Integration audits check official filenames/labels/splits, cross-model mask identity and image-level sampling. The documented setup and full runner were replayed successfully in the reference environment using verified feature caches; see [pipeline replay scope](docs/PIPELINE_REPLAY_CHECK.json). This replay refits probes and reruns analyses, without claiming a second full feature-extraction experiment.

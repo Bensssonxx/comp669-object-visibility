@@ -1,0 +1,24 @@
+{
+  "images": 2035,
+  "rgb_matches": 2035,
+  "trimap_matches": 2035,
+  "jpeg_api_version": "9.0",
+  "libjpeg_turbo": null,
+  "all_match": true,
+  "record_mode": false,
+  "encoder_batches": [
+    {
+      "model": "aimv2",
+      "conditions": 8,
+      "max_abs_feature_difference": 0.0,
+      "matches_at_atol_1e_4": true
+    },
+    {
+      "model": "dinov2",
+      "conditions": 8,
+      "max_abs_feature_difference": 0.0,
+      "matches_at_atol_1e_4": true
+    }
+  ],
+  "scope": "All selected preprocessed inputs; first 8 model conditions each. Not a second full experiment."
+}

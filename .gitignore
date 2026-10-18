@@ -1,4 +1,6 @@
 .venv/
+.repro-venv/
+.reference-conda/
 __pycache__/
 *.pyc
 *.egg-info/

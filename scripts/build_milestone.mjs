@@ -9,8 +9,14 @@ import {Presentation, PresentationFile} from '@oai/artifact-tool';
 const ROOT = process.cwd();
 const SKILL = process.env.PRESENTATION_SKILL_DIR ?? '/Users/boshenyang/.codex/plugins/cache/openai-primary-runtime/presentations/26.1017.11052/skills/presentations';
 const RUNTIME_PYTHON = process.env.PRESENTATION_PYTHON ?? '/Users/boshenyang/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3';
+process.env.RUNTIME_NODE_MODULES ??= '/Users/boshenyang/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules';
+process.env.RUNTIME_NODE ??= process.execPath;
 const data = JSON.parse(await fs.readFile(path.join(ROOT, 'milestone/slide_data.json'), 'utf8'));
 if (data.audit.completed_prediction_models.length !== 2) throw new Error('Both models must finish and pass the integration audit.');
+const imageBlobs={};
+for(const file of ['ratios_inputs.png','accuracy_curves.png','foreground_coverage.png','pairs_inputs.png','matched_case.png']){
+  imageBlobs[file]=new Uint8Array(await fs.readFile(path.join(ROOT,'milestone/assets',file)));
+}
 const pres = Presentation.create({slideSize:{width:1280,height:720}});
 const FONT = 'Arial', INK='#17313D', TEAL='#007F7B', GRAY='#52616A';
 const pct = n => `${(n*100).toFixed(1)}%`;
@@ -35,7 +41,7 @@ function slide(title, note, source='Saved pilot_v1 predictions, configuration an
   return s;
 }
 function image(s,file,x=64,y=175,w=1152,h=425,alt=file){
-  s.images.add({path:path.join(ROOT,'milestone/assets',file),position:{left:x,top:y,width:w,height:h},fit:'contain',alt});
+  s.images.add({blob:imageBlobs[file],contentType:'image/png',position:{left:x,top:y,width:w,height:h},fit:'contain',alt});
 }
 function table(s,values,x,y,w,h,widths){
   const t=s.tables.add({rows:values.length,columns:values[0].length,left:x,top:y,width:w,height:h,values,columnWidths:widths});
@@ -89,12 +95,12 @@ function table(s,values,x,y,w,h,widths){
  text(s,'Exact patch budgets. All tokens remain. Gray fill precedes normalization.',64,613,1120,40,23,GRAY);
 }
 {
- const ac=get('aimv2','clean',1), dc=get('dinov2','clean',1);
- const s=slide('Initial accuracy curves depend on the mask',
- `The clean held-out accuracies are ${pct(ac.accuracy)} for AIMv2 and ${pct(dc.accuracy)} for DINOv2 under this shared probe recipe. These panels show accuracy as image visibility changes. The shaded intervals resample original test images. For random masks, the three repetitions are averaged within each image first. The curves characterize these checkpoints and this dataset. Even if one model is higher in a panel, that does not identify which aspect of its pretraining caused the difference. Before interpreting a mask as easy or difficult, I next check how much foreground it keeps.`,
+ const ac=get('aimv2','clean',1), dc=get('dinov2','clean',1), ar=get('aimv2','random',.25), dr=get('dinov2','random',.25);
+ const s=slide('The model ordering changes with the mask',
+ `The clean held-out accuracies are ${pct(ac.accuracy)} for AIMv2 and ${pct(dc.accuracy)} for DINOv2 under this shared probe recipe. But with only 25 percent randomly visible, AIMv2 reaches ${pct(ar.accuracy)} and DINOv2 ${pct(dr.accuracy)}. Under the center condition at that same image-area budget, the ordering reverses again. So clean-image performance alone does not predict the ordering in these tests. The shaded intervals resample original images, averaging random repeats inside each image first. This is a descriptive finding for these checkpoints, probes and data, not evidence about which pretraining mechanism caused it. To interpret the mask comparison, I next examine foreground coverage.`,
  'results/pilot_v1/summary.csv and paired_model_differences.csv; 2000 original-image bootstrap resamples');
  image(s,'accuracy_curves.png',95,151,1090,475,'Four mask-specific accuracy curves with image-bootstrap confidence intervals');
- text(s,`Clean accuracy: AIMv2 ${pct(ac.accuracy)} / DINOv2 ${pct(dc.accuracy)}. 185 test images.`,64,642,1140,31,22,GRAY);
+ text(s,`25% random visibility: AIMv2 ${pct(ar.accuracy)} / DINOv2 ${pct(dr.accuracy)}. n = 185 images.`,64,642,1140,31,22,GRAY);
 }
 {
  const c=get('aimv2','center',.5),r=get('aimv2','random',.5);
@@ -116,7 +122,7 @@ function table(s,values,x,y,w,h,widths){
  const a=pair('aimv2','object_contrast'),d=pair('dinov2','object_contrast');
  const am=pair('aimv2','visibility_matched'),dm=pair('dinov2','visibility_matched');
  const s=slide('Paired diagnostics quantify two different changes',
- `The upper table compares the same image with higher and lower foreground visibility while fixing square-occluder area and shape. AIMv2's paired difference is ${pp(a.paired_accuracy_difference)} percentage points, with a 95 percent interval from ${pp(a.difference_ci_low)} to ${pp(a.difference_ci_high)}. DINOv2's difference is ${pp(d.paired_accuracy_difference)} points, with an interval from ${pp(d.difference_ci_low)} to ${pp(d.difference_ci_high)}. The lower figures describe pairs whose foreground coverage is already close. Correctness changes for ${pct(am.correctness_discordance)} of AIMv2 pairs and ${pct(dm.correctness_discordance)} of DINOv2 pairs. These flips show why an average signed difference alone can hide changes. They do not establish a pure spatial effect.`,
+ `The upper table compares the same image with higher and lower foreground visibility while fixing square-occluder area and shape. AIMv2's paired difference is ${pp(a.paired_accuracy_difference)} percentage points, with a 95 percent interval from ${pp(a.difference_ci_low)} to ${pp(a.difference_ci_high)}. DINOv2's difference is ${pp(d.paired_accuracy_difference)} points, with an interval from ${pp(d.difference_ci_low)} to ${pp(d.difference_ci_high)}. The lower figures describe pairs whose foreground coverage is already close. Correctness changes for ${pct(am.correctness_discordance)} of AIMv2 pairs and ${pct(dm.correctness_discordance)} of DINOv2 pairs. A lower flip rate alone is not better robustness: both versions can be wrong without a flip. These figures describe changes, not a pure spatial mechanism or a general model ranking.`,
  'results/pilot_v1/paired_summary.csv; paired image-bootstrap confidence intervals; n=185 per diagnostic');
  table(s,[['Model','More FG','Less FG','Paired difference (95% CI)'],['AIMv2',pct(a.accuracy_a),pct(a.accuracy_b),`${pp(a.paired_accuracy_difference)} pp [${pp(a.difference_ci_low)}, ${pp(a.difference_ci_high)}]`],['DINOv2',pct(d.accuracy_a),pct(d.accuracy_b),`${pp(d.paired_accuracy_difference)} pp [${pp(d.difference_ci_low)}, ${pp(d.difference_ci_high)}]`]],64,184,1152,180,[190,220,220,522]);
  text(s,'Within foreground-visibility-matched pairs',64,423,1120,42,30,TEAL,true);
@@ -144,7 +150,8 @@ function table(s,values,x,y,w,h,widths){
  const s=slide('Code, next experiments and AI use',
  'The repository contains the protocol, source hashes, data manifests, model predictions, analysis code and figures. It is currently private, so I need to arrange instructor access before submitting the link. For the final project, I will prioritize a larger test set and fill-color sensitivity, then a more precise analysis of the content that remains visible. I used OpenAI Codex for literature inspection, implementation, debugging, execution and analysis drafting. The saved outputs provide the evidence for the reported numbers, and I need to review and understand the code and interpretations before presenting them. The main related works are PatchDrop, the backgrounds challenge, AIMv2, DINOv2 and the Oxford-IIIT Pet dataset.',
  'https://github.com/Bensssonxx/comp669-object-visibility; docs/AI_USE.md; docs/RELATED_WORK.md');
- text(s,'github.com/Bensssonxx/comp669-object-visibility',64,183,1152,60,30,TEAL,true);
+ const repositoryLink=text(s,'github.com/Bensssonxx/comp669-object-visibility',64,183,1152,60,30,TEAL,true);
+ repositoryLink.text.get('github.com/Bensssonxx/comp669-object-visibility').link={uri:'https://github.com/Bensssonxx/comp669-object-visibility',isExternal:true};
  text(s,'Next: larger held-out test set, second fill color, part-level analysis.',64,280,1140,95,31);
  text(s,'AI use: Codex assisted source review, code, debugging, execution and analysis drafting.',64,402,1130,100,27);
  text(s,'References: PatchDrop (2021), Backgrounds Challenge (2020),\nAIMv2 (2024), DINOv2 (2023), Oxford-IIIT Pet (2012).',64,551,1130,80,24,GRAY);

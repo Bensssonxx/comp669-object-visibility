@@ -1,0 +1,6 @@
+{
+  "python": "3.12.2",
+  "jpeg": "9.0",
+  "libjpeg_turbo": null,
+  "tests": "26 passed, 14 warnings in 6.30s"
+}

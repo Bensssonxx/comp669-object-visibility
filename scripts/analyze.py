@@ -82,6 +82,11 @@ def main():
             mean_abs_target_probability_difference=float(np.abs(a.target_probability.to_numpy() - b.target_probability.to_numpy()).mean()),
             mean_object_visibility_a=float(a.object_visibility.mean()), mean_object_visibility_b=float(b.object_visibility.mean()),
             max_pair_object_visibility_difference=float(np.abs(a.object_visibility.to_numpy() - b.object_visibility.to_numpy()).max())))
+        paired_summary[-1].update(
+            n_both_correct=int(((a.correct == 1) & (b.correct == 1)).sum()),
+            n_both_wrong=int(((a.correct == 0) & (b.correct == 0)).sum()),
+            n_only_a_correct=int(((a.correct == 1) & (b.correct == 0)).sum()),
+            n_only_b_correct=int(((a.correct == 0) & (b.correct == 1)).sum()))
     pairs = pd.DataFrame(paired_summary)
     pairs.to_csv(out / "paired_summary.csv", index=False)
 
@@ -168,8 +173,8 @@ def main():
     for ax, pair_type in zip(axes, ["object_contrast", "visibility_matched"]):
         g = pairs[pairs.pair_type == pair_type]
         x = np.arange(len(g))
-        ax.bar(x - .17, g.accuracy_a * 100, .34, label="Higher object visibility" if pair_type == "object_contrast" else "Location A")
-        ax.bar(x + .17, g.accuracy_b * 100, .34, label="Lower object visibility" if pair_type == "object_contrast" else "Location B")
+        ax.bar(x - .17, g.accuracy_a * 100, .34, label="Higher object visibility" if pair_type == "object_contrast" else "Selected mask A")
+        ax.bar(x + .17, g.accuracy_b * 100, .34, label="Lower object visibility" if pair_type == "object_contrast" else "Selected mask B")
         ax.set_xticks(x, g.model)
         ax.set_ylim(0, 100)
         ax.set_title(f"{pair_type.replace('_', ' ')} (n={int(g.n_images.min())})")
