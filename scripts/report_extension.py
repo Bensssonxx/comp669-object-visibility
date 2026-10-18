@@ -162,9 +162,14 @@ def report():
     conclusion_en += (' The family-wise intervals for all four component model differences are on their corresponding sides of zero.' if family_crossover else 'Not all four component family-wise intervals exclude zero in their expected directions.')
     head = pairs[pairs.pair_type == 'head_contrast']
     head_details = ''
+    head_details_zh = ''
     if len(head):
         first = head.iloc[0]
         head_details = f'Head-region visibility averaged {first.mean_head_visibility_a:.1%} vs {first.mean_head_visibility_b:.1%}; foreground visibility averaged {first.mean_object_visibility_a:.1%} vs {first.mean_object_visibility_b:.1%}. These coverage means are unweighted image means.'
+        head_details_zh = f'在辅助配对中，两边的主体可见面积平均为 {first.mean_object_visibility_a:.1%}／{first.mean_object_visibility_b:.1%}，但头部区域可见程度为 {first.mean_head_visibility_a:.1%}／{first.mean_head_visibility_b:.1%}。'
+        if 'mean_body_visibility_a' in first and pd.notna(first.mean_body_visibility_a):
+            head_details += f' The complementary body-region proxy averages {first.mean_body_visibility_a:.1%} vs {first.mean_body_visibility_b:.1%} visible.'
+            head_details_zh += f' 其余主体区域可见程度则为 {first.mean_body_visibility_a:.1%}／{first.mean_body_visibility_b:.1%}。这些覆盖数值是原始图片均值，展示面积接近时仍可能发生较大的部位替换。'
     common = f'''\n{accuracy}\n\n![Primary accuracy](../results/extension_v2/figures/primary_accuracy.png)\n\n{contrast_table}\n\n![Paired contrasts](../results/extension_v2/figures/primary_contrasts.png)\n'''
     zh = f'''# 第二轮实验：新图片复查、填充敏感性与头部区域诊断
 
@@ -182,6 +187,10 @@ def report():
 
 共 {analysis['prediction_rows']:,} 条真实预测，两个模型每个 {preparation['rows_per_model']:,} 条。原图是统计单位；随机重复先在图内平均。主实验按 37 个品种等权，10,000 次品种内图片 bootstrap；七个固定主对比同时报告单项和 Bonferroni 同时区间。辅助／配对筛选后也按有样本品种等权，原始联合计数另存，百分比不一定等于原始计数除以总数。
 
+下图按样本清单顺序选例，未根据模型预测挑选；青色标注不传给编码器。
+
+![Actual shared inputs](../results/extension_v2/figures/design_inputs.png)
+
 ## 主实验：图像可见面积均为 25%
 {common}
 
@@ -192,6 +201,8 @@ def report():
 object_contrast 的 A/B 是主体保留较多／较少；visibility_matched 的 A/B 是算法固定的两个位置；head_contrast 的 A/B 是头部区域保留较多／较少。三个设计都固定图片、模型、分类器、遮挡形状和面积。配对遮挡保留的是 75% 图像，不能与上面保留 25% 图像的分数混用。
 
 {paired}
+
+{head_details_zh}
 
 ![Head region diagnostic](../results/extension_v2/figures/head_region_diagnostic.png)
 
@@ -224,6 +235,10 @@ Primary cohort: 740 previously unevaluated official-test images, 20 per breed, d
 Auxiliary cohort: 185 unused official-trainval images with head boxes, separate from primary and pilot samples. {preparation['eligibility']['auxiliary_head']['eligible']}/185 meet fixed head-contrast eligibility: foreground-visibility gap <=3 pp, center distance >=4 patches, head-region gap >=20 pp. Thresholds were not relaxed. All official-test images lack the downloaded head XMLs, so this auxiliary cohort cannot be presented as official-test head analysis.
 
 There are {analysis['prediction_rows']:,} actual predictions ({preparation['rows_per_model']:,} per model). Random repetitions are averaged within original images. Main estimates use equal breed weights and 10,000 within-breed image bootstrap resamples, retaining all paired conditions together. Seven fixed primary contrasts receive individual and approximate family-wise 95% Bonferroni intervals. Pair/auxiliary results use equal represented-breed weights after eligibility; raw joint counts are retained separately. Intervals condition on the frozen probes/checkpoints.
+
+Input examples below follow manifest order and annotation eligibility, without looking at model outcomes. Cyan annotations are not encoder inputs.
+
+![Actual shared inputs](../results/extension_v2/figures/design_inputs.png)
 
 ## Primary results, 25% visible image area
 {common}

@@ -1,0 +1,8 @@
+{
+  "images": 925,
+  "all_rgb_and_trimap_fingerprints_match": true,
+  "independent_interpreter": ".venv (original pilot environment) versus .reference-conda (extension execution environment)",
+  "jpeg_api_version": "9.0",
+  "libjpeg_turbo": null,
+  "scope": "Decoded inputs only, not a second full model run."
+}
