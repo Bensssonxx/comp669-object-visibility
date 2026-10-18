@@ -1,0 +1,30 @@
+{
+  "scope": "Three aligned batches per model (initial primary conditions and the primary/auxiliary boundary); not a second full experiment.",
+  "python_executable": "/Users/boshenyang/Documents/UNC/senior/comp669/occlusion-visibility/.venv/bin/python",
+  "python_prefix": "/Users/boshenyang/Documents/UNC/senior/comp669/occlusion-visibility/.venv",
+  "independent_from_reference_conda": true,
+  "torch_version": "2.14.0",
+  "jpeg_api_version": "9.0",
+  "batches_per_model": 3,
+  "models": [
+    {
+      "model": "aimv2",
+      "replayed_conditions": 24,
+      "max_abs_feature_difference": 0.0,
+      "matches_at_atol_1e_5_rtol_0": true,
+      "all_cached_feature_norms_near_one": true,
+      "cached_norm_min": 0.9999997615814209,
+      "cached_norm_max": 1.000000238418579
+    },
+    {
+      "model": "dinov2",
+      "replayed_conditions": 24,
+      "max_abs_feature_difference": 0.0,
+      "matches_at_atol_1e_5_rtol_0": true,
+      "all_cached_feature_norms_near_one": true,
+      "cached_norm_min": 0.9999998807907104,
+      "cached_norm_max": 1.0000001192092896
+    }
+  ],
+  "passed": true
+}

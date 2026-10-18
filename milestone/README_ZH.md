@@ -1,5 +1,7 @@
 # Milestone 材料与阅读顺序
 
+已完成第二轮新图片、填充颜色与头部区域实验，见 `../reports/EXTENSION_V2_ZH.md`／`EXTENSION_V2_EN.md`。这里的 v4 PPT 仍对应首轮 pilot_v1；若汇报采用第二轮结果，需要另行更新幻灯片。
+
 先看 `reports/PILOT_REPORT_ZH.md` 的真实结果与解释，再看 PPT。报告和 PPT 都必须等两个模型完成预测、通过审计后才能生成；文件缺失时不能用示意数字替代。
 
 ## 汇报要讲清楚的主线

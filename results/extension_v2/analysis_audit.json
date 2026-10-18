@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "prediction_rows": 32722,
+  "primary_images": 740,
+  "primary_contrast_count": 7,
+  "bootstrap_repetitions": 10000,
+  "bootstrap_unit": "Original image, stratified within breed; repeated conditions carried together",
+  "random_repeats_averaged_within_image": true,
+  "primary_family_size": 7,
+  "interval_scope": "Conditional on fixed probes/checkpoints; follow-up design selected after pilot"
+}

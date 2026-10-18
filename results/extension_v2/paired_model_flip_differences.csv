@@ -1,0 +1,3 @@
+fill,contrast,estimate,ci_low,ci_high,n_images,n_represented_breeds,estimand
+0,aim_minus_dino_matched_flip_rate,0.012162162162162163,-0.013513513513513514,0.03918918918918919,740,37,Equal represented-breed average; condition on eligibility where applicable
+128,aim_minus_dino_matched_flip_rate,0.021621621621621623,-0.005405405405405406,0.04864864864864865,740,37,Equal represented-breed average; condition on eligibility where applicable

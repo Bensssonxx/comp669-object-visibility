@@ -51,11 +51,11 @@ def actual_inputs():
             from extension_v2 import load_head
             head, _ = load_head(ROOT, image_id, trimap)
             axes[row, 0].contour(head, levels=[.5], colors=['#00FFFF'], linewidths=1)
-            axes[row, 0].set_title(image_id + '\nCyan = head-region FG proxy', fontsize=11)
+            axes[row, 0].set_title(image_id + '\nOriginal, auxiliary cohort\nCyan = head-region FG proxy', fontsize=11)
             for col, (role, fill) in enumerate([('high', 128), ('low', 128), ('high', 0), ('low', 0)], start=1):
                 r = conditions[(conditions.image_id == image_id) & (conditions.pair_type == 'head_contrast') & (conditions.pair_role == role) & (conditions.fill == fill)].iloc[0]
                 axes[row, col].imshow(apply_mask(rgb, decode_mask(r.mask_hex, 224, 14), fill))
-                axes[row, col].set_title(f'{role} head, fill {fill}\nFG {float(r.object_visibility):.1%}, head {float(r.head_visibility):.1%}', fontsize=11)
+                axes[row, col].set_title(f'{role} head, fill {fill}\n75% image, FG {float(r.object_visibility):.1%}\nHead region {float(r.head_visibility):.1%}', fontsize=11)
         for ax in axes[row]:
             ax.axis('off')
     fig.suptitle('Actual extension inputs; annotation outlines are never fed to the encoders', fontsize=14)
@@ -122,9 +122,10 @@ def figure_results(summary, pairs, contrasts):
         ax.grid(axis='y', alpha=.15)
     n = int(auxiliary.n_images.iloc[0])
     axes[0].set_ylabel('Accuracy, equal represented-breed weight (%)')
-    axes[1].legend(fontsize=10, loc='lower left')
+    handles, labels = axes[1].get_legend_handles_labels()
+    fig.legend(handles, labels, fontsize=11, loc='lower center', ncol=2, frameon=False, bbox_to_anchor=(.5, .005))
     fig.suptitle(f'Exploratory head-region pairs, n={n}; foreground gap <=3 pp, same square area')
-    fig.tight_layout()
+    fig.tight_layout(rect=(0, .09, 1, 1))
     fig.savefig(destination / 'head_region_diagnostic.png', dpi=170, bbox_inches='tight')
     plt.close(fig)
 
@@ -146,14 +147,22 @@ def report():
             clean = main[(main.model == model) & (main.pattern == 'clean')].estimate.iloc[0]
             accuracy_rows.append([model, fill, f'{clean:.1%}'] + [f'{g.loc[p,"estimate"]:.1%}' for p in ['prefix', 'suffix', 'center', 'random']])
     accuracy = markdown_table(['Model', 'Fill RGB', 'Clean', 'Prefix 25%', 'Suffix 25%', 'Center 25%', 'Random 25%'], accuracy_rows)
+    foreground = pd.read_csv(OUT / 'foreground_coverage.csv').set_index('pattern')
+    foreground_table = markdown_table(['Pattern', 'Mean foreground visible', 'Median foreground visible', 'Original images'],
+        [[p, f'{foreground.loc[p,"mean"]:.1%}', f'{foreground.loc[p,"median"]:.1%}', int(foreground.loc[p,'count'])] for p in ['prefix', 'suffix', 'center', 'random']])
     contrast_table = markdown_table(['Contrast', 'Estimate pp', '95% CI pp', 'Family-wise 95% CI pp'],
         [[r.contrast, f'{r.estimate*100:.1f}', f'[{r.ci_low*100:.1f}, {r.ci_high*100:.1f}]', f'[{r.familywise_ci_low*100:.1f}, {r.familywise_ci_high*100:.1f}]'] for r in contrasts.itertuples()])
     pair_rows = []
     for r in pairs.itertuples():
         pair_rows.append([r.cohort, r.pair_type, r.model, r.fill, r.n_images, f'{r.accuracy_a:.1%}', f'{r.accuracy_b:.1%}',
             f'{r.paired_accuracy_difference*100:.1f} [{r.paired_accuracy_difference_ci_low*100:.1f}, {r.paired_accuracy_difference_ci_high*100:.1f}]', f'{r.correctness_flip_rate:.1%}', f'{r.class_change_rate:.1%}'])
-    paired = markdown_table(['Cohort', 'Pair', 'Model', 'Fill', 'n', 'A accuracy', 'B accuracy', 'A-B pp [95% CI]', 'Correctness flips', 'Class changes'], pair_rows)
+    paired = markdown_table(['Cohort', 'Pair', 'Model', 'Fill', 'n', 'A breed-macro accuracy', 'B breed-macro accuracy', 'A-B pp [95% CI]', 'Correctness flips', 'Class changes'], pair_rows)
     lookup = contrasts.set_index('contrast')
+    fill_checks = pd.read_csv(OUT / 'fill_sensitivity.csv').set_index(['model', 'pattern'])
+    ar, dr = fill_checks.loc[('aimv2', 'random')], fill_checks.loc[('dinov2', 'random')]
+    interaction = lookup.loc['black_minus_gray_model_by_pattern_interaction']
+    fill_note_zh = f'排序稳定不代表填充颜色无关。在 random 条件下，黑色减灰色的准确率差为 AIMv2 {ar.estimate*100:.1f} 个百分点，95% 区间 [{ar.ci_low*100:.1f}, {ar.ci_high*100:.1f}]；DINOv2 为 {dr.estimate*100:.1f} 个百分点，区间 [{dr.ci_low*100:.1f}, {dr.ci_high*100:.1f}]。模型与模式交互量的黑色减灰色差为 {interaction.estimate*100:.1f} 个百分点，单项 95% 区间 [{interaction.ci_low*100:.1f}, {interaction.ci_high*100:.1f}]；该区间跨零并不证明两种填充等价。完整八项填充差值均保存在 fill_sensitivity.csv。'
+    fill_note_en = f'Stable ordering does not imply fill invariance. For random visibility, black-minus-gray accuracy is {ar.estimate*100:.1f} pp for AIMv2 (95% CI [{ar.ci_low*100:.1f}, {ar.ci_high*100:.1f}]) and {dr.estimate*100:.1f} pp for DINOv2 (95% CI [{dr.ci_low*100:.1f}, {dr.ci_high*100:.1f}]). The black-minus-gray change in the model-by-pattern interaction is {interaction.estimate*100:.1f} pp (individual 95% CI [{interaction.ci_low*100:.1f}, {interaction.ci_high*100:.1f}]). That interval crossing zero does not establish equivalence of fills. All eight fill contrasts are retained in fill_sensitivity.csv.'
     point_crossover = all(lookup.loc[f'aim_minus_dino_center_fill{f}', 'estimate'] > 0 and lookup.loc[f'aim_minus_dino_random_fill{f}', 'estimate'] < 0 for f in [128, 0])
     family_crossover = all(lookup.loc[f'aim_minus_dino_center_fill{f}', 'familywise_ci_low'] > 0 and lookup.loc[f'aim_minus_dino_random_fill{f}', 'familywise_ci_high'] < 0 for f in [128, 0])
     conclusion_zh = ('两种填充下，中心条件 AIMv2 更高、随机条件 DINOv2 更高的点估计排序均重复出现。' if point_crossover else '首轮的排序反转没有在两种填充下同时重复，必须按条件阅读结果。')
@@ -170,7 +179,7 @@ def report():
         if 'mean_body_visibility_a' in first and pd.notna(first.mean_body_visibility_a):
             head_details += f' The complementary body-region proxy averages {first.mean_body_visibility_a:.1%} vs {first.mean_body_visibility_b:.1%} visible.'
             head_details_zh += f' 其余主体区域可见程度则为 {first.mean_body_visibility_a:.1%}／{first.mean_body_visibility_b:.1%}。这些覆盖数值是原始图片均值，展示面积接近时仍可能发生较大的部位替换。'
-    common = f'''\n{accuracy}\n\n![Primary accuracy](../results/extension_v2/figures/primary_accuracy.png)\n\n{contrast_table}\n\n![Paired contrasts](../results/extension_v2/figures/primary_contrasts.png)\n'''
+    common = f'''\n{accuracy}\n\n{foreground_table}\n\n![Primary accuracy](../results/extension_v2/figures/primary_accuracy.png)\n\n{contrast_table}\n\n![Paired contrasts](../results/extension_v2/figures/primary_contrasts.png)\n'''
     zh = f'''# 第二轮实验：新图片复查、填充敏感性与头部区域诊断
 
 本轮方案由首轮结果启发，在新图片预测前固定并提交（815a33b）。它是预先固定的后续复查，不是独立构思的外部预注册研究。首轮 pilot_v1 保留不变。
@@ -183,7 +192,7 @@ def report():
 
 主实验：740 张此前未评估的官方测试图，每个品种 20 张；与首轮全部训练、验证和测试图在 ID 与原始图片字节哈希上不重叠。沿用原始 C=10 分类器和冻结编码器，完全没有重训或新参数选择。只聚焦 25% 图像可见预算，复查四种模式和三个随机重复，并重复同图方形遮挡诊断。每个遮挡版本都评估 RGB128 灰色与 RGB0 黑色，保留像素和位置相同。
 
-辅助实验：185 张未用于原训练或验证、具有头框的官方 trainval 图片，独立于主实验。{preparation['eligibility']['auxiliary_head']['eligible']}/185 张满足事先规定的主体面积差不超过 3 个百分点、位置距离至少 4 个 patch、头部区域可见差至少 20 个百分点的配对条件。未放宽阈值或替换图片。官方测试集完全没有头框，因此不能把辅助结果冒充官方测试集上的头部分析。
+辅助实验：185 张未用于原训练或验证、具有头框的官方 trainval 图片，独立于主实验。{preparation['eligibility']['auxiliary_head']['eligible']}/185 张满足事先规定的主体面积差不超过 3 个百分点、位置距离至少 4 个 patch、头部区域可见差至少 20 个百分点的配对条件。未放宽阈值或替换图片。本次官方标注归档中，测试集没有头框，因此辅助结果不能视作官方测试集的头部分析。
 
 共 {analysis['prediction_rows']:,} 条真实预测，两个模型每个 {preparation['rows_per_model']:,} 条。原图是统计单位；随机重复先在图内平均。主实验按 37 个品种等权，10,000 次品种内图片 bootstrap；七个固定主对比同时报告单项和 Bonferroni 同时区间。辅助／配对筛选后也按有样本品种等权，原始联合计数另存，百分比不一定等于原始计数除以总数。
 
@@ -195,6 +204,10 @@ def report():
 {common}
 
 七个主对比中，center-minus-random 是模型差值在两种模式之间的变化，black-minus-gray 是这一交互量对填充颜色的敏感性。交互量非零本身不保证排序反转；需要分别看中心与随机的模型差值方向。
+
+同样保留 25% 图像，center 平均保留了 {foreground.loc['center','mean']:.1%} 的主体，random 为 {foreground.loc['random','mean']:.1%}。上表主体覆盖度在两个模型和两种填充间完全相同，随机重复先在图内平均。这些标准模式保留了不同的主体分布；本轮没有估计其分数差异中有多少由主体或具体部位解释，不能把它当作已控制内容后的纯位置比较。
+
+{fill_note_zh}
 
 ## 同图配对诊断
 
@@ -244,6 +257,10 @@ Input examples below follow manifest order and annotation eligibility, without l
 {common}
 
 An interaction alone does not establish opposite rankings: inspect the two component model differences. Black-minus-gray measures fill sensitivity of the model-by-pattern interaction.
+
+Despite equal 25% image visibility, mean foreground visibility is {foreground.loc['center','mean']:.1%} under center and {foreground.loc['random','mean']:.1%} under random masks. Coverage is shared across both models and fills; random repeats are averaged within image. These patterns retain different content distributions. This follow-up does not estimate how much foreground or parts explain their score differences, and does not identify a content-controlled pure position effect.
+
+{fill_note_en}
 
 ## Same-image paired diagnostics
 

@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "prediction_rows": 32722,
+  "summary_rows_recomputed": 20,
+  "primary_contrasts_recomputed_from_aggregates": 7,
+  "paired_rows_recomputed_from_breed_aggregates": 12,
+  "familywise_intervals_contain_individual_intervals": true,
+  "all_pilot_results_and_core_sources_unchanged_from_0a461ed": true,
+  "foreground_coverage_rows_recomputed_from_conditions": 4
+}

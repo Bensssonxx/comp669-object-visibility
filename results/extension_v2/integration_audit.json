@@ -5,7 +5,10 @@
   "new_ids_and_bytes_disjoint_from_all_pilot_samples": true,
   "all_conditions_annotation_regenerated": true,
   "all_input_fingerprints_match": true,
-  "completed_and_reconstructed_models": [],
+  "completed_and_reconstructed_models": [
+    "aimv2",
+    "dinov2"
+  ],
   "eligibility": {
     "primary": {
       "eligible": 740,

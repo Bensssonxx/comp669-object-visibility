@@ -1,0 +1,8 @@
+estimate,ci_low,ci_high,n_images,n_represented_breeds,estimand,contrast,family_size,familywise_ci_low,familywise_ci_high
+0.23918918918918916,0.2081081081081081,0.2702702702702703,740,37,Equal represented-breed average; condition on eligibility where applicable,aim_minus_dino_center_fill128,7,0.1986486486486486,0.28243243243243243
+-0.36081081081081084,-0.38918918918918927,-0.33288288288288287,740,37,Equal represented-breed average; condition on eligibility where applicable,aim_minus_dino_random_fill128,7,-0.399229407979408,-0.322972972972973
+0.6,0.5599099099099099,0.6400900900900901,740,37,Equal represented-breed average; condition on eligibility where applicable,center_minus_random_model_difference_fill128,7,0.5453651866151866,0.6558558558558559
+0.25405405405405407,0.2243243243243243,0.28378378378378377,740,37,Equal represented-breed average; condition on eligibility where applicable,aim_minus_dino_center_fill0,7,0.2135135135135135,0.2932432432432433
+-0.3180180180180181,-0.34684684684684686,-0.28918918918918923,740,37,Equal represented-breed average; condition on eligibility where applicable,aim_minus_dino_random_fill0,7,-0.3567567567567568,-0.2800498712998716
+0.5720720720720721,0.5333333333333333,0.6117117117117118,740,37,Equal represented-breed average; condition on eligibility where applicable,center_minus_random_model_difference_fill0,7,0.5169868082368083,0.6249050836550836
+-0.02792792792792793,-0.06441441441441441,0.009009009009009007,740,37,Equal represented-breed average; condition on eligibility where applicable,black_minus_gray_model_by_pattern_interaction,7,-0.07850868725868725,0.02265283140283115

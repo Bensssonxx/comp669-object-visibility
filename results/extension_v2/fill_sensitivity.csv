@@ -1,0 +1,9 @@
+model,pattern,contrast,estimate,ci_low,ci_high,n_images,n_represented_breeds,estimand
+aimv2,center,black_minus_gray_accuracy,0.002702702702702703,-0.010810810810810811,0.016216216216216217,740,37,Equal represented-breed average; condition on eligibility where applicable
+aimv2,prefix,black_minus_gray_accuracy,-0.021621621621621623,-0.03783783783783784,-0.006756756756756757,740,37,Equal represented-breed average; condition on eligibility where applicable
+aimv2,random,black_minus_gray_accuracy,-0.03153153153153153,-0.04954954954954955,-0.013513513513513513,740,37,Equal represented-breed average; condition on eligibility where applicable
+aimv2,suffix,black_minus_gray_accuracy,-0.0013513513513513514,-0.020270270270270268,0.01756756756756757,740,37,Equal represented-breed average; condition on eligibility where applicable
+dinov2,center,black_minus_gray_accuracy,-0.012162162162162163,-0.03783783783783784,0.013513513513513514,740,37,Equal represented-breed average; condition on eligibility where applicable
+dinov2,prefix,black_minus_gray_accuracy,0.021621621621621623,-0.0013513513513513514,0.0445945945945946,740,37,Equal represented-breed average; condition on eligibility where applicable
+dinov2,random,black_minus_gray_accuracy,-0.07432432432432431,-0.09234234234234234,-0.05675675675675677,740,37,Equal represented-breed average; condition on eligibility where applicable
+dinov2,suffix,black_minus_gray_accuracy,0.02837837837837838,0.0013513513513513514,0.05675675675675676,740,37,Equal represented-breed average; condition on eligibility where applicable

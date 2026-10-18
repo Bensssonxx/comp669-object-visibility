@@ -2,15 +2,21 @@
 
 **COMP 669 research project, Boshen Yang.** A reproducible, annotation-aware evaluation of frozen AIMv2-L/14 and DINOv2-L/14. The question is whether location/pattern comparisons change when we explicitly measure how much of the target foreground remains visible.
 
-Pilot v1 is complete for both models. Start with the [Chinese report](reports/PILOT_REPORT_ZH.md), [English report](reports/PILOT_REPORT_EN.md), and [milestone materials](milestone/README_ZH.md). The final reviewed presentation is `milestone/COMP669_Object_Visibility_Milestone_v4.pptx`.
+Pilot v1 and follow-up v2 are complete. Start with the latest [Chinese report](reports/EXTENSION_V2_ZH.md) or [English report](reports/EXTENSION_V2_EN.md). The original [pilot report](reports/PILOT_REPORT_ZH.md) and [milestone materials](milestone/README_ZH.md) remain available. The reviewed presentation `milestone/COMP669_Object_Visibility_Milestone_v4.pptx` covers pilot_v1 only; follow-up v2 findings are in the separate reports.
 
 This is a course-scale replication and extension of prior occlusion work, including [Intriguing Properties of Vision Transformers / PatchDrop](https://arxiv.org/abs/2105.10497). We do not claim that separating foreground/background occlusion is new, nor that cross-model differences identify the effect of prefix attention.
 
-## Follow-up in progress
+## Completed follow-up v2
 
-The user authorized a larger follow-up. Its design and samples were frozen before new predictions in commit `815a33b`: [extension protocol](docs/EXTENSION_V2_PROTOCOL.md). It uses 740 new official-test images, two fill colors, the original fixed probes, and a separate 185-image annotated head-region cohort. Eligibility is fixed by annotations; no extension result is claimed until both encoders and audits finish.
+Start with the [Chinese follow-up report](reports/EXTENSION_V2_ZH.md) or [English follow-up report](reports/EXTENSION_V2_EN.md). Both encoders completed 16,361 conditions each (32,722 predictions), and every saved prediction/probability passed reconstruction audit. The design and samples were fixed before new predictions in commit `815a33b`: [extension protocol](docs/EXTENSION_V2_PROTOCOL.md).
 
-Run on a GPU-enabled host after reference setup:
+The 740 new official-test images exclude all pilot IDs and exact image bytes. The original C=10 clean-trained probes stay frozen. At 25% image visibility, gray center scores are AIMv2 87.0% / DINOv2 63.1%, and gray random scores are 33.6% / 69.6%. With black fill they are 87.3% / 61.9% and 30.4% / 62.2%. All four component model differences retain their directions under the seven-contrast family-wise intervals. Fill still changes accuracy; stable ordering does not mean equivalent fills.
+
+A separate cohort of 185 unused official-trainval images supplies head boxes absent from the downloaded official-test annotations. 159 meet the fixed head-region contrast constraints, with foreground visibility matched within 3 pp. Their results are exploratory and describe changing content bundles, not a pure head effect or the cause of the main crossover. Do not pool this cohort into the official-test estimate.
+
+Evidence: [integration audit](results/extension_v2/integration_audit.json), [numeric review](results/extension_v2/report_numeric_review.json), [source provenance](results/extension_v2/provenance_audit.json), [925-input replay](docs/EXTENSION_INPUT_REPLAY_CHECK.json), and [independent 24-condition encoder replay](docs/EXTENSION_ENCODER_REPLAY_CHECK.json). Both replayed encoders matched with zero feature difference. This is not another full independent experiment.
+
+Run on a GPU-enabled macOS arm64 host from a fresh clone:
 
 ```bash
 bash scripts/setup_reference.sh
@@ -22,9 +28,15 @@ bash scripts/run_extension.sh
 .reference-conda/bin/python scripts/report_extension.py
 ```
 
-The tracked extension probes allow a fresh clone to run this follow-up without first retraining the pilot classifiers. The asset commands download/verify data and official upstream checkpoints; they reuse valid existing files. `verify_extension_provenance.py` checks the frozen protocol/source/sample inventory and all 185 auxiliary XML hashes.
+The tracked small extension probes allow this without first refitting pilot classifiers. Valid existing assets are reused. Source/core code and all pilot results remain unchanged. Extension feature caches and upstream model weights are ignored by Git. Exact-byte disjointness does not establish absence of visual near duplicates or pretraining overlap.
 
-The original pilot core is unchanged. Extension caches and outputs are separate in `results/extension_v2/`; frozen small classifier heads are tracked, upstream model weights remain downloaded/ignored. Exact-byte disjointness does not establish absence of visual near duplicates or pretraining overlap. The head-region proxy is not an exact semantic segmentation or a causal head intervention.
+For statistical reanalysis using committed predictions, the following commands need no model weights or raw images. They use the stored completed-run audit and independently recalculate tables; they do not rerun the model integration audit:
+
+```bash
+source scripts/env.sh
+.reference-conda/bin/python scripts/analyze_extension.py
+.reference-conda/bin/python scripts/report_extension.py
+```
 
 ## Read first
 

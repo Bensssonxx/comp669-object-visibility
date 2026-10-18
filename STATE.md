@@ -1,55 +1,54 @@
 # Current state
 
-Updated 2026-10-18, America/New_York. This file is the handoff for continuing the project.
+Updated 2026-10-18, America/New_York. Read this file before continuing the project.
 
-## Active extension v2
+## Completed research
 
-User authorized continuing the research. An independent follow-up protocol is fixed in `docs/EXTENSION_V2_PROTOCOL.md` before new predictions. Config: `configs/extension_v2.json`. Standalone extension scripts preserve all pilot core/cache hashes.
+The initial pilot and the user-authorized follow-up v2 are complete, with real model predictions, audited statistics and bilingual reports. This does not mean the final course project, instructor approval or submission is complete. No inference process remains active; sessions 2187 (full extension) and 69558 (independent encoder replay) finished successfully.
 
-Samples prepared and audited: 740 new official test images (20 per breed), disjoint from all pilot IDs/bytes; 185 unused official trainval images with head-box annotations form a separate auxiliary cohort. All 740 primary images have foreground-matched pairs. 159/185 auxiliary images meet the predeclared head-contrast/foreground-match constraints; no thresholds were relaxed. There are 16,361 actual conditions per model, gray128 and black0 fills, one shared clean input. Frozen original C=10 probes are saved under `results/extension_v2/probes/` for standalone reproduction.
+Repository: https://github.com/Bensssonxx/comp669-object-visibility (private). Use the working HTTPS credential helper and `GIT_TERMINAL_PROMPT=0 git push origin main`. The GitHub connector cannot access this private repository, and SSH authentication is unavailable. Do not create credentials or retry those routes. Instructor access still needs arranging before formal submission. Canvas remains read-only; no upload, email or invitation has been performed.
 
-Run from a GPU-enabled host, not the restricted sandbox: `bash scripts/run_extension.sh`. It validates inputs, executes both encoders, audits every prediction, and computes seven prespecified paired contrasts plus secondary diagnostics. For interrupted runs resume finite-batch caches; do not modify `scripts/extension_v2.py`, core sources, config, manifests or probes while running. `scripts/analyze_extension.py` is also recorded in the frozen provenance inventory. Any bug repair must preserve and document the original planned analysis rather than silently replacing it. No extension conclusions before both models finish and audits pass. Pre-prediction commit 815a33b was pushed before inference. Live unified-exec session: 2187, running `/usr/bin/caffeinate -i bash scripts/run_extension.sh` on the GPU-enabled host. Inspect `results/extension_v2/run.log` and finite cache rows before any restart. AIMv2 is first, then DINOv2. The runner ends with audit and `analyze_extension.py`; separately run `report_extension.py` after both complete. The 36 focused protocol/statistical checks and a separate temporary-only end-to-end synthetic analysis/report test pass. All 925 new decoded input fingerprints also match the original pilot interpreter (docs/EXTENSION_INPUT_REPLAY_CHECK.json). Do not claim any extension result from preparation or benchmark output.
+## Latest findings and evidence
 
-## Delivered scope
+Read `reports/EXTENSION_V2_ZH.md` first; `reports/EXTENSION_V2_EN.md` is the technical version for instructor review.
 
-The initial research-and-milestone preparation is complete: a real two-model pilot, audited predictions, reproducible source/data/model pins, bilingual reports, and a reviewed 12-slide presentation with speaker notes. This does not mean the final course project or instructor approval is complete. Canvas remains read-only; no assignment was submitted and no instructor was contacted.
+The follow-up protocol, source, samples and original classifier heads were committed as 815a33b before new predictions. Main cohort: 740 new official-test images, 20 per breed, with no IDs or image-byte hashes shared with any pilot training/validation/test sample. Auxiliary cohort: 185 unused official-trainval images with head boxes. All 740 main images have foreground-matched pairs; 159/185 auxiliary images meet fixed head-region contrast constraints. The entire official test split has zero downloaded head XMLs. No thresholds were loosened.
 
-Private repository: https://github.com/Bensssonxx/comp669-object-visibility. Arrange instructor access before formal submission. HTTPS Git credential helper works; use `GIT_TERMINAL_PROMPT=0 git push origin main`. The GitHub connector cannot see this private repository; SSH auth is unavailable. Do not retry those routes or create credentials.
+Both frozen L/14 encoders evaluated the same 16,361 conditions (32,722 rows total), using the original C=10 clean-trained probes, original normalization/mean patch pooling/full-frame resize, and shared gray128/black0 inputs. All original core sources and pilot results are unchanged from 0a461ed.
 
-## Read and present
+At 25% visible image area:
 
-- `reports/PILOT_REPORT_ZH.md`: actual results, interpretation and limitations.
-- `reports/PILOT_REPORT_EN.md`: copy-ready technical report for instructor review.
-- `milestone/COMP669_Object_Visibility_Milestone_v4.pptx`: final reviewed 12-slide deck. Native text/tables, embedded scientific figures, clickable repository link, source notes and AI-use disclosure.
-- `milestone/SPEAKER_NOTES_EN.md`: approximately 1,230 spoken words; personally rehearse before presenting.
-- `milestone/QA_EN.md`: likely questions and bounded answers.
-- `docs/PRESENTATION_VALIDATION.json`: package/layout/import/font checks; all final previews inspected; representative LibreOffice renders checked. Microsoft PowerPoint itself was not tested.
+| Fill | Pattern | AIMv2 | DINOv2 |
+| --- | --- | ---: | ---: |
+| Gray128 | center | 87.0% | 63.1% |
+| Gray128 | random | 33.6% | 69.6% |
+| Black0 | center | 87.3% | 61.9% |
+| Black0 | random | 30.4% | 62.2% |
 
-Part 2 slides are due Oct 21, 2026 at 11:59 PM ET; presentation Oct 22, 12 minutes plus 1–2 minutes Q&A. These dates were checked live on Canvas in this chat on Oct 18. Required preliminary results, analysis, future experiments, code link and AI disclosure are in the deck. Check Canvas again before actual submission.
+At this 25% image budget, center retains 62.5% foreground on average, random 25.0%; the standard-pattern comparison still changes content distribution and does not isolate a pure position effect. All four model-difference directions persist under family-wise intervals over seven prespecified contrasts. Black fill still reduces random accuracy by 3.2 pp for AIMv2 and 7.4 pp for DINOv2. The black-minus-gray change in the model-by-pattern interaction is -2.8 pp, individual 95% CI [-6.4, 0.9]; this is not evidence that fills are equivalent.
 
-## Executed pilot
+Auxiliary head-region pairs keep foreground visibility within 3 pp while swapping head/body content. Gray-fill breed-macro accuracy is 92.4% vs 73.2% for AIMv2 (paired gap 19.2 pp [13.5,24.9]) and 82.9% vs 72.4% for DINOv2 (10.5 pp [5.8,15.1]). Black-fill gaps are 17.0 and 8.4 pp. These are content-bundle comparisons, not pure head effects or explanations of the main crossover. Head visibility is a box-intersected-foreground proxy, not precise head segmentation.
 
-Oxford-IIIT Pet, 37 breeds, official trainval/test split. 1,480 clean train / 370 clean validation / 185 test images (5 per breed), seed 6692026. Fourteen empty-foreground annotations excluded before sampling. Official metadata agrees with the pinned image mirror, including 100 original-JPEG byte comparisons. Both frozen L/14 encoders use normalized mean patch features and clean-only logistic probes; clean validation selected C=10 for both. Shared 224x224 full-frame pixels and RGB128 masking; no token removal.
+Validation: 37 tests passed; source provenance verifies 19 frozen files and all 185 auxiliary XMLs; both saved classifiers reconstruct every prediction and target probability; independent input decoding matches all 925 new images; 24 aligned conditions per encoder replay in the original pilot interpreter with zero feature difference. All cached feature norms are near one. Raw aggregates independently reproduce all 20 summary rows, seven primary contrasts and 12 paired rows. Final research figures were visually inspected. Evidence is in `results/extension_v2/*audit.json`, `report_numeric_review.json`, and `docs/EXTENSION_*REPLAY_CHECK.json`.
 
-Both models completed all 4,255 test conditions (8,510 prediction rows total). No inference process remains active. All stored mask/coverage values were recomputed; saved classifiers reproduce every label and target probability. Twenty-six focused protocol/statistical tests pass.
+## Reproduce or extend
 
-Main observation: at 25% visible image area, random masking yields AIMv2 32.6% / DINOv2 70.6%, whereas center masking yields 90.8% / 62.7%. This ordering crossover is descriptive, not a pretraining-mechanism claim. Clean scores are 93.5% / 83.2%. Object-contrast paired accuracy gaps are 20.5 pp / 11.9 pp; matched-foreground correctness flips are 11.9% / 9.7%. Full intervals and joint outcomes are in the report/tables.
+Use the full fresh-clone and saved-prediction reanalysis commands in README.md. Numeric reference: macOS arm64, Python 3.12.2, Conda Pillow 10.4.0 with libjpeg 9e. Plain pip Pillow uses another decoder and fails pixel fingerprints despite the same Pillow version. Source `scripts/env.sh` before direct Python commands on this host.
 
-There is no eligible common foreground-coverage bin across all four standard patterns at 50% image area. Do not claim a reliable adjusted comparison there. Same-image square-occluder pairs are a separate design. Matching foreground area does not match parts, texture or background; all 185 test images lack head-box XMLs. The selected illustrative case is post hoc, with its selection rule stored.
+`bash scripts/run_extension.sh` validates/prepares, runs both models sequentially, audits outputs and computes statistics. `report_extension.py` generates figures and bilingual reports. Tracked small NPZ probes allow extension execution without first refitting pilot classifiers. Raw data/checkpoints/vendor code/environments/features/build files are ignored by Git. The frozen inventory in `results/extension_v2/frozen_provenance.json` checks source/sample hashes from the pre-inference commit. Never silently edit the frozen v1/v2 source/config/probes or reuse their caches for a different experiment. Use a new versioned protocol/run for new scientific settings.
 
-A post-hoc C=10/100/1000 sensitivity supplement reports every tested value without replacing the main results. The random/center ordering persists; flip rates change. This does not establish general encoder rankings or resolve pooling sensitivity.
+The optional independent model-replay script is `scripts/replay_extension_encoder.py`, run from the original `.venv` on the GPU-enabled host. It checks 24 aligned conditions per model and all cached feature norms; it explicitly does not repeat the full experiment. Saved-prediction reanalysis recalculates statistics without raw images or upstream model weights, but relies on the stored completed-run model audit.
 
-## Reproduce and extend
+## Scientific interpretation and next priorities
 
-```bash
-bash scripts/setup_reference.sh
-bash scripts/run_pilot.sh
-```
+The supported result is evaluation-condition-dependent ordering for these specific frozen encoder/probe systems, replicated on new images and two fills. Equal image area and approximately matched foreground area do not specify identical semantic content. Cross-model training data/objectives/architecture remain uncontrolled. Do not attribute the differences to prefix attention or claim first-ever foreground/background occlusion research.
 
-The numeric reference is macOS arm64, Python 3.12.2, Conda Pillow 10.4.0 and libjpeg 9e, pinned in `environment.reference.yml`. Pip Pillow of the same version uses another JPEG decoder and differs numerically; the failed smoke check is preserved in `docs/FRESH_ENCODER_SMOKE.json`. A separate reference environment matches all 2,035 selected decoded RGB/trimap fingerprints; first 8 conditions per encoder replay with zero feature difference. This is not a second full independent experiment. See `docs/REFERENCE_REPLAY_CHECK.json`.
+The original four-pattern common-support issue at 50% visible image area remains unresolved; the follow-up targets 25% and uses separate 75%-visible square diagnostics. Auxiliary eligibility and source split differ from the main cohort; do not pool their estimates. Bootstrap units are original images within breeds, random repeats averaged within image, and all uncertainty is conditional on the fixed probes/checkpoints. Visual near duplicates and pretraining overlap are unknown. No external dataset or natural-occluder replication is complete.
 
-Source `scripts/env.sh` before direct Python commands; it handles hosts that suppress editable-install paths. Default runner interpreter is `.reference-conda/bin/python`. Input hashes must pass before cache reuse. The documented setup and full runner were replayed successfully in the reference environment with verified feature caches; probes, analyses and audits were rerun (docs/PIPELINE_REPLAY_CHECK.json). Data, weights, vendor source, feature caches, environments and build previews are ignored by Git. Do not edit `src/occlusion_visibility` to reuse v1 caches: source hashes bind them. New experimental settings require a new run name and untouched v1 evidence.
+Next priorities: compare alternative feature readouts/pooling with a newly fixed protocol, then consider natural occluders or another dataset. Do not infer that a lower correctness-flip rate means better robustness; both versions can be wrong. Ask the instructor whether this bounded behavior-analysis contribution addresses the feedback before treating the research scope as approved. Student review/understanding and AI disclosure remain necessary.
 
-Next scientific priorities: enlarge the held-out test set and vary fill color, then improve matching support and analyze semantic parts using valid annotations. Before any expansion, personally review the motivation, protocol and implementation, and ask the instructor whether this scope addresses the original feedback. No claim of first-ever foreground/background analysis or causal prefix-attention effect is supported.
+## Existing milestone materials
 
-Extension provenance: `python scripts/verify_extension_provenance.py` verifies 19 source/input files against their pre-inference inventory, upstream revisions, and all 185 selected head XML hashes. The README includes explicit asset-download/import steps for a fresh clone; tracked small probes allow extension reproduction without refitting the pilot. Current reporting code has a passed temporary-only known-answer end-to-end smoke check. No model conclusion is available until both runs finish.
+`milestone/COMP669_Object_Visibility_Milestone_v4.pptx` is the reviewed 12-slide pilot_v1 deck, with speaker notes and QA. It has not been revised to include v2 results. Preserve it as pilot evidence. If the presentation should cover the follow-up, update it explicitly using the new reports and keep old versions.
+
+Slides due Oct 21, 2026 at 11:59 PM ET; presentation Oct 22, 12 minutes plus 1–2 minutes Q&A. These dates were checked live on Oct 18 in the original task; recheck Canvas before actual submission. Required problem/approach, preliminary results, analysis, further experiments, code link and AI-use disclosure remain relevant. No submission has occurred.
