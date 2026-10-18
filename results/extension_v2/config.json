@@ -1,0 +1,27 @@
+{
+  "run_name": "extension_v2",
+  "source_run": "pilot_v1",
+  "seed": 6692027,
+  "size": 224,
+  "patch": 14,
+  "fills": [
+    128,
+    0
+  ],
+  "primary_test_per_class": 20,
+  "auxiliary_head_per_class": 5,
+  "primary_fraction": 0.25,
+  "random_seeds": [
+    0,
+    1,
+    2
+  ],
+  "pair_caliper": 0.03,
+  "head_minimum_visibility_gap": 0.2,
+  "minimum_center_distance_patches": 4,
+  "batch_size": 8,
+  "device": "mps",
+  "dtype": "float32",
+  "bootstrap_repetitions": 10000,
+  "probe_policy": "Reuse original pilot_v1 C=10 clean-trained heads; no refit or selection."
+}

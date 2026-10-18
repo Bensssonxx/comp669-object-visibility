@@ -1,0 +1,33 @@
+{
+  "new_images": 925,
+  "primary_images": 740,
+  "auxiliary_images": 185,
+  "rows_per_model": 16361,
+  "candidate_pool_sizes": {
+    "primary": 3477,
+    "auxiliary_head": 1822
+  },
+  "official_test_head_xmls": 0,
+  "eligibility": {
+    "primary": {
+      "eligible": 740,
+      "total": 740
+    },
+    "auxiliary_head": {
+      "eligible": 159,
+      "total": 185
+    }
+  },
+  "frozen_probes": {
+    "aimv2": {
+      "sha256": "bbae76c22459dfe643b36796a67e27578903ddf2c41eca1d730f686e0eea23c7",
+      "C": 10,
+      "training": "Original pilot clean train only; frozen for extension"
+    },
+    "dinov2": {
+      "sha256": "3bddc55fc6b6f79589b78cda8f34b94f71d2ce110bff75300cf7d93a30c06345",
+      "C": 10,
+      "training": "Original pilot clean train only; frozen for extension"
+    }
+  }
+}

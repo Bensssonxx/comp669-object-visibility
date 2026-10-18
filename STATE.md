@@ -2,6 +2,14 @@
 
 Updated 2026-10-18, America/New_York. This file is the handoff for continuing the project.
 
+## Active extension v2
+
+User authorized continuing the research. An independent follow-up protocol is fixed in `docs/EXTENSION_V2_PROTOCOL.md` before new predictions. Config: `configs/extension_v2.json`. Standalone extension scripts preserve all pilot core/cache hashes.
+
+Samples prepared and audited: 740 new official test images (20 per breed), disjoint from all pilot IDs/bytes; 185 unused official trainval images with head-box annotations form a separate auxiliary cohort. All 740 primary images have foreground-matched pairs. 159/185 auxiliary images meet the predeclared head-contrast/foreground-match constraints; no thresholds were relaxed. There are 16,361 actual conditions per model, gray128 and black0 fills, one shared clean input. Frozen original C=10 probes are saved under `results/extension_v2/probes/` for standalone reproduction.
+
+Run from a GPU-enabled host, not the restricted sandbox: `bash scripts/run_extension.sh`. It validates inputs, executes both encoders, audits every prediction, and computes seven prespecified paired contrasts plus secondary diagnostics. For interrupted runs resume finite-batch caches; do not modify `scripts/extension_v2.py`, core sources, config, manifests or probes while running. `scripts/analyze_extension.py` can be refined independently of the encoder cache. No extension conclusions before both models finish and audits pass. First inference will be launched after the pre-prediction commit.
+
 ## Delivered scope
 
 The initial research-and-milestone preparation is complete: a real two-model pilot, audited predictions, reproducible source/data/model pins, bilingual reports, and a reviewed 12-slide presentation with speaker notes. This does not mean the final course project or instructor approval is complete. Canvas remains read-only; no assignment was submitted and no instructor was contacted.

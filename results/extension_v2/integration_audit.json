@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "images": 925,
+  "conditions_per_model": 16361,
+  "new_ids_and_bytes_disjoint_from_all_pilot_samples": true,
+  "all_conditions_annotation_regenerated": true,
+  "all_input_fingerprints_match": true,
+  "completed_and_reconstructed_models": [],
+  "eligibility": {
+    "primary": {
+      "eligible": 740,
+      "total": 740
+    },
+    "auxiliary_head": {
+      "eligible": 159,
+      "total": 185
+    }
+  }
+}
