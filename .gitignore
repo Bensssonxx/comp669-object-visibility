@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.DS_Store
+data/raw/
+data/processed/
+models/
+vendor/
+.cache/
+results/*/features/
+results/*/classifiers/
+*.log
+docs/*-source.html
+docs/*-source.py
+docs/*-source.toml

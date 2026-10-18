@@ -1,0 +1,12 @@
+torch==2.14.0
+torchvision==0.29.0
+numpy==1.26.4
+scikit-learn==1.7.1
+Pillow==10.4.0
+matplotlib==3.10.5
+sympy==1.14.0
+safetensors==0.6.2
+huggingface_hub==0.35.3
+pytest==8.4.2
+pyarrow==19.0.1
+einops==0.8.1

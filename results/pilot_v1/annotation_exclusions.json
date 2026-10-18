@@ -1,0 +1,100 @@
+[
+  {
+    "image_id": "saint_bernard_108",
+    "label": 28,
+    "species": 2,
+    "official_split": "trainval",
+    "reason": "invalid labels or no foreground after shared resize"
+  },
+  {
+    "image_id": "Egyptian_Mau_162",
+    "label": 11,
+    "species": 1,
+    "official_split": "trainval",
+    "reason": "invalid labels or no foreground after shared resize"
+  },
+  {
+    "image_id": "Egyptian_Mau_165",
+    "label": 11,
+    "species": 1,
+    "official_split": "trainval",
+    "reason": "invalid labels or no foreground after shared resize"
+  },
+  {
+    "image_id": "Egyptian_Mau_196",
+    "label": 11,
+    "species": 1,
+    "official_split": "trainval",
+    "reason": "invalid labels or no foreground after shared resize"
+  },
+  {
+    "image_id": "leonberger_18",
+    "label": 19,
+    "species": 2,
+    "official_split": "trainval",
+    "reason": "invalid labels or no foreground after shared resize"
+  },
+  {
+    "image_id": "miniature_pinscher_14",
+    "label": 21,
+    "species": 2,
+    "official_split": "trainval",
+    "reason": "invalid labels or no foreground after shared resize"
+  },
+  {
+    "image_id": "saint_bernard_15",
+    "label": 28,
+    "species": 2,
+    "official_split": "trainval",
+    "reason": "invalid labels or no foreground after shared resize"
+  },
+  {
+    "image_id": "Egyptian_Mau_20",
+    "label": 11,
+    "species": 1,
+    "official_split": "test",
+    "reason": "invalid labels or no foreground after shared resize"
+  },
+  {
+    "image_id": "japanese_chin_199",
+    "label": 17,
+    "species": 2,
+    "official_split": "test",
+    "reason": "invalid labels or no foreground after shared resize"
+  },
+  {
+    "image_id": "keeshond_7",
+    "label": 18,
+    "species": 2,
+    "official_split": "test",
+    "reason": "invalid labels or no foreground after shared resize"
+  },
+  {
+    "image_id": "Persian_259",
+    "label": 23,
+    "species": 1,
+    "official_split": "test",
+    "reason": "invalid labels or no foreground after shared resize"
+  },
+  {
+    "image_id": "saint_bernard_60",
+    "label": 28,
+    "species": 2,
+    "official_split": "test",
+    "reason": "invalid labels or no foreground after shared resize"
+  },
+  {
+    "image_id": "saint_bernard_78",
+    "label": 28,
+    "species": 2,
+    "official_split": "test",
+    "reason": "invalid labels or no foreground after shared resize"
+  },
+  {
+    "image_id": "wheaten_terrier_195",
+    "label": 35,
+    "species": 2,
+    "official_split": "test",
+    "reason": "invalid labels or no foreground after shared resize"
+  }
+]

@@ -1,0 +1,63 @@
+{
+  "aim_code": {
+    "url": "https://github.com/apple-aiml-research/ml-aim",
+    "revision": "a018ae3208ef3289cae9aa024947e0bb3b71d3ff"
+  },
+  "dino_code": {
+    "url": "https://github.com/facebookresearch/dinov2",
+    "revision": "7764ea0f912e53c92e82eb78a2a1631e92725fc8"
+  },
+  "aim_weights": {
+    "url": "https://huggingface.co/apple/aimv2-large-patch14-224/resolve/ac764a25c832c7dc5e11871daa588e98e3cdbfb7/model.safetensors",
+    "sha256": "3dcf6ca8ae00c81e62cf2ede60f6dfbd9603b25f276bf805917b0630567b0234"
+  },
+  "dino_weights": {
+    "url": "https://dl.fbaipublicfiles.com/dinov2/dinov2_vitl14/dinov2_vitl14_pretrain.pth",
+    "sha256": "d5383ea8f4877b2472eb973e0fd72d557c7da5d3611bd527ceeb1d7162cbf428"
+  },
+  "pet_annotations": {
+    "url": "https://www.robots.ox.ac.uk/~vgg/data/pets/data/annotations.tar.gz",
+    "sha256": "52425fb6de5c424942b7626b428656fcbd798db970a937df61750c0f1d358e91"
+  },
+  "related_work": [
+    {
+      "title": "Intriguing Properties of Vision Transformers",
+      "url": "https://arxiv.org/abs/2105.10497",
+      "relationship": "Prior foreground/background/random occlusion; this project is an extension, not first use."
+    }
+  ],
+  "environment": {
+    "torch": "2.14.0",
+    "torchvision": "0.29.0",
+    "numpy": "1.26.4",
+    "scikit-learn": "1.7.1",
+    "Pillow": "10.4.0",
+    "matplotlib": "3.10.5",
+    "sympy": "1.14.0",
+    "safetensors": "0.6.2",
+    "huggingface_hub": "0.35.3",
+    "pytest": "8.4.2"
+  },
+  "pet_image_mirror": {
+    "repository": "https://huggingface.co/datasets/timm/oxford-iiit-pet",
+    "revision": "089695c834a7deb60505b7cc506672db1c31a6aa",
+    "files": [
+      {
+        "split": "train",
+        "rows": 3680,
+        "sha256": "b9ff432b33c77f4b50014684f25686a1cd523090686571743a6b7a257af27422"
+      },
+      {
+        "split": "test",
+        "rows": 3669,
+        "sha256": "0997d4744ee6740e96f17f56b40b97c70076a4e4dad565bc63d0ffd03906f754"
+      }
+    ],
+    "validation": "All original filenames, 0-based breed labels and train/test membership exactly match official annotation lists.",
+    "official_archive_crosscheck": {
+      "compared_original_jpegs": 100,
+      "byte_identical": true,
+      "note": "First 100 regular JPEGs available in partial official archive; complete mirror split/labels verified separately."
+    }
+  }
+}
