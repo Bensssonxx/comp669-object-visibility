@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 cd "$(dirname "$0")/.."
+source scripts/env.sh
 export PYTHONUNBUFFERED=1
 export OMP_NUM_THREADS=4
 export OPENBLAS_NUM_THREADS=4

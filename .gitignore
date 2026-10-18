@@ -15,3 +15,6 @@ results/*/classifiers/
 docs/*-source.html
 docs/*-source.py
 docs/*-source.toml
+
+.build-presentation/
+.codex-finalizer/

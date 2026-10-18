@@ -10,6 +10,8 @@
   "condition_rows": 4255,
   "all_stored_coverage_recomputed": true,
   "matched_caliper_verified": true,
-  "completed_prediction_models": [],
+  "completed_prediction_models": [
+    "aimv2"
+  ],
   "zero_foreground_annotation_exclusions": 14
 }

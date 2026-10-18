@@ -28,7 +28,9 @@ for model in ["aimv2", "dinov2"]:
 fg_center = half.loc[("aimv2","center"),"mean_object_visibility"]
 fg_random = half.loc[("aimv2","random"),"mean_object_visibility"]
 estimable = adjusted[adjusted.estimable == True]
-support_note = f"{len(estimable)} pattern estimates have the prespecified common-bin support; consult visibility_standardization.csv and visibility_bin_counts.csv for bins and retained counts. No causal mediation claim is made."
+no_support = sorted(adjusted[adjusted.estimable == False].fraction.unique())
+missing_budgets = ", ".join(f"{v:.0%}" for v in no_support) or "none"
+support_note = f"{len(estimable)} pattern estimates have the prespecified common-bin support. Non-estimable visible-image budgets: {missing_budgets}. At supported budgets, the retained groups can still be small; consult visibility_standardization.csv and visibility_bin_counts.csv for bins and counts. These coarse-bin descriptive estimates do not equal exact foreground matching or causal mediation."
 reports = root / "reports"
 reports.mkdir(exist_ok=True)
 common_en = """## Design and interpretation
@@ -105,6 +107,8 @@ zh = f"""# 项目第一轮真实实验结果：pilot v1
 {chr(10).join(details_zh)}
 
 成对实验始终遮住 25% 图像，使用相同大小方形。同一图片的匹配对在主体可见比例上相差不超过 3 个百分点，由标注选出，选取时没有查看模型输出。不能把剩余差异直接叫作“位置导致的纯效应”：遮住的具体部位、纹理与背景仍然不同。
+
+四种标准遮挡模式共同区间不足的可见图像预算为：{missing_budgets}。在这些预算下，不能可靠报告四种模式“调整主体可见性后”的比较。有共同区间的预算也仅使用少量、粗分组样本；不能把这种描述性重加权当作精确匹配或因果解释。同图方形遮挡匹配实验是另一个设计，不等于原来的四模式比较已经解决。
 
 ## 能得出什么，不能得出什么
 

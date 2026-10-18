@@ -21,6 +21,13 @@ def cluster_ci(values, seed=6692026, n=2000):
     return np.quantile(means, [0.025, 0.975]).tolist()
 
 
+def collapse_repetitions(standard):
+    """Return one observation per original image, model, pattern and budget."""
+    return standard.groupby(["model", "image_id", "label", "pattern", "fraction"], as_index=False).agg(
+        correct=("correct", "mean"), object_visibility=("object_visibility", "mean"),
+        background_visibility=("background_visibility", "mean"), target_probability=("target_probability", "mean"))
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--run", default="pilot_v1")
@@ -39,9 +46,7 @@ def main():
         assert (a.mask_sha256 == b.mask_sha256).all()
     standard = df[df.suite == "standard"]
     # Three random masks collapse to one per-original-image outcome before uncertainty.
-    per_image = standard.groupby(["model", "image_id", "label", "pattern", "fraction"], as_index=False).agg(
-        correct=("correct", "mean"), object_visibility=("object_visibility", "mean"),
-        background_visibility=("background_visibility", "mean"), target_probability=("target_probability", "mean"))
+    per_image = collapse_repetitions(standard)
     summary = []
     for (model, pattern, fraction), g in per_image.groupby(["model", "pattern", "fraction"]):
         lo, hi = cluster_ci(g.correct, n=config["bootstrap_repetitions"])
@@ -65,11 +70,15 @@ def main():
         assert np.allclose(a.visible_fraction, b.visible_fraction)
         differences = a.correct.to_numpy() - b.correct.to_numpy()
         lo, hi = cluster_ci(differences, n=config["bootstrap_repetitions"])
+        flips = (a.correct.to_numpy() != b.correct.to_numpy()).astype(float)
+        changes = (a.prediction.to_numpy() != b.prediction.to_numpy()).astype(float)
+        flip_lo, flip_hi = cluster_ci(flips, n=config["bootstrap_repetitions"])
+        change_lo, change_hi = cluster_ci(changes, n=config["bootstrap_repetitions"])
         paired_summary.append(dict(model=model, pair_type=pair_type, n_images=len(a),
             role_a=role_a, role_b=role_b, accuracy_a=float(a.correct.mean()), accuracy_b=float(b.correct.mean()),
             paired_accuracy_difference=float(differences.mean()), difference_ci_low=lo, difference_ci_high=hi,
-            correctness_discordance=float((a.correct.to_numpy() != b.correct.to_numpy()).mean()),
-            prediction_disagreement=float((a.prediction.to_numpy() != b.prediction.to_numpy()).mean()),
+            correctness_discordance=float(flips.mean()), correctness_discordance_ci_low=flip_lo, correctness_discordance_ci_high=flip_hi,
+            prediction_disagreement=float(changes.mean()), prediction_disagreement_ci_low=change_lo, prediction_disagreement_ci_high=change_hi,
             mean_abs_target_probability_difference=float(np.abs(a.target_probability.to_numpy() - b.target_probability.to_numpy()).mean()),
             mean_object_visibility_a=float(a.object_visibility.mean()), mean_object_visibility_b=float(b.object_visibility.mean()),
             max_pair_object_visibility_difference=float(np.abs(a.object_visibility.to_numpy() - b.object_visibility.to_numpy()).max())))
@@ -86,6 +95,14 @@ def main():
             model_differences.append(dict(pattern=pattern, fraction=fraction, n_images=len(diff),
                 aim_minus_dino=float(diff.mean()), ci_low=lo, ci_high=hi))
         pd.DataFrame(model_differences).to_csv(out / "paired_model_differences.csv", index=False)
+        matched = df[df.pair_type == "visibility_matched"]
+        flip_data = matched.pivot(index="image_id", columns=["model", "pair_role"], values="correct")
+        differences = ((flip_data["aimv2"]["a"] != flip_data["aimv2"]["b"]).astype(int) -
+                       (flip_data["dinov2"]["a"] != flip_data["dinov2"]["b"]).astype(int))
+        lo, hi = cluster_ci(differences, n=config["bootstrap_repetitions"])
+        pd.DataFrame([dict(metric="matched_correctness_flip_rate", n_images=len(differences),
+                           aim_minus_dino=float(differences.mean()), ci_low=lo, ci_high=hi)]).to_csv(
+            out / "paired_diagnostic_model_differences.csv", index=False)
 
     # Descriptive common-support reweighting, with counts and explicit non-estimability.
     patterns = ["prefix", "suffix", "center", "random"]

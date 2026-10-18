@@ -33,6 +33,7 @@ bash scripts/run_pilot.sh
 Or run steps separately:
 
 ```bash
+source scripts/env.sh
 .venv/bin/python scripts/download_assets.py
 .venv/bin/python scripts/import_pet_mirror.py
 .venv/bin/python -m occlusion_visibility.experiment prepare
@@ -53,6 +54,8 @@ Feature extraction resumes at saved finite batches. Caches are bound to configur
 Example input figures contain research-use excerpts from the Oxford-IIIT Pet dataset, attributed to [Parkhi et al. and original image owners](https://www.robots.ox.ac.uk/~vgg/data/pets/); full raw image files are not tracked. Model code and weights retain their upstream licenses. No license grant to third-party assets is implied by this project.
 
 Bootstrap confidence intervals resample original test images, not individual masks, and are conditional on the fixed learned probes. The pilot has only 5 test images/class. Equal foreground area is not equal semantic information; parts, texture, shape and background can still differ. Masked-image robustness does not establish robustness to real occluders. Pretraining data overlap is unknown.
+
+`scripts/env.sh` sets explicit project/AIM source paths for Python hosts that suppress editable-install `.pth` processing, and gives Matplotlib a writable project-local cache. No global interpreter or authentication settings are changed.
 
 ## Validation
 

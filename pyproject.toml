@@ -7,7 +7,7 @@ name = "occlusion-visibility"
 version = "0.1.0"
 description = "Object-visibility-aware evaluation of frozen AIMv2 and DINOv2"
 requires-python = ">=3.10"
-dependencies = ["numpy", "Pillow", "torch>=2.4", "torchvision", "scikit-learn", "matplotlib", "safetensors", "huggingface_hub"]
+dependencies = ["numpy", "Pillow", "torch>=2.4", "torchvision", "scikit-learn", "matplotlib", "pandas", "safetensors", "huggingface_hub"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
