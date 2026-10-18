@@ -6,6 +6,20 @@ Pilot v1 is complete for both models. Start with the [Chinese report](reports/PI
 
 This is a course-scale replication and extension of prior occlusion work, including [Intriguing Properties of Vision Transformers / PatchDrop](https://arxiv.org/abs/2105.10497). We do not claim that separating foreground/background occlusion is new, nor that cross-model differences identify the effect of prefix attention.
 
+## Follow-up in progress
+
+The user authorized a larger follow-up. Its design and samples were frozen before new predictions in commit `815a33b`: [extension protocol](docs/EXTENSION_V2_PROTOCOL.md). It uses 740 new official-test images, two fill colors, the original fixed probes, and a separate 185-image annotated head-region cohort. Eligibility is fixed by annotations; no extension result is claimed until both encoders and audits finish.
+
+Run on a GPU-enabled host after reference setup:
+
+```bash
+bash scripts/run_extension.sh
+source scripts/env.sh
+.reference-conda/bin/python scripts/report_extension.py
+```
+
+The original pilot core is unchanged. Extension caches and outputs are separate in `results/extension_v2/`; frozen small classifier heads are tracked, upstream model weights remain downloaded/ignored. Exact-byte disjointness does not establish absence of visual near duplicates or pretraining overlap. The head-region proxy is not an exact semantic segmentation or a causal head intervention.
+
 ## Read first
 
 - [Direction in Chinese](docs/DIRECTION_ZH.md): motivation and contribution boundaries.

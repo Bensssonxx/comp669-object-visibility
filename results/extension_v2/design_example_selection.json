@@ -1,0 +1,5 @@
+{
+  "rule": "First primary manifest image and first eligible auxiliary manifest image; no prediction lookup.",
+  "primary_image_id": "Abyssinian_96",
+  "auxiliary_image_id": "Abyssinian_12"
+}
