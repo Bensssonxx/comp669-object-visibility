@@ -1,0 +1,24 @@
+{
+  "reference_commit": "815a33b",
+  "frozen_file_sha256": {
+    "configs/extension_v2.json": "bc3a123815432ab76ba8e2dead9724d46da95a6e584d94be58678470735aab88",
+    "docs/EXTENSION_V2_PROTOCOL.md": "523086652fc5b61f34eea6468835ffd6cccdd51455821b1651671924487549c4",
+    "docs/SOURCES.json": "32f783f2d3745b0ce60d3f9b4902db60e58f0129a536a04d444415fd8e63ce64",
+    "scripts/extension_v2.py": "cf586b58e0990e73a29a46a1b361f3206e48a5f387a5a9177bf3f3e3c76b3052",
+    "scripts/analyze_extension.py": "da79f50bde4c2e705d0c1f2344ebc20e9e34f73df66e8732f636c7363f24d850",
+    "src/occlusion_visibility/__init__.py": "b5c152ea5553174b089362b1433db6416ce00b2e5de6c8b29a2224a3f769192d",
+    "src/occlusion_visibility/data.py": "81fd8e5871d6e31514352a139208fae37ae15ca5a62ecc2df2f582a146dadbfc",
+    "src/occlusion_visibility/encoders.py": "7790ce57e72d702ecae22538271f5d1b5ed240ef8442a20b51e813fa78bfbd97",
+    "src/occlusion_visibility/experiment.py": "1f864f127ed35a347f182d24a329799c7ab9b08ce652cbaa323954539f75b842",
+    "src/occlusion_visibility/masks.py": "95ceacc3902b0bc7f44f2f898eccd96edd042a7e5c98b01f36027474480f1ff8",
+    "results/extension_v2/config.json": "2d09963c32f409817740febdb986507ec73feb4beb8f8aeecd74106cc75a2e4b",
+    "results/extension_v2/manifest.json": "de0b0ee82abef9ae3b022dc0ace90f3c99a92d83bd8c490feebae7ad363b7eae",
+    "results/extension_v2/conditions.csv": "ccbda272013ad6826bdd91b5a3be092d56e3def8c8364c7fbf37e0a9ee9c69ae",
+    "results/extension_v2/preprocessing_fingerprints.csv": "27734b7a6acdcd003e6e356db7407086f4d7ae2a5f0378782ee1b8740640d493",
+    "results/extension_v2/preparation_audit.json": "2c63231c27bff683fb13cd0f8424dd9f426690aa2386ad8328077c36ca4941f6",
+    "results/extension_v2/eligibility.csv": "d1332c4678cc3d4d01f7d0480dfe3fb6ec82176f76f8fbf984617a99a1ee0320",
+    "results/extension_v2/exclusions.json": "1b7f066570180c3f30375771b01b6339fa232cbfef7fedadd8297caa5b89f650",
+    "results/extension_v2/probes/aimv2_linear.npz": "bbae76c22459dfe643b36796a67e27578903ddf2c41eca1d730f686e0eea23c7",
+    "results/extension_v2/probes/dinov2_linear.npz": "3bddc55fc6b6f79589b78cda8f34b94f71d2ce110bff75300cf7d93a30c06345"
+  }
+}

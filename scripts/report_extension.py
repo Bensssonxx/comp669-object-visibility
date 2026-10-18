@@ -206,7 +206,7 @@ object_contrast 的 A/B 是主体保留较多／较少；visibility_matched 的 
 
 ![Head region diagnostic](../results/extension_v2/figures/head_region_diagnostic.png)
 
-头部区域是“头框矩形与主体像素的交集”，属于区域代理，并非精确头部像素标注。即使主体总面积接近，头部、其余部位、背景和纹理仍作为内容组合一起改变；不能把准确率差解释成头部的独立因果效果。翻转率也不能单独排名模型鲁棒性，两边都错不会产生正确性翻转。
+头部区域是“头框矩形与主体像素的交集”，属于区域代理，并非精确头部像素标注。即使主体总面积接近，头部、其余部位、背景和纹理仍作为内容组合一起改变；不能把准确率差解释成头部的独立因果效果。辅助头部实验也不能证明主实验的模型排序反转由头部可见性解释，两者使用不同的样本与遮挡设计。翻转率不能单独排名模型鲁棒性，两边都错不会产生正确性翻转。
 
 ## 它怎样回应教授
 
@@ -255,7 +255,7 @@ A/B means more/less foreground for object_contrast, fixed selected locations for
 
 ![Head-region diagnostic](../results/extension_v2/figures/head_region_diagnostic.png)
 
-The head-region proxy intersects the head bounding rectangle with annotated foreground; it is not exact head segmentation. Approximate foreground-area matching still changes parts, texture and background together. This is a content-bundle diagnostic, not the isolated causal effect of the head. Correctness-flip rates alone cannot rank robustness: two wrong predictions yield no correctness flip.
+The head-region proxy intersects the head bounding rectangle with annotated foreground; it is not exact head segmentation. Approximate foreground-area matching still changes parts, texture and background together. This is a content-bundle diagnostic, not the isolated causal effect of the head. It also does not establish that head visibility explains the primary model-ordering crossover: the cohorts and mask designs differ. Correctness-flip rates alone cannot rank robustness: two wrong predictions yield no correctness flip.
 
 ## Motivation and limits
 

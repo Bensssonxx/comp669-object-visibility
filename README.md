@@ -13,10 +13,16 @@ The user authorized a larger follow-up. Its design and samples were frozen befor
 Run on a GPU-enabled host after reference setup:
 
 ```bash
-bash scripts/run_extension.sh
+bash scripts/setup_reference.sh
 source scripts/env.sh
+.reference-conda/bin/python scripts/download_assets.py
+.reference-conda/bin/python scripts/import_pet_mirror.py
+.reference-conda/bin/python scripts/verify_extension_provenance.py
+bash scripts/run_extension.sh
 .reference-conda/bin/python scripts/report_extension.py
 ```
+
+The tracked extension probes allow a fresh clone to run this follow-up without first retraining the pilot classifiers. The asset commands download/verify data and official upstream checkpoints; they reuse valid existing files. `verify_extension_provenance.py` checks the frozen protocol/source/sample inventory and all 185 auxiliary XML hashes.
 
 The original pilot core is unchanged. Extension caches and outputs are separate in `results/extension_v2/`; frozen small classifier heads are tracked, upstream model weights remain downloaded/ignored. Exact-byte disjointness does not establish absence of visual near duplicates or pretraining overlap. The head-region proxy is not an exact semantic segmentation or a causal head intervention.
 
