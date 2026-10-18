@@ -9,6 +9,7 @@ This is a course-scale replication and extension of prior occlusion work, includ
 - [Direction in Chinese](docs/DIRECTION_ZH.md): motivation and contribution boundaries.
 - [Pre-inference protocol](docs/PROTOCOL.md): sampling, masks, probe fitting, matched pairs and uncertainty.
 - [Source revisions and hashes](docs/SOURCES.json): official code/checkpoints and dataset provenance.
+- [Related work](docs/RELATED_WORK.md): what already exists and what this project adds.
 - [AI assistance disclosure](docs/AI_USE.md).
 - [Current project status](STATE.md).
 
@@ -39,6 +40,8 @@ Or run steps separately:
 .venv/bin/python -m occlusion_visibility.experiment run --model aimv2
 .venv/bin/python -m occlusion_visibility.experiment run --model dinov2
 .venv/bin/python scripts/analyze.py --run pilot_v1
+.venv/bin/python scripts/audit_run.py --require-predictions
+.venv/bin/python scripts/write_reports.py
 ```
 
 Feature extraction resumes at saved finite batches. Caches are bound to configuration, row order, image/annotation hashes, encoder source and checkpoint hash. A changed experiment must use a new run name. Stop on checksum mismatch, missing foreground, cross-split duplicate image bytes, stale cache or non-finite features; never silently substitute a smaller checkpoint.
@@ -46,6 +49,8 @@ Feature extraction resumes at saved finite batches. Caches are bound to configur
 ## Outputs
 
 `results/pilot_v1/` contains the configuration, sample manifest, annotation exclusions, shared mask metadata, raw predictions, probe validation choices, accuracy summaries, paired diagnostics, object-visibility counts, exploratory common-support standardization, analysis audit and figures. Large image/checkpoint/feature files are ignored by Git and downloaded by the scripts. Dataset images remain attributed to their original owners and are not redistributed in the repository.
+
+Example input figures contain research-use excerpts from the Oxford-IIIT Pet dataset, attributed to [Parkhi et al. and original image owners](https://www.robots.ox.ac.uk/~vgg/data/pets/); full raw image files are not tracked. Model code and weights retain their upstream licenses. No license grant to third-party assets is implied by this project.
 
 Bootstrap confidence intervals resample original test images, not individual masks, and are conditional on the fixed learned probes. The pilot has only 5 test images/class. Equal foreground area is not equal semantic information; parts, texture, shape and background can still differ. Masked-image robustness does not establish robustness to real occluders. Pretraining data overlap is unknown.
 

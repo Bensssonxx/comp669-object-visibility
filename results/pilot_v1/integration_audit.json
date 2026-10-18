@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "split_counts": {
+    "train": 1480,
+    "val": 370,
+    "test": 185
+  },
+  "all_37_classes_balanced": true,
+  "exact_duplicate_bytes_across_samples": false,
+  "condition_rows": 4255,
+  "all_stored_coverage_recomputed": true,
+  "matched_caliper_verified": true,
+  "completed_prediction_models": [],
+  "zero_foreground_annotation_exclusions": 14
+}

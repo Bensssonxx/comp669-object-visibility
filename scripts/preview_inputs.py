@@ -43,6 +43,22 @@ fig.tight_layout()
 fig.savefig(figures / "actual_inputs.png", dpi=160, bbox_inches="tight")
 plt.close(fig)
 
+image_id = examples[0]
+rgb, _ = load_image(root, image_id)
+fig, axes = plt.subplots(3, 4, figsize=(11, 8))
+for i, pattern in enumerate(["prefix", "center", "random"]):
+    for j, fraction in enumerate([1., .75, .5, .25]):
+        p = "clean" if fraction == 1. else pattern
+        r = conditions[(conditions.image_id == image_id) & (conditions.pattern == p) &
+                       (conditions.fraction == fraction) & (conditions.repeat == 0)].iloc[0]
+        axes[i, j].imshow(apply_mask(rgb, decode_mask(r.mask_hex, 224, 14), config["fill"]))
+        axes[i, j].set_title(f"{p}: {fraction:.0%} image\n{r.object_visibility:.0%} foreground visible", fontsize=9)
+        axes[i, j].axis("off")
+fig.suptitle(f"Same original image across visibility budgets: {image_id}")
+fig.tight_layout()
+fig.savefig(figures / "visibility_ratios.png", dpi=160, bbox_inches="tight")
+plt.close(fig)
+
 fig, axes = plt.subplots(3, 5, figsize=(13, 8))
 for row_index, image_id in enumerate(examples):
     rgb, _ = load_image(root, image_id)

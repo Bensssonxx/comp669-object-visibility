@@ -35,8 +35,11 @@ for split, official in [("train", "trainval"), ("test", "test")]:
     provenance.append({"split": split, "rows": len(seen), "sha256": sha256_file(path)})
 sources_path = root / "docs/SOURCES.json"
 sources = json.loads(sources_path.read_text())
+previous_crosscheck = sources.get("pet_image_mirror", {}).get("official_archive_crosscheck")
 sources["pet_image_mirror"] = {"repository": "https://huggingface.co/datasets/timm/oxford-iiit-pet",
     "revision": json.loads((root / "docs/pets-mirror-metadata.json").read_text())["sha"],
     "files": provenance, "validation": "All original filenames, 0-based breed labels and train/test membership exactly match official annotation lists."}
+if previous_crosscheck:
+    sources["pet_image_mirror"]["official_archive_crosscheck"] = previous_crosscheck
 sources_path.write_text(json.dumps(sources, indent=2))
 print("Imported and verified", len(all_ids), "original JPEGs", flush=True)

@@ -12,3 +12,6 @@ export OPENBLAS_NUM_THREADS=4
 .venv/bin/python -m occlusion_visibility.experiment run --model aimv2
 .venv/bin/python -m occlusion_visibility.experiment run --model dinov2
 .venv/bin/python scripts/analyze.py --run pilot_v1
+.venv/bin/python scripts/audit_run.py --require-predictions
+.venv/bin/python scripts/qualitative_cases.py
+.venv/bin/python scripts/write_reports.py
