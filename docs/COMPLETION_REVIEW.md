@@ -4,7 +4,7 @@ Completed October 18, 2026. Scope: prepare reviewable research evidence and mile
 
 | Requirement | Evidence |
 | --- | --- |
-| Focused motivation and contribution boundaries | DIRECTION_ZH.md, RELATED_WORK.md, PROTOCOL.md |
+| Focused motivation and contribution boundaries | PROJECT_DIRECTION.md, RELATED_WORK.md, PROTOCOL.md |
 | Official code/checkpoint/data provenance | SOURCES.json, ../results/pilot_v1/manifest.json, ENVIRONMENT.json |
 | Shared pixel interventions and annotation semantics | protocol, mask code, actual input figures, 26 passing tests |
 | Real AIMv2 and DINOv2 pilot | 4,255 saved prediction rows each; integration_audit.json |
@@ -12,7 +12,7 @@ Completed October 18, 2026. Scope: prepare reviewable research evidence and mile
 | Validation-only probe selection and honest sensitivity | per-model probe selection, probe_regularization_sensitivity.csv; post-hoc supplement labeled |
 | Reproducible decoded inputs | 2,035 canonical RGB/trimap hashes; REFERENCE_REPLAY_CHECK.json |
 | Executable setup and full pipeline | PIPELINE_REPLAY_CHECK.json; successful reference setup and cached-feature replay |
-| Preliminary results, analysis and further experiments | PILOT_REPORT_ZH.md, PILOT_REPORT_EN.md; 12-slide v4 PPTX |
+| Preliminary results, analysis and further experiments | PILOT_REPORT_EN.md; 12-slide v4 PPTX |
 | Real figures, speaker notes, code link and AI disclosure | milestone assets, SPEAKER_NOTES_EN.md, last slide, AI_USE.md |
 | Presentation review | PRESENTATION_VALIDATION.json; all previews inspected, representative LibreOffice cross-check; no PowerPoint execution claim |
 

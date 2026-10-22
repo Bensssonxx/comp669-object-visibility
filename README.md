@@ -2,13 +2,26 @@
 
 **COMP 669 research project, Boshen Yang.** A reproducible, annotation-aware evaluation of frozen AIMv2-L/14 and DINOv2-L/14. The question is whether location/pattern comparisons change when we explicitly measure how much of the target foreground remains visible.
 
-Pilot v1 and follow-up v2 are complete. Start with the latest [Chinese report](reports/EXTENSION_V2_ZH.md) or [English report](reports/EXTENSION_V2_EN.md). The original [pilot report](reports/PILOT_REPORT_ZH.md) and [milestone materials](milestone/README_ZH.md) remain available. The reviewed presentation `milestone/COMP669_Object_Visibility_Milestone_v4.pptx` covers pilot_v1 only; follow-up v2 findings are in the separate reports.
+Pilot v1 and follow-up v2 are complete. Start with the latest [follow-up report](reports/EXTENSION_V2_EN.md) and the [code guide](docs/CODE_GUIDE.md). The updated [milestone presentation](milestone/COMP669_Object_Visibility_Milestone_v5.pptx) incorporates follow-up v2, with [English speaker notes](milestone/SPEAKER_NOTES_EN_v5.md) and [questions to prepare for](milestone/QA_EN_v5.md). It has 12 main slides and two hidden backups, with an approximately 11-minute target. See the [milestone index](milestone/README.md). The original [pilot report](reports/PILOT_REPORT_EN.md) and v4 pilot deck remain preserved.
 
 This is a course-scale replication and extension of prior occlusion work, including [Intriguing Properties of Vision Transformers / PatchDrop](https://arxiv.org/abs/2105.10497). We do not claim that separating foreground/background occlusion is new, nor that cross-model differences identify the effect of prefix attention.
 
+## Where the important code lives
+
+| Read first | Purpose |
+| --- | --- |
+| [Code guide](docs/CODE_GUIDE.md) | Guided reading order and one-result walkthrough |
+| [Core package](src/occlusion_visibility/) | Images, masks, frozen encoders and pilot classifier fitting |
+| [Follow-up runner](scripts/extension_v2.py) | New-image sampling, two fills, head-region pairs and frozen-probe predictions |
+| [Follow-up analysis](scripts/analyze_extension.py) | Image-level aggregation, paired contrasts and bootstrap intervals |
+| [Reports](reports/README.md) | Current findings and the preserved pilot report |
+| [Milestone files](milestone/README.md) | Current presentation, speaker notes and questions |
+
+Repository documentation, report generators and presentation text use English. Local study translations are kept outside the Git repository.
+
 ## Completed follow-up v2
 
-Start with the [Chinese follow-up report](reports/EXTENSION_V2_ZH.md) or [English follow-up report](reports/EXTENSION_V2_EN.md). Both encoders completed 16,361 conditions each (32,722 predictions), and every saved prediction/probability passed reconstruction audit. The design and samples were fixed before new predictions in commit `815a33b`: [extension protocol](docs/EXTENSION_V2_PROTOCOL.md).
+Start with the [follow-up report](reports/EXTENSION_V2_EN.md). Both encoders completed 16,361 conditions each (32,722 predictions), and every saved prediction/probability passed reconstruction audit. The design and samples were fixed before new predictions in commit `815a33b`: [extension protocol](docs/EXTENSION_V2_PROTOCOL.md).
 
 The 740 new official-test images exclude all pilot IDs and exact image bytes. The original C=10 clean-trained probes stay frozen. At 25% image visibility, gray center scores are AIMv2 87.0% / DINOv2 63.1%, and gray random scores are 33.6% / 69.6%. With black fill they are 87.3% / 61.9% and 30.4% / 62.2%. All four component model differences retain their directions under the seven-contrast family-wise intervals. Fill still changes accuracy; stable ordering does not mean equivalent fills.
 
@@ -40,7 +53,8 @@ source scripts/env.sh
 
 ## Read first
 
-- [Direction in Chinese](docs/DIRECTION_ZH.md): motivation and contribution boundaries.
+- [Code guide](docs/CODE_GUIDE.md): reading order, main functions, C selection, data flow and result trace.
+- [Research direction](docs/PROJECT_DIRECTION.md): motivation and contribution boundaries.
 - [Pre-inference protocol](docs/PROTOCOL.md): sampling, masks, probe fitting, matched pairs and uncertainty.
 - [Source revisions and hashes](docs/SOURCES.json): official code/checkpoints and dataset provenance.
 - [Related work](docs/RELATED_WORK.md): what already exists and what this project adds.

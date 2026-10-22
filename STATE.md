@@ -1,16 +1,16 @@
 # Current state
 
-Updated 2026-10-18, America/New_York. Read this file before continuing the project.
+Updated 2026-10-21, America/New_York. Read this file before continuing the project.
 
 ## Completed research
 
-The initial pilot and the user-authorized follow-up v2 are complete, with real model predictions, audited statistics and bilingual reports. This does not mean the final course project, instructor approval or submission is complete. No inference process remains active; sessions 2187 (full extension) and 69558 (independent encoder replay) finished successfully.
+The initial pilot and the user-authorized follow-up v2 are complete, with real model predictions, audited statistics and English reports. This does not mean the final course project, instructor approval or submission is complete. No inference process remains active; sessions 2187 (full extension) and 69558 (independent encoder replay) finished successfully.
 
 Repository: https://github.com/Bensssonxx/comp669-object-visibility (private). Use the working HTTPS credential helper and `GIT_TERMINAL_PROMPT=0 git push origin main`. The GitHub connector cannot access this private repository, and SSH authentication is unavailable. Do not create credentials or retry those routes. Instructor access still needs arranging before formal submission. Canvas remains read-only; no upload, email or invitation has been performed.
 
 ## Latest findings and evidence
 
-Read `reports/EXTENSION_V2_ZH.md` first; `reports/EXTENSION_V2_EN.md` is the technical version for instructor review.
+Read `docs/CODE_GUIDE.md` for the implementation and `reports/EXTENSION_V2_EN.md` for the current technical findings.
 
 The follow-up protocol, source, samples and original classifier heads were committed as 815a33b before new predictions. Main cohort: 740 new official-test images, 20 per breed, with no IDs or image-byte hashes shared with any pilot training/validation/test sample. Auxiliary cohort: 185 unused official-trainval images with head boxes. All 740 main images have foreground-matched pairs; 159/185 auxiliary images meet fixed head-region contrast constraints. The entire official test split has zero downloaded head XMLs. No thresholds were loosened.
 
@@ -35,7 +35,7 @@ Validation: 37 tests passed; source provenance verifies 19 frozen files and all 
 
 Use the full fresh-clone and saved-prediction reanalysis commands in README.md. Numeric reference: macOS arm64, Python 3.12.2, Conda Pillow 10.4.0 with libjpeg 9e. Plain pip Pillow uses another decoder and fails pixel fingerprints despite the same Pillow version. Source `scripts/env.sh` before direct Python commands on this host.
 
-`bash scripts/run_extension.sh` validates/prepares, runs both models sequentially, audits outputs and computes statistics. `report_extension.py` generates figures and bilingual reports. Tracked small NPZ probes allow extension execution without first refitting pilot classifiers. Raw data/checkpoints/vendor code/environments/features/build files are ignored by Git. The frozen inventory in `results/extension_v2/frozen_provenance.json` checks source/sample hashes from the pre-inference commit. Never silently edit the frozen v1/v2 source/config/probes or reuse their caches for a different experiment. Use a new versioned protocol/run for new scientific settings.
+`bash scripts/run_extension.sh` validates/prepares, runs both models sequentially, audits outputs and computes statistics. `report_extension.py` generates figures and the English report. Tracked small NPZ probes allow extension execution without first refitting pilot classifiers. Raw data/checkpoints/vendor code/environments/features/build files are ignored by Git. The frozen inventory in `results/extension_v2/frozen_provenance.json` checks source/sample hashes from the pre-inference commit. Never silently edit the frozen v1/v2 source/config/probes or reuse their caches for a different experiment. Use a new versioned protocol/run for new scientific settings.
 
 The optional independent model-replay script is `scripts/replay_extension_encoder.py`, run from the original `.venv` on the GPU-enabled host. It checks 24 aligned conditions per model and all cached feature norms; it explicitly does not repeat the full experiment. Saved-prediction reanalysis recalculates statistics without raw images or upstream model weights, but relies on the stored completed-run model audit.
 
@@ -49,6 +49,20 @@ Next priorities: compare alternative feature readouts/pooling with a newly fixed
 
 ## Existing milestone materials
 
-`milestone/COMP669_Object_Visibility_Milestone_v4.pptx` is the reviewed 12-slide pilot_v1 deck, with speaker notes and QA. It has not been revised to include v2 results. Preserve it as pilot evidence. If the presentation should cover the follow-up, update it explicitly using the new reports and keep old versions.
+The current deck is `milestone/COMP669_Object_Visibility_Milestone_v5.pptx`, explicitly updated with follow-up v2 under the user's request. It retains the original slide/master style, with 12 visible main slides and two hidden backups (13–14). Native editable charts and tables use saved v2 evidence, not new model runs. Motivation, the controls for each comparison, and the descriptive/causal boundaries are separate sections. The auxiliary head analysis remains separate from the main 740-image cohort.
 
-Slides due Oct 21, 2026 at 11:59 PM ET; presentation Oct 22, 12 minutes plus 1–2 minutes Q&A. These dates were checked live on Oct 18 in the original task; recheck Canvas before actual submission. Required problem/approach, preliminary results, analysis, further experiments, code link and AI-use disclosure remain relevant. No submission has occurred.
+Use `milestone/SPEAKER_NOTES_EN_v5.md`, `milestone/README.md` and `milestone/QA_EN_v5.md`. All 12 spoken scripts and source citations are embedded in the PPTX. The English script has 1,104 words, targeting 11 minutes. At 100–110 words/minute plus 40 seconds of pauses, estimated time is 10:42–11:42. This is not a timed human rehearsal. The student still needs to rehearse and review the implementation/claims, and instructor access to the private repository remains pending.
+
+Build with `python3 scripts/prepare_milestone_v5.py`, copy `scripts/build_milestone_v5.mjs` into `.build-presentation/`, then run it with the bundled Node executable from the repository root. Its bare import uses the existing `.build-presentation/node_modules` link to the bundled runtime. The finalizer refuses overwriting an existing final file; use a new `MILESTONE_BUILD` name for another deck revision. `python3 scripts/verify_milestone_v5.py` checks the delivered v5 content against source CSVs and embedded notes. Final v5 SHA256: `4d2d9bd94d39f77a526a7024bfbdb11411387a5d42a2821fb0c541ac77950ff1`.
+
+Validation: all 14 source and final previews inspected/compared (the final import renders pixel-identically to reviewed authored previews), finalizer layout/package/font/chart workbook checks pass, native chart data and every reported table were checked against saved CSVs, and LibreOffice sample slides 5,6,7,10 were visually checked. Hidden backups are correctly skipped by LibreOffice's 12-page PDF export. No native PowerPoint execution test was performed. Build/validation artifacts remain private under `.build-presentation/v5/`; content review is `docs/MILESTONE_V5_CONTENT_REVIEW.json`.
+
+`milestone/COMP669_Object_Visibility_Milestone_v4.pptx` and its original `SPEAKER_NOTES_EN.md` / `QA_EN.md` remain the preserved pilot_v1 version. Use the v5 files for the current milestone.
+
+Slides due Oct 21, 2026 at 11:59 PM ET; presentation Oct 22, 12 minutes plus 1–2 minutes Q&A. Assignment 967489 and milestone announcement 900889 were rechecked live on Oct 19 before this presentation update. Recheck Canvas before actual submission. Required problem/approach, preliminary results, analysis, further experiments, code link and AI-use disclosure remain relevant. No submission has occurred.
+
+## English-only repository and code orientation
+
+On October 21 the user requested English-only GitHub material and a code walkthrough. The current branch removes the study translations, replaces their direction/milestone indexes with English documents, and makes report/slide-data generators English-only. Pre-existing local changes and study translations were backed up outside this repository under `../local-study-notes/2026-10-21-before-english-only/`. Old Git history is retained because the experiment provenance depends on it.
+
+`docs/CODE_GUIDE.md` is the reader entry point. It maps the real functions and data flow, explains validation-only C selection and frozen encoder/probe roles, and distinguishes the pilot runner from the follow-up. No experimental core, fixed protocol, classifier or result bytes were changed by this documentation/language cleanup.

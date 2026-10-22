@@ -1,0 +1,74 @@
+{
+  "main_slides": 12,
+  "hidden_backup_slides": [
+    13,
+    14
+  ],
+  "spoken_word_count": 1104,
+  "planned_seconds": 660,
+  "estimated_seconds_100wpm_plus40": 702.4,
+  "estimated_seconds_110wpm_plus40": 642.1818181818182,
+  "scope": "Word-rate estimate only, not a timed human rehearsal",
+  "slides": [
+    {
+      "slide": 1,
+      "words": 53,
+      "target_seconds": 25
+    },
+    {
+      "slide": 2,
+      "words": 98,
+      "target_seconds": 55
+    },
+    {
+      "slide": 3,
+      "words": 92,
+      "target_seconds": 55
+    },
+    {
+      "slide": 4,
+      "words": 94,
+      "target_seconds": 60
+    },
+    {
+      "slide": 5,
+      "words": 96,
+      "target_seconds": 65
+    },
+    {
+      "slide": 6,
+      "words": 95,
+      "target_seconds": 65
+    },
+    {
+      "slide": 7,
+      "words": 94,
+      "target_seconds": 55
+    },
+    {
+      "slide": 8,
+      "words": 92,
+      "target_seconds": 50
+    },
+    {
+      "slide": 9,
+      "words": 101,
+      "target_seconds": 60
+    },
+    {
+      "slide": 10,
+      "words": 100,
+      "target_seconds": 70
+    },
+    {
+      "slide": 11,
+      "words": 98,
+      "target_seconds": 55
+    },
+    {
+      "slide": 12,
+      "words": 91,
+      "target_seconds": 45
+    }
+  ]
+}

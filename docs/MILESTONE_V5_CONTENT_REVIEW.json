@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "deck_sha256": "4d2d9bd94d39f77a526a7024bfbdb11411387a5d42a2821fb0c541ac77950ff1",
+  "checks": [
+    "12 visible slides, two hidden backups",
+    "All four model comparisons and simultaneous intervals match CSVs",
+    "Foreground-pair accuracies, gaps, intervals and flip rates match CSVs",
+    "Auxiliary accuracies and foreground/head coverage match CSVs",
+    "Full backup accuracy table matches CSVs",
+    "Both editable chart caches match source percentages rounded to one decimal",
+    "All 12 embedded spoken scripts and citations match the external speaker notes",
+    "Clickable repository link, visible AI disclosure and interpretation boundaries present",
+    "Script word-rate estimate under 12 minutes at 100 wpm plus 40 seconds of pauses"
+  ],
+  "spoken_words": 1104,
+  "scope": "Package/content checks against saved evidence. Timing is estimated, not rehearsed."
+}

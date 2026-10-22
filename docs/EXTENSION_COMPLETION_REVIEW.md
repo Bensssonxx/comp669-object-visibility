@@ -15,8 +15,8 @@ The user-authorized follow-up is complete. This is a research-evidence handoff, 
 | Source/input repeatability | 19 frozen files, 185 XML hashes, all 925 decoded inputs match; 24 features/model replay with zero difference |
 | Numeric/report review | Independent aggregate checks of 20 summary, seven primary and 12 paired rows; all final figures visually inspected |
 | Tests | 37 passed, plus targeted report smoke check after report and figure text edits |
-| Handoff | EXTENSION_V2_ZH.md / EXTENSION_V2_EN.md, raw predictions, figures, configuration, provenance and scripts |
+| Handoff | EXTENSION_V2_EN.md, raw predictions, figures, configuration, provenance and scripts |
 
 The ordering crossover repeats on the main cohort under both fills. Fill still changes accuracy. Head-region content comparisons retain a near-matched foreground-area constraint but change other body/background/texture content; they do not identify a pure head effect or mediate the main crossover. All inference is conditional on the specified frozen probes/checkpoints; one dataset and two synthetic fills do not establish general model quality or a causal pretraining mechanism.
 
-The private repository still requires instructor access arrangements before formal submission. No Canvas upload or instructor contact was performed. The existing v4 PPTX documents the first pilot only; the new scientific results are in separate follow-up reports.
+The private repository still requires instructor access arrangements before formal submission. No Canvas upload or instructor contact was performed. The preserved v4 PPTX documents the first pilot. The updated v5 presentation and English speaker notes incorporate the follow-up; see ../milestone/README.md.

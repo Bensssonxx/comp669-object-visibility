@@ -1,6 +1,7 @@
 """Synthetic, temporary-only end-to-end statistical pipeline with known contrasts."""
 import importlib.util
 import json
+import re
 from pathlib import Path
 import numpy as np
 import pandas as pd
@@ -55,5 +56,8 @@ def test_known_followup_contrasts_and_report_smoke(tmp_path):
     (out / 'preparation_audit.json').write_text(json.dumps({'rows_per_model': len(all_rows) // 2, 'eligibility': {'auxiliary_head': {'eligible': 1}}}))
     report.ROOT, report.OUT = tmp_path, out
     report.report()
-    assert (tmp_path / 'reports/EXTENSION_V2_ZH.md').exists()
+    english_report = tmp_path / 'reports/EXTENSION_V2_EN.md'
+    assert english_report.exists()
+    assert not (tmp_path / 'reports/EXTENSION_V2_ZH.md').exists()
+    assert not re.search(r'[\u3400-\u9fff]', english_report.read_text())
     assert (out / 'figures/primary_contrasts.png').exists()
