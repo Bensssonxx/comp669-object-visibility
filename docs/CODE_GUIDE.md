@@ -150,7 +150,7 @@ The report prints the saved aggregate; it does not invent or fit the 87.0% score
 | Reproduction | `setup_reference.sh`, `env.sh`, `download_assets.py`, `import_pet_mirror.py` | Reference environment, official assets and verified mirror import |
 | Verification | `audit_run.py`, `verify_preprocessing.py`, `verify_extension_provenance.py`, `replay_extension_encoder.py` | Inputs, provenance, reconstruction and limited feature replay |
 | Reports | `write_reports.py`, `report_extension.py` | English reports and research figures from completed results |
-| Presentation support | `preview_inputs.py`, `qualitative_cases.py`, `prepare_slide_assets.py`, `build_milestone.mjs`, the three `*_milestone_v5.*` scripts | Input examples, cases, slide data, PPTX build and content verification |
+| Presentation support | `preview_inputs.py`, `qualitative_cases.py`, `prepare_slide_assets.py`, `build_milestone.mjs`, the `*_milestone_v6.*` scripts (current) and earlier v5 builders | Input examples, cases, slide data, PPTX build and content verification |
 | Runner commands | `run_pilot.sh`, `run_extension.sh` | Execute the stages in the intended order |
 | Generic setup | `setup.sh` | Development setup; use the reference setup for exact JPEG decoding |
 | Tests | `tests/` | Budgets, unchanged visible pixels, annotations, deterministic pairs, sampling/condition rules and known synthetic analysis contrasts |
