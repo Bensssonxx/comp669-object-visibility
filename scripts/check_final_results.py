@@ -106,6 +106,9 @@ def main():
         if r["metric"]=="interaction":
             others={v["metric"]:float(v["center_minus_relocated"]) for v in patch_table if v["cohort"]==r["cohort"]}
             check(others["aimv2"]-others["dinov2"],r["center_minus_relocated"])
+    # This checker is also invoked in isolated (-I) mode from a fresh archive.
+    import runpy
+    runpy.run_path(str(ROOT/"scripts/check_region_swap.py"))["check"]()
     print("Verified 48 clean-baseline comparisons and all six relocation contrasts, including masks and center replays.")
 
 

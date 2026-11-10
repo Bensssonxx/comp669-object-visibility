@@ -64,6 +64,33 @@ On the main images, moving the patches reduces AIMv2 accuracy by 14.6 pp and inc
 
 The comparison measures sensitivity to this change in visible content and arrangement at closely matched animal area. Patch adjacency, texture, animal parts and background pixels can change together. Both cohorts have appeared in earlier experiments. [Design and execution](../docs/PATCH_RELOCATION.md) and [full results](../results/patch_relocation/summary.csv).
 
+## Two tests on fresh official test photos
+
+All previous project image IDs and exact JPEG hashes were excluded before selecting these photos. The direct replication sampled ten new images per breed. Of 370 sampled, 364 supported the original relocation rule. The regional experiment required four visible and four hidden pure patches in each of animal and background. 779 of 2737 candidate photos qualified. Up to ten per breed gave 366 regional photos. The samples share 88 images. Estimates give equal weight to each of the 37 breeds.
+
+The direct replication used the previous design, with two fixed relocations per eligible image. Differences below use center accuracy minus relocated accuracy. Each interval adjusts for the two models within this comparison.
+
+| Model | Center | Relocated | Center minus relocated (pp) | Adjusted 95% interval (pp) |
+| --- | --- | --- | --- | --- |
+| aimv2 | 87.9% | 72.4% | +15.5 | [+11.8, +19.3] |
+| dinov2 | 63.4% | 75.5% | -12.2 | [-16.3, -8.0] |
+
+For the regional experiment, each single-region change hides four visible patches and reveals four others from the same region. The original pixels keep their positions. Other regions, mixed patches, fill color, image budget and the exact visible pixel counts of each trimap class are fixed. The combined condition applies both exchanges.
+
+| Model | Center | Animal swap | Background swap | Both swaps | Animal minus background cost (pp) | Adjusted 95% interval (pp) |
+| --- | --- | --- | --- | --- | --- | --- |
+| aimv2 | 84.0% | 82.3% | 82.0% | 80.2% | -0.3 | [-3.6, +3.2] |
+| dinov2 | 57.7% | 64.4% | 60.1% | 67.4% | -4.3 | [-8.0, -0.6] |
+
+Each regional cost averages the change from applying its swap at both settings of the other region. The difference between costs reduces to background-only accuracy minus animal-only accuracy. A positive difference means the animal exchange cost more accuracy. A negative difference means it cost less. A range spanning zero leaves the ordering uncertain. The full table includes both costs, the factorial interaction and pointwise intervals.
+
+Only photos with enough pure animal and background patches near and outside the center support this experiment. It tests small exchanges, with one regional draw per photo. It does not recover causal contributions to the larger relocation or identify a pretraining mechanism. Prior research has already separated foreground and background cues in recognition. The contribution here is the paired, equal-size intervention in the two fixed Pet classifiers and its comparison with the earlier behavior. [Xiao et al.](https://openreview.net/pdf?id=gl3D-xY7wLq), [locked design](../docs/REGION_SWAP_PROTOCOL.md), [estimates and intervals](../results/region_swap/summary.csv).
+
+AIMv2 accuracy after an animal-only exchange minus accuracy after a background-only exchange was +0.3 pp (adjusted interval -3.2 to +3.6).
+DINOv2 accuracy after an animal-only exchange minus accuracy after a background-only exchange was +4.3 pp (adjusted interval +0.6 to +8.0).
+
+DINOv2 gained more accuracy when the exchange involved animal patches. AIMv2 showed no resolved difference between the two exchange locations. This locates a behavioral difference under an exact area constraint. Within each region the particular texture, part and position can still change.
+
 ## Accuracy across masking conditions
 
 ### primary

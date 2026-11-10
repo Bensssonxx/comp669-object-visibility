@@ -1,0 +1,7 @@
+{
+  "docs/REGION_SWAP_PROTOCOL.md": "7976d0e8c96300051b4729d9d9c4421f85061a562b3aa9a27adcf04ab643233c",
+  "scripts/region_swap.py": "c898a31a3feae7314f9c7bf07d6d9f3b31d9a37758dc1e0dd7c709603fc71e35",
+  "scripts/patch_relocation.py": "d77eb1258597fe503d0c58c65615d5806fbabe9022d3f6db2d40ca9b7fcba9bc",
+  "results/region_swap/candidates.csv": "0f55633bd05443f90f3e2bbe3424b9e77d773dbca69320f9ee0ebe26ac074daa",
+  "results/region_swap/conditions.csv": "72d2c91c22a1f033987934e21927f0a14124f9aafcc368776ebb5e778675873c"
+}

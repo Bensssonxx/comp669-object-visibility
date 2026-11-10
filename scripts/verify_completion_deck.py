@@ -11,7 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'results/occlusion_completion'
-DECK = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / 'final/COMP669_Occlusion_Final_v3.pptx'
+DECK = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / 'final/COMP669_Occlusion_Final_v4.pptx'
 NS = {'a': 'http://schemas.openxmlformats.org/drawingml/2006/main',
       'p': 'http://schemas.openxmlformats.org/presentationml/2006/main',
       'c': 'http://schemas.openxmlformats.org/drawingml/2006/chart',
@@ -67,20 +67,16 @@ def main():
         loss = next(r for r in read('clean_loss.csv') if r['cohort']=='primary' and r['pattern']=='random'
                     and float(r['fraction'])==.75 and r['fill']=='128')
         assert all(pp(loss[m+'_loss'])+' pp' in text(8) for m in ['aimv2','dinov2'])
-        expected = []
-        for f in [.25, .5, .75]:
-            for pat in ['center', 'random']:
-                expected.append([f'{int(f*100)}%', pat,
-                                 pct(stat('new_head', f, pat, 'aimv2')),
-                                 pct(stat('new_head', f, pat, 'dinov2'))])
-        assert table(10)[1:] == expected
-        expected = []
-        for model in ['aimv2', 'dinov2']:
-            r = pair('new_head', model)
-            expected.append(['AIMv2' if model == 'aimv2' else 'DINOv2',
-                             pct(r['accuracy_a']), pct(r['accuracy_b']), pp(r['difference'])])
-        assert table(11)[1:] == expected
-        for slide, cohort in [(9, 'auxiliary_head'), (11, 'new_head')]:
+        with (ROOT/'results/region_swap/summary.csv').open() as f:
+            region = {(r['suite'],r['model'],r['metric']):float(r['estimate']) for r in csv.DictReader(f)}
+        for slide,suite,columns in [(10,'direct',['center','relocated']),(11,'regional',['center','animal','background','both'])]:
+            expected = []
+            for model,label in [('aimv2','AIMv2'),('dinov2','DINOv2')]:
+                row = [label,*[pct(region[suite,model,c]) for c in columns]]
+                if slide==10: row.append(f"{-100*region[suite,model,'center_cost']:+.1f} pp")
+                expected.append(row)
+            assert table(slide)[1:] == expected
+        for slide, cohort in [(9, 'auxiliary_head')]:
             r = pair(cohort, 'aimv2')
             for field in ['object_visibility', 'head_visibility', 'body_visibility', 'background_visibility']:
                 for role in ['a', 'b']:

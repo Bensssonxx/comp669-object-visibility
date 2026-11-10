@@ -23,5 +23,11 @@ for model in aimv2 dinov2; do
   "$PROJECT_PYTHON" scripts/patch_relocation.py "$model"
 done
 "$PROJECT_PYTHON" scripts/patch_relocation.py analyze
+"$PROJECT_PYTHON" scripts/region_swap.py prepare
+for model in aimv2 dinov2; do
+  "$PROJECT_PYTHON" scripts/region_swap.py "$model"
+done
+"$PROJECT_PYTHON" scripts/region_swap.py summarize
+"$PROJECT_PYTHON" scripts/check_region_swap.py --pixels
 "$PROJECT_PYTHON" scripts/check_final_results.py
 "$PROJECT_PYTHON" scripts/report_completion.py

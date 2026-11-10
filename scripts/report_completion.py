@@ -116,6 +116,8 @@ def main():
                   'The fixed design is in `docs/OCCLUSION_COMPLETION_PROTOCOL.md`; stage planning is in `docs/OCCLUSION_COMPLETION_PLAN.md`. Source tables and figures are under `results/occlusion_completion/`. Codex assisted protocol implementation, execution, analysis, and documentation under the existing AI-use disclosure.'])
     if (ROOT/'results/patch_relocation/summary.csv').exists():
         extra = final_comparisons()
+        if (ROOT/'results/region_swap/summary.csv').exists():
+            extra.extend(region_results())
         lines[lines.index('## Accuracy across masking conditions'):lines.index('## Accuracy across masking conditions')] = extra
     (ROOT/'reports/OCCLUSION_COMPLETION_EN.md').write_text('\n'.join(lines)+'\n')
     print('Saved reports/OCCLUSION_COMPLETION_EN.md')
@@ -156,6 +158,39 @@ def final_comparisons():
     repeat = relocated[relocated.cohort.eq('new_head')].set_index('metric')
     section += ['', f"On the main images, moving the patches reduces AIMv2 accuracy by {100*main.loc['aimv2','center_minus_relocated']:.1f} pp and increases DINOv2 accuracy by {-100*main.loc['dinov2','center_minus_relocated']:.1f} pp. The difference in responses is {100*main.loc['interaction','center_minus_relocated']:.1f} pp (adjusted 95% interval {100*main.loc['interaction','family_low']:.1f} to {100*main.loc['interaction','family_high']:.1f}). The annotated cohort shows the same directions, with a difference in responses of {100*repeat.loc['interaction','center_minus_relocated']:.1f} pp."]
     section += ['', 'The comparison measures sensitivity to this change in visible content and arrangement at closely matched animal area. Patch adjacency, texture, animal parts and background pixels can change together. Both cohorts have appeared in earlier experiments. [Design and execution](../docs/PATCH_RELOCATION.md) and [full results](../results/patch_relocation/summary.csv).', '']
+    return section
+
+
+def region_results():
+    folder=ROOT/'results/region_swap'
+    design=pd.read_csv(folder/'candidates.csv')
+    scores=pd.read_csv(folder/'summary.csv').set_index(['suite','model','metric'])
+    n=int(design.regional.sum()); eligible=int(design.regional_eligible.sum())
+    direct=int(design.direct_eligible.eq(True).sum())
+    overlap=int((design.regional & design.direct_eligible.eq(True)).sum())
+    section=['## Two tests on fresh official test photos','',
+             f'All previous project image IDs and exact JPEG hashes were excluded before selecting these photos. The direct replication sampled ten new images per breed. Of 370 sampled, {direct} supported the original relocation rule. The regional experiment required four visible and four hidden pure patches in each of animal and background. {eligible} of {int(design.reason.eq("valid").sum())} candidate photos qualified. Up to ten per breed gave {n} regional photos. The samples share {overlap} images. Estimates give equal weight to each of the 37 breeds.','',
+             'The direct replication used the previous design, with two fixed relocations per eligible image. Differences below use center accuracy minus relocated accuracy. Each interval adjusts for the two models within this comparison.','']
+    rows=[]
+    for m in ['aimv2','dinov2']:
+        c=scores.loc['direct',m]; d=c.loc['center_cost']
+        rows.append([m,f'{c.loc["center","estimate"]:.1%}',f'{c.loc["relocated","estimate"]:.1%}',f'{d.estimate*100:+.1f}',f'[{d.adjusted_low*100:+.1f}, {d.adjusted_high*100:+.1f}]'])
+    section.extend([table(rows,['Model','Center','Relocated','Center minus relocated (pp)','Adjusted 95% interval (pp)']),'',
+                    'For the regional experiment, each single-region change hides four visible patches and reveals four others from the same region. The original pixels keep their positions. Other regions, mixed patches, fill color, image budget and the exact visible pixel counts of each trimap class are fixed. The combined condition applies both exchanges.',''])
+    rows=[]
+    for m in ['aimv2','dinov2']:
+        c=scores.loc['regional',m]; d=c.loc['animal_minus_background_cost']
+        rows.append([m,*[f'{c.loc[k,"estimate"]:.1%}' for k in ['center','animal','background','both']],
+                     f'{100*d.estimate:+.1f}',f'[{100*d.adjusted_low:+.1f}, {100*d.adjusted_high:+.1f}]'])
+    section.extend([table(rows,['Model','Center','Animal swap','Background swap','Both swaps','Animal minus background cost (pp)','Adjusted 95% interval (pp)']),'',
+                    'Each regional cost averages the change from applying its swap at both settings of the other region. The difference between costs reduces to background-only accuracy minus animal-only accuracy. A positive difference means the animal exchange cost more accuracy. A negative difference means it cost less. A range spanning zero leaves the ordering uncertain. The full table includes both costs, the factorial interaction and pointwise intervals.','',
+                    'Only photos with enough pure animal and background patches near and outside the center support this experiment. It tests small exchanges, with one regional draw per photo. It does not recover causal contributions to the larger relocation or identify a pretraining mechanism. Prior research has already separated foreground and background cues in recognition. The contribution here is the paired, equal-size intervention in the two fixed Pet classifiers and its comparison with the earlier behavior. [Xiao et al.](https://openreview.net/pdf?id=gl3D-xY7wLq), [locked design](../docs/REGION_SWAP_PROTOCOL.md), [estimates and intervals](../results/region_swap/summary.csv).',''])
+    for m,label in [('aimv2','AIMv2'),('dinov2','DINOv2')]:
+        d=scores.loc['regional',m,'animal_minus_background_cost']
+        gain=-100*d.estimate
+        lower,upper=-100*d.adjusted_high,-100*d.adjusted_low
+        section.append(f'{label} accuracy after an animal-only exchange minus accuracy after a background-only exchange was {gain:+.1f} pp (adjusted interval {lower:+.1f} to {upper:+.1f}).')
+    section += ['', 'DINOv2 gained more accuracy when the exchange involved animal patches. AIMv2 showed no resolved difference between the two exchange locations. This locates a behavioral difference under an exact area constraint. Within each region the particular texture, part and position can still change.', '']
     return section
 
 

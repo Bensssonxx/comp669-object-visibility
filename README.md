@@ -12,7 +12,7 @@ The results apply to these models and test conditions. They do not establish whi
 
 - [Core code](src/occlusion_visibility/): data processing, masks, model features and classifiers.
 - [Follow-up experiments](scripts/complete_occlusion.py) and [analysis](scripts/analyze_completion.py).
-- [Results report](reports/OCCLUSION_COMPLETION_EN.md) and [matched-area patch experiment](docs/PATCH_RELOCATION.md).
+- [Results report](reports/OCCLUSION_COMPLETION_EN.md) and [controlled animal and background swaps](docs/REGION_SWAP_PROTOCOL.md).
 - [Code guide](docs/CODE_GUIDE.md): where to start reading the implementation.
 - [Pilot protocol](docs/PROTOCOL.md) and [current follow-up protocol](docs/OCCLUSION_COMPLETION_PROTOCOL.md).
 

@@ -77,7 +77,7 @@ function series(name,values,index,xValues){return {name,values:values.map(v=>v==
 }
 {
  const s=init(2);text(s,'Oxford-IIIT Pet: 37 cat and dog breeds',64,163,1152,45,28,TEAL,true);
- table(s,[['Data','Images','Use'],['Clean training / validation','1,480 / 370','Fit and select classifiers'],['Main evaluation','740','Four patterns; 25%, 50%, 75% visible'],['New annotated evaluation','185','All patterns plus head-region pairs']],64,232,1152,257,[420,180,552],24);
+ table(s,[['Data','Images','Use'],['Clean training / validation','1,480 / 370','Fit and select classifiers'],['Main evaluation','740','Four patterns; 25%, 50%, 75% visible'],['Annotated follow-up','185','Head visibility and other retained regions'],['Fresh official test photos','370 / 366','Replication / regional swaps (overlap allowed)']],64,220,1152,276,[420,180,552],24);
  text(s,'Frozen encoders and classifiers. Shared masks, preprocessing and mean pooling.',64,535,1140,83,28,INK,true);
  text(s,'Training histories differ; these comparisons do not isolate a training mechanism.',64,635,1135,40,22,GRAY);
 }
@@ -143,25 +143,36 @@ function series(name,values,index,xValues){return {name,values:values.map(v=>v==
  text(s,'Head ROI = annotated head box intersected with foreground; not precise head segmentation.',64,652,1152,40,22,GRAY);
 }
 {
- const s=init(9);text(s,'185 unused annotated images; gray fill; fixed sampling before predictions',64,157,1152,60,26,GRAY);
- const rows=[['Image visible','Pattern','AIMv2','DINOv2']];
- for(const f of [.25,.5,.75])for(const pat of ['center','random'])rows.push([`${Math.round(f*100)}%`,pat,percent(stat('new_head',f,pat,'aimv2').estimate),percent(stat('new_head',f,pat,'dinov2').estimate)]);
- table(s,rows,64,238,1152,343,[280,300,286,286],26);
- text(s,'Random at 50% / 75%: adjusted intervals do not resolve a winner.\nSeparate cohort: unused official trainval images with head annotations.',64,605,1152,70,23,GRAY);
+ const s=init(9);
+ const row=(m,k)=>data.regional.find(r=>r.suite==='direct' && r.model===m && r.metric===k);
+ text(s,`Prior project photos excluded. ${row('aimv2','center').n} of 370 new photos meet the relocation rule.`,64,165,1152,72,28,GRAY);
+ const rows=[['Model','Center','Relocated','Change after relocation']];
+ for(const [m,label] of [['aimv2','AIMv2'],['dinov2','DINOv2']]){
+  const d=-100*row(m,'center_cost').estimate;
+  rows.push([label,percent(row(m,'center').estimate),percent(row(m,'relocated').estimate),(d>=0?'+':'')+d.toFixed(1)+' pp']);
+ }
+ table(s,rows,64,276,1152,235,[232,238,264,418],30);
+ text(s,'Same breed task, two fixed masks per photo, 25% of the image visible.',64,584,1152,78,26,TEAL,true);
 }
 {
- const s=init(10),r=pair('new_head','aimv2');text(s,`${r.n_images} of 185 images meet the unchanged head-pair rules`,64,158,1152,45,28,TEAL,true);
- text(s,'Breed accuracy; gray fill; 75% image visible',64,210,1152,32,23,GRAY);
- const rows=[['Model','More head visible','Less head visible','Gap (pp)']];
- for(const m of ['aimv2','dinov2']){const q=pair('new_head',m);rows.push([m==='aimv2'?'AIMv2':'DINOv2',percent(q.accuracy_a),percent(q.accuracy_b),points(q.difference)]);}
- table(s,rows,64,249,1152,185,[220,340,340,252],26);
- text(s,`Animal visible: ${percent(r.object_visibility_a)} / ${percent(r.object_visibility_b)}\nHead ROI visible: ${percent(r.head_visibility_a)} / ${percent(r.head_visibility_b)}\nOther animal visible: ${percent(r.body_visibility_a)} / ${percent(r.body_visibility_b)}\nBackground visible: ${percent(r.background_visibility_a)} / ${percent(r.background_visibility_b)}`,64,475,1152,140,27,INK,true);
- text(s,'A new-image check of a content bundle, not an isolated head effect.',64,645,1152,40,25,GRAY);
+ const s=init(10);
+ const rows=[['Model','Center','Animal swap','Background swap','Both']];
+ const row=(m,k)=>data.regional.find(r=>r.suite==='regional' && r.model===m && r.metric===k);
+ text(s,`${row('aimv2','center').n} photos. Each exchange hides four patches and reveals four in the same region.`,64,153,1152,64,26,GRAY);
+ for(const [i,term] of ['center','animal','background','both'].entries()){
+  const x=88+284*i;
+  await photo(s,'region_'+term,x,219,168);
+  text(s,['Center','Animal only','Background only','Both'][i],x,397,270,36,22,INK,true);
+ }
+ for(const [m,label] of [['aimv2','AIMv2'],['dinov2','DINOv2']])
+  rows.push([label,...['center','animal','background','both'].map(k=>percent(row(m,k).estimate))]);
+ table(s,rows,64,452,1152,137,[175,187,255,320,215],23);
+ text(s,'Visible animal and background pixel counts stay fixed in every comparison.',64,625,1152,62,26,TEAL,true);
 }
 {
  const s=init(11);text(s,'Model ranking changes with pattern and visibility.',64,184,1152,60,33,TEAL,true);
  text(s,'Masked accuracy and loss from clean accuracy can favor different models.',64,273,1152,92,32,TEAL,true);
- text(s,'At matched animal area, moving visible patches affected the models in opposite directions.',64,370,1152,96,32,TEAL,true);
+ text(s,'With equal-size swaps, DINOv2 gained more from changing animal patches than background patches.',64,370,1152,96,32,TEAL,true);
  text(s,'Scope: two fixed systems, one dataset, artificial masks.\nTraining mechanisms and real-world occluders remain untested.',64,485,1152,90,27,GRAY);
  const link=text(s,'github.com/Bensssonxx/comp669-object-visibility',64,594,1152,40,25,TEAL,true);link.text.get('github.com/Bensssonxx/comp669-object-visibility').link={uri:'https://github.com/Bensssonxx/comp669-object-visibility',isExternal:true};
  text(s,'I used OpenAI Codex for source review, code, experiments, analysis, slides and notes.',64,648,1152,55,18,GRAY);
@@ -189,7 +200,7 @@ for(let i=0;i<p.slides.items.length;i++){
 }
 await fs.writeFile(path.join(build,'inspection.ndjson'),(await p.inspect({kind:'slide,textbox,image,table,chart,notes,layout',maxChars:1000000})).ndjson);
 const candidate=path.join(build,'candidate.pptx');await(await PresentationFile.exportPptx(p)).save(candidate);
-const finalPath=path.join(ROOT,'final',process.env.FINAL_DECK_NAME??'COMP669_Occlusion_Final_v3.pptx');
+const finalPath=path.join(ROOT,'final',process.env.FINAL_DECK_NAME??'COMP669_Occlusion_Final_v4.pptx');
 const receipt=await finalizePresentation({workspaceDir:ROOT,candidatePath:candidate,finalPath,pythonExecutable:PYTHON,
  integrityValidatorPath:path.join(SKILL,'container_tools/inspect_presentation_package_integrity.py'),
  layoutValidatorPath:path.join(SKILL,'container_tools/inspect_presentation_layout_geometry.py'),

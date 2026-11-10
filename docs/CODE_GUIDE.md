@@ -20,6 +20,8 @@ New prediction files go in `results/completion_primary/` and `results/completion
 
 [final_sensitivity.py](../scripts/final_sensitivity.py) reconstructs clean-to-masked changes and checks which existing masks match within the same photo. [patch_relocation.py](../scripts/patch_relocation.py) creates and evaluates the annotation-guided masks. In the reference environment, source `scripts/env.sh`, then run the script with `prepare`, `aimv2`, `dinov2`, and `analyze` in that order. Preparation requires the original photos and annotations. Inference reuses the verified completion run, upstream weights, clean classifiers and Apple GPU. To check the saved findings on another computer, run `python3 scripts/check_final_results.py` from the repository root (Python 3.10+).
 
+[region_swap.py](../scripts/region_swap.py) constructs the fresh official-test samples and runs the regional experiment. It accepts `prepare`, `aimv2`, `dinov2` and `summarize` in sequence using the same reference environment. [check_region_swap.py](../scripts/check_region_swap.py) independently checks the exported predictions, exact patch mask changes, selection, and breed-weighted point estimates. With the original Pet data and the reference environment, add `--pixels` to replay every decoded input and verify the changed regions against the trimaps.
+
 ## Start with these files
 
 | Order | File | Question it answers |

@@ -3,74 +3,74 @@
     {
       "title": "Comparing AIMv2 and DINOv2 Under Occlusion",
       "note": "Hi everyone, I'm Boshen. My project studies occlusion robustness: how well image recognition works when some of the image is hidden. I compare AIMv2 and DINOv2 on cat and dog breeds. I focus on the testing conditions that make one model appear better than the other.",
-      "source": "docs/OCCLUSION_COMPLETION_PROTOCOL.md; results/occlusion_completion/accuracy_summary.csv; results/occlusion_completion/foreground_bins.csv; results/occlusion_completion/pair_measurements.csv; results/occlusion_completion/verification.json; results/occlusion_completion/clean_loss.csv; results/occlusion_completion/area_matched_patterns.csv; results/patch_relocation/summary.csv; results/patch_relocation/conditions.csv",
+      "source": "docs/OCCLUSION_COMPLETION_PROTOCOL.md; results/occlusion_completion/accuracy_summary.csv; results/occlusion_completion/foreground_bins.csv; results/occlusion_completion/pair_measurements.csv; results/occlusion_completion/verification.json; results/occlusion_completion/clean_loss.csv; results/occlusion_completion/area_matched_patterns.csv; results/patch_relocation/summary.csv; results/patch_relocation/conditions.csv; docs/REGION_SWAP_PROTOCOL.md; results/region_swap/summary.csv; results/region_swap/conditions.csv",
       "words": 46
     },
     {
       "title": "Research question",
-      "note": "A drop in accuracy after hiding information is expected. My question is more specific: does the masking pattern change which model performs better, and what animal content remains visible in those tests? This matters when we evaluate or choose a model. An accuracy score is easier to interpret when we know what evidence the model could actually see. I first explain the fixed setup, then show the inputs and results.",
-      "source": "docs/OCCLUSION_COMPLETION_PROTOCOL.md; results/occlusion_completion/accuracy_summary.csv; results/occlusion_completion/foreground_bins.csv; results/occlusion_completion/pair_measurements.csv; results/occlusion_completion/verification.json; results/occlusion_completion/clean_loss.csv; results/occlusion_completion/area_matched_patterns.csv; results/patch_relocation/summary.csv; results/patch_relocation/conditions.csv",
-      "words": 70
+      "note": "Earlier PatchDrop experiments showed that vision transformers can still recognize images with many patches hidden. My question is whether a change in the masking pattern can reverse which system looks better on the same photos. If it can, I want to know whether that reversal persists when both versions show about the same amount of the animal. I will start with the data and the two classifiers.",
+      "source": "docs/OCCLUSION_COMPLETION_PROTOCOL.md; results/occlusion_completion/accuracy_summary.csv; results/occlusion_completion/foreground_bins.csv; results/occlusion_completion/pair_measurements.csv; results/occlusion_completion/verification.json; results/occlusion_completion/clean_loss.csv; results/occlusion_completion/area_matched_patterns.csv; results/patch_relocation/summary.csv; results/patch_relocation/conditions.csv; docs/REGION_SWAP_PROTOCOL.md; results/region_swap/summary.csv; results/region_swap/conditions.csv; https://papers.neurips.cc/paper/2021/hash/c404a5adbf90e09631678b13b05d9d7a-Abstract.html",
+      "words": 67
     },
     {
       "title": "Data and fixed evaluation setup",
-      "note": "I use Oxford-IIIT Pet, with thirty-seven breeds. The pretrained encoders stay frozen. Separate classifiers were trained using fourteen hundred eighty clean images, with three hundred seventy validation images for settings. The main evaluation uses seven hundred forty images. I also selected one hundred eighty-five previously unused images with head annotations. Both models receive identical masked pixels. The classifiers, pooling, and preprocessing stay fixed. The models still have different training histories, so this is a comparison of released systems, not a controlled training experiment.",
-      "source": "docs/OCCLUSION_COMPLETION_PROTOCOL.md; results/occlusion_completion/accuracy_summary.csv; results/occlusion_completion/foreground_bins.csv; results/occlusion_completion/pair_measurements.csv; results/occlusion_completion/verification.json; results/occlusion_completion/clean_loss.csv; results/occlusion_completion/area_matched_patterns.csv; results/patch_relocation/summary.csv; results/patch_relocation/conditions.csv",
-      "words": 83
+      "note": "I use Oxford-IIIT Pet, with thirty-seven breeds. The pretrained encoders stay frozen. Separate classifiers were trained using fourteen hundred eighty clean images, with three hundred seventy validation images for settings. The main evaluation uses seven hundred forty images. I added a head-annotated sample, then reserved fresh official test photos for the last two checks. Both models receive identical masked pixels. The classifiers, pooling, and preprocessing stay fixed. The models still have different training histories, so this is a comparison of released systems, not a controlled training experiment.",
+      "source": "docs/OCCLUSION_COMPLETION_PROTOCOL.md; results/occlusion_completion/accuracy_summary.csv; results/occlusion_completion/foreground_bins.csv; results/occlusion_completion/pair_measurements.csv; results/occlusion_completion/verification.json; results/occlusion_completion/clean_loss.csv; results/occlusion_completion/area_matched_patterns.csv; results/patch_relocation/summary.csv; results/patch_relocation/conditions.csv; docs/REGION_SWAP_PROTOCOL.md; results/region_swap/summary.csv; results/region_swap/conditions.csv",
+      "words": 87
     },
     {
       "title": "Image visibility and animal visibility",
       "note": "These two masked versions both keep twenty-five percent of the image. But the center version keeps about eighty-four percent of this animal, while the random version keeps about twenty-two percent. Image visibility counts all image pixels. Animal visibility counts only pixels labeled as animal foreground. Hidden pixels are filled with gray or black; patch tokens are not removed. This example explains why an equal image budget can produce very different recognition conditions.",
-      "source": "docs/OCCLUSION_COMPLETION_PROTOCOL.md; results/occlusion_completion/accuracy_summary.csv; results/occlusion_completion/foreground_bins.csv; results/occlusion_completion/pair_measurements.csv; results/occlusion_completion/verification.json; results/occlusion_completion/clean_loss.csv; results/occlusion_completion/area_matched_patterns.csv; results/patch_relocation/summary.csv; results/patch_relocation/conditions.csv",
+      "source": "docs/OCCLUSION_COMPLETION_PROTOCOL.md; results/occlusion_completion/accuracy_summary.csv; results/occlusion_completion/foreground_bins.csv; results/occlusion_completion/pair_measurements.csv; results/occlusion_completion/verification.json; results/occlusion_completion/clean_loss.csv; results/occlusion_completion/area_matched_patterns.csv; results/patch_relocation/summary.csv; results/patch_relocation/conditions.csv; docs/REGION_SWAP_PROTOCOL.md; results/region_swap/summary.csv; results/region_swap/conditions.csv",
       "words": 72
     },
     {
       "title": "The initial ranking reversal",
       "note": "On the main sample with gray fill and twenty-five percent image visibility, AIMv2 gets 87.0 percent accuracy for center, versus 63.1 percent for DINOv2. With random patches, the order reverses: 33.6 percent versus 69.6 percent. Black fill shows the same initial ordering. However, center and random retain different amounts of animal. Next, I look at accuracy against measured animal visibility.",
-      "source": "docs/OCCLUSION_COMPLETION_PROTOCOL.md; results/occlusion_completion/accuracy_summary.csv; results/occlusion_completion/foreground_bins.csv; results/occlusion_completion/pair_measurements.csv; results/occlusion_completion/verification.json; results/occlusion_completion/clean_loss.csv; results/occlusion_completion/area_matched_patterns.csv; results/patch_relocation/summary.csv; results/patch_relocation/conditions.csv",
+      "source": "docs/OCCLUSION_COMPLETION_PROTOCOL.md; results/occlusion_completion/accuracy_summary.csv; results/occlusion_completion/foreground_bins.csv; results/occlusion_completion/pair_measurements.csv; results/occlusion_completion/verification.json; results/occlusion_completion/clean_loss.csv; results/occlusion_completion/area_matched_patterns.csv; results/patch_relocation/summary.csv; results/patch_relocation/conditions.csv; docs/REGION_SWAP_PROTOCOL.md; results/region_swap/summary.csv; results/region_swap/conditions.csv",
       "words": 64
     },
     {
       "title": "Accuracy versus animal visibility",
       "note": "Here the horizontal axis is animal visibility, and the vertical axis is classification accuracy. Each panel holds the image budget and masking pattern fixed. The points summarize foreground-visibility intervals. Center covers a much wider range than random, which is concentrated near twenty-five percent. These are different image groups, so a line is not a causal experiment that reveals more of the same animal. The full report includes all four patterns, sample counts, and uncertainty intervals. That led me to compare two masks on the same photo.",
-      "source": "docs/OCCLUSION_COMPLETION_PROTOCOL.md; results/occlusion_completion/accuracy_summary.csv; results/occlusion_completion/foreground_bins.csv; results/occlusion_completion/pair_measurements.csv; results/occlusion_completion/verification.json; results/occlusion_completion/clean_loss.csv; results/occlusion_completion/area_matched_patterns.csv; results/patch_relocation/summary.csv; results/patch_relocation/conditions.csv",
+      "source": "docs/OCCLUSION_COMPLETION_PROTOCOL.md; results/occlusion_completion/accuracy_summary.csv; results/occlusion_completion/foreground_bins.csv; results/occlusion_completion/pair_measurements.csv; results/occlusion_completion/verification.json; results/occlusion_completion/clean_loss.csv; results/occlusion_completion/area_matched_patterns.csv; results/patch_relocation/summary.csv; results/patch_relocation/conditions.csv; docs/REGION_SWAP_PROTOCOL.md; results/region_swap/summary.csv; results/region_swap/conditions.csv",
       "words": 86
     },
     {
       "title": "Moving patches while matching animal area",
       "note": "Can we compare masks on the very same photo while keeping about the same amount of animal visible? Only eight of the original seven hundred forty photos had a random mask close enough at this budget. So I built two new masks per photo. I moved at least sixteen of the sixty-four visible patches and kept animal visibility within three percentage points of the center version. 731 photos qualified. The table shows each model\u2019s accuracy before and after moving the patches. AIMv2 went from 87.0 percent to 72.4 percent. DINOv2 went from 63.3 percent to 75.9 percent. The models respond in opposite directions. Which parts and textures they see can still change.",
-      "source": "docs/OCCLUSION_COMPLETION_PROTOCOL.md; results/occlusion_completion/accuracy_summary.csv; results/occlusion_completion/foreground_bins.csv; results/occlusion_completion/pair_measurements.csv; results/occlusion_completion/verification.json; results/occlusion_completion/clean_loss.csv; results/occlusion_completion/area_matched_patterns.csv; results/patch_relocation/summary.csv; results/patch_relocation/conditions.csv",
+      "source": "docs/OCCLUSION_COMPLETION_PROTOCOL.md; results/occlusion_completion/accuracy_summary.csv; results/occlusion_completion/foreground_bins.csv; results/occlusion_completion/pair_measurements.csv; results/occlusion_completion/verification.json; results/occlusion_completion/clean_loss.csv; results/occlusion_completion/area_matched_patterns.csv; results/patch_relocation/summary.csv; results/patch_relocation/conditions.csv; docs/REGION_SWAP_PROTOCOL.md; results/region_swap/summary.csv; results/region_swap/conditions.csv",
       "words": 116
     },
     {
       "title": "Model ordering across visibility budgets",
       "note": "Now return to the original masks. At fifty percent visibility, gray random masks still favor DINOv2. Black random masks give no clear winner. At seventy-five percent, AIMv2 has higher accuracy under both patterns and both fills. But AIMv2 started higher on clean images. Under gray random masks, it loses 5.6 points from its clean score, and DINOv2 loses 2.1. Which model finishes higher and which loses less are two different questions. What parts of the animal were actually visible?",
-      "source": "docs/OCCLUSION_COMPLETION_PROTOCOL.md; results/occlusion_completion/accuracy_summary.csv; results/occlusion_completion/foreground_bins.csv; results/occlusion_completion/pair_measurements.csv; results/occlusion_completion/verification.json; results/occlusion_completion/clean_loss.csv; results/occlusion_completion/area_matched_patterns.csv; results/patch_relocation/summary.csv; results/patch_relocation/conditions.csv",
+      "source": "docs/OCCLUSION_COMPLETION_PROTOCOL.md; results/occlusion_completion/accuracy_summary.csv; results/occlusion_completion/foreground_bins.csv; results/occlusion_completion/pair_measurements.csv; results/occlusion_completion/verification.json; results/occlusion_completion/clean_loss.csv; results/occlusion_completion/area_matched_patterns.csv; results/patch_relocation/summary.csv; results/patch_relocation/conditions.csv; docs/REGION_SWAP_PROTOCOL.md; results/region_swap/summary.csv; results/region_swap/conditions.csv",
       "words": 81
     },
     {
       "title": "Similar animal area, different content",
-      "note": "This separate experiment moves an equal-sized square on the same picture, always leaving seventy-five percent of the image visible. Among the original eligible head pairs, average animal visibility is 55.9 percent versus 55.4 percent. Head visibility is 83.0 percent versus 12.7 percent. Each percentage uses its own original region as the denominator. The remaining animal region changes in the opposite direction. The experiment therefore compares different visible-content combinations. It cannot isolate the head alone. I then repeat the broader evaluation on previously unused annotated images.",
-      "source": "docs/OCCLUSION_COMPLETION_PROTOCOL.md; results/occlusion_completion/accuracy_summary.csv; results/occlusion_completion/foreground_bins.csv; results/occlusion_completion/pair_measurements.csv; results/occlusion_completion/verification.json; results/occlusion_completion/clean_loss.csv; results/occlusion_completion/area_matched_patterns.csv; results/patch_relocation/summary.csv; results/patch_relocation/conditions.csv",
-      "words": 89
+      "note": "This separate experiment moves an equal-sized square on the same picture, always leaving seventy-five percent of the image visible. Among the original eligible head pairs, average animal visibility is 55.9 percent versus 55.4 percent. Head visibility is 83.0 percent versus 12.7 percent. Each percentage uses its own original region as the denominator. Both systems did better with more head visible. Other animal parts changed in the opposite direction. It cannot isolate the head alone. That leaves two questions. Does the earlier relocation result hold up on fresh photos? And can we test the animal and background separately?",
+      "source": "docs/OCCLUSION_COMPLETION_PROTOCOL.md; results/occlusion_completion/accuracy_summary.csv; results/occlusion_completion/foreground_bins.csv; results/occlusion_completion/pair_measurements.csv; results/occlusion_completion/verification.json; results/occlusion_completion/clean_loss.csv; results/occlusion_completion/area_matched_patterns.csv; results/patch_relocation/summary.csv; results/patch_relocation/conditions.csv; docs/REGION_SWAP_PROTOCOL.md; results/region_swap/summary.csv; results/region_swap/conditions.csv",
+      "words": 101
     },
     {
-      "title": "A check on previously unused images",
-      "note": "The new cohort has one hundred eighty-five images, five per breed. They were excluded from all earlier training, validation, and evaluation, and selected before predictions. At twenty-five percent visibility, center again favors AIMv2 and random favors DINOv2. At seventy-five percent, the point estimates favor AIMv2 under both patterns, but the random-mask intervals are still too wide to resolve a winner. The matched patch experiment also repeats the opposite responses on 182 eligible photos. These photos come from the training-and-validation source split, which includes head boxes. I keep them separate from the main sample.",
-      "source": "docs/OCCLUSION_COMPLETION_PROTOCOL.md; results/occlusion_completion/accuracy_summary.csv; results/occlusion_completion/foreground_bins.csv; results/occlusion_completion/pair_measurements.csv; results/occlusion_completion/verification.json; results/occlusion_completion/clean_loss.csv; results/occlusion_completion/area_matched_patterns.csv; results/patch_relocation/summary.csv; results/patch_relocation/conditions.csv",
-      "words": 93
+      "title": "Relocation on fresh test photos",
+      "note": "Could the earlier relocation result depend on which photos I used? I set the rules first and drew ten previously unused official test photos per breed. Of 370 photos, 364 met the same area-matching rules. The table compares the center with the two relocated masks. AIMv2 went from 87.9 percent to 72.4 percent. DINOv2 went from 63.4 percent to 75.5 percent. Could changing the animal and changing its surroundings affect accuracy differently?",
+      "source": "docs/OCCLUSION_COMPLETION_PROTOCOL.md; results/occlusion_completion/accuracy_summary.csv; results/occlusion_completion/foreground_bins.csv; results/occlusion_completion/pair_measurements.csv; results/occlusion_completion/verification.json; results/occlusion_completion/clean_loss.csv; results/occlusion_completion/area_matched_patterns.csv; results/patch_relocation/summary.csv; results/patch_relocation/conditions.csv; docs/REGION_SWAP_PROTOCOL.md; results/region_swap/summary.csv; results/region_swap/conditions.csv",
+      "words": 76
     },
     {
-      "title": "Head-region pairs on the new images",
-      "note": "On the new images, 164 pairs satisfy the same foreground-matching and head-contrast rules. Their average animal visibility is 55.4 percent versus 55.0 percent, while head visibility is 83.0 percent versus 15.7 percent. Both models are more accurate with higher head coverage, by about fifteen percentage points for AIMv2 and seven for DINOv2. Other animal regions and background are shown as well. This checks the earlier content comparison on new pictures, but it keeps the same limitation: head coverage changes together with other information.",
-      "source": "docs/OCCLUSION_COMPLETION_PROTOCOL.md; results/occlusion_completion/accuracy_summary.csv; results/occlusion_completion/foreground_bins.csv; results/occlusion_completion/pair_measurements.csv; results/occlusion_completion/verification.json; results/occlusion_completion/clean_loss.csv; results/occlusion_completion/area_matched_patterns.csv; results/patch_relocation/summary.csv; results/patch_relocation/conditions.csv",
-      "words": 87
+      "title": "Animal and background patch swaps",
+      "note": "For that question, I used photos with enough patches entirely inside the animal and entirely in the background. In each photo I hid four patches and revealed four others. I did this inside the animal only, in the background only, and in both regions. Look at the pictures. Even the number of visible animal pixels stays exactly the same. The table gives accuracy under each condition. DINOv2 gained more from an animal swap than a background swap, by about four percentage points. For AIMv2 the difference was too small to distinguish. These swaps cover a small part of the image, so I limit this conclusion to this particular test.",
+      "source": "docs/OCCLUSION_COMPLETION_PROTOCOL.md; results/occlusion_completion/accuracy_summary.csv; results/occlusion_completion/foreground_bins.csv; results/occlusion_completion/pair_measurements.csv; results/occlusion_completion/verification.json; results/occlusion_completion/clean_loss.csv; results/occlusion_completion/area_matched_patterns.csv; results/patch_relocation/summary.csv; results/patch_relocation/conditions.csv; docs/REGION_SWAP_PROTOCOL.md; results/region_swap/summary.csv; results/region_swap/conditions.csv; https://openreview.net/pdf?id=gl3D-xY7wLq",
+      "words": 109
     },
     {
       "title": "What this study tells us",
-      "note": "If I were choosing a model, I would ask how much of the image is usually hidden and which parts stay visible. I would report both accuracy on those images and the change from clean accuracy. Here, those measures can favor different models. The patch and head comparisons show why knowing the visible area alone is insufficient. These findings concern two fixed systems and artificial masks on pet photos. I used Codex to help with code, experiments, analysis and presentation. The link takes you to the code and predictions. Thank you.",
-      "source": "docs/OCCLUSION_COMPLETION_PROTOCOL.md; results/occlusion_completion/accuracy_summary.csv; results/occlusion_completion/foreground_bins.csv; results/occlusion_completion/pair_measurements.csv; results/occlusion_completion/verification.json; results/occlusion_completion/clean_loss.csv; results/occlusion_completion/area_matched_patterns.csv; results/patch_relocation/summary.csv; results/patch_relocation/conditions.csv",
-      "words": 91
+      "note": "If I were choosing a model, I would ask how much of the image is usually hidden and which parts stay visible. I would report both accuracy on those images and the change from clean accuracy. Here, those measures can favor different models. Even when visible area is fixed, changing which animal patches are shown can change accuracy. These findings concern two fixed systems and artificial masks on pet photos. I used Codex to help with code, experiments, analysis and presentation. The link takes you to the code and predictions. Thank you.",
+      "source": "docs/OCCLUSION_COMPLETION_PROTOCOL.md; results/occlusion_completion/accuracy_summary.csv; results/occlusion_completion/foreground_bins.csv; results/occlusion_completion/pair_measurements.csv; results/occlusion_completion/verification.json; results/occlusion_completion/clean_loss.csv; results/occlusion_completion/area_matched_patterns.csv; results/patch_relocation/summary.csv; results/patch_relocation/conditions.csv; docs/REGION_SWAP_PROTOCOL.md; results/region_swap/summary.csv; results/region_swap/conditions.csv",
+      "words": 92
     }
   ],
   "summary": [
@@ -50961,6 +50961,272 @@
       "mean_exchanged": 32.0246238
     }
   ],
+  "regional": [
+    {
+      "suite": "direct",
+      "model": "aimv2",
+      "metric": "center",
+      "n": 364,
+      "breeds": 37,
+      "estimate": 0.8792792793,
+      "low": 0.8489489489,
+      "high": 0.9078078078,
+      "adjusted_low": null,
+      "adjusted_high": null
+    },
+    {
+      "suite": "direct",
+      "model": "aimv2",
+      "metric": "relocated",
+      "n": 364,
+      "breeds": 37,
+      "estimate": 0.7237987988,
+      "low": 0.6885116366,
+      "high": 0.7584084084,
+      "adjusted_low": null,
+      "adjusted_high": null
+    },
+    {
+      "suite": "direct",
+      "model": "aimv2",
+      "metric": "center_cost",
+      "n": 364,
+      "breeds": 37,
+      "estimate": 0.1554804805,
+      "low": 0.1227458709,
+      "high": 0.1882150901,
+      "adjusted_low": 0.1182432432,
+      "adjusted_high": 0.1932441817
+    },
+    {
+      "suite": "direct",
+      "model": "dinov2",
+      "metric": "center",
+      "n": 364,
+      "breeds": 37,
+      "estimate": 0.6336336336,
+      "low": 0.6003003003,
+      "high": 0.6687687688,
+      "adjusted_low": null,
+      "adjusted_high": null
+    },
+    {
+      "suite": "direct",
+      "model": "dinov2",
+      "metric": "relocated",
+      "n": 364,
+      "breeds": 37,
+      "estimate": 0.7552552553,
+      "low": 0.7226689189,
+      "high": 0.7875375375,
+      "adjusted_low": null,
+      "adjusted_high": null
+    },
+    {
+      "suite": "direct",
+      "model": "dinov2",
+      "metric": "center_cost",
+      "n": 364,
+      "breeds": 37,
+      "estimate": -0.1216216216,
+      "low": -0.1581118619,
+      "high": -0.0855855856,
+      "adjusted_low": -0.1629147898,
+      "adjusted_high": -0.0804804805
+    },
+    {
+      "suite": "regional",
+      "model": "aimv2",
+      "metric": "center",
+      "n": 366,
+      "breeds": 37,
+      "estimate": 0.8396396396,
+      "low": 0.8066066066,
+      "high": 0.8720720721,
+      "adjusted_low": null,
+      "adjusted_high": null
+    },
+    {
+      "suite": "regional",
+      "model": "aimv2",
+      "metric": "animal",
+      "n": 366,
+      "breeds": 37,
+      "estimate": 0.8234234234,
+      "low": 0.7882882883,
+      "high": 0.8564564565,
+      "adjusted_low": null,
+      "adjusted_high": null
+    },
+    {
+      "suite": "regional",
+      "model": "aimv2",
+      "metric": "background",
+      "n": 366,
+      "breeds": 37,
+      "estimate": 0.8204204204,
+      "low": 0.7855855856,
+      "high": 0.8537537538,
+      "adjusted_low": null,
+      "adjusted_high": null
+    },
+    {
+      "suite": "regional",
+      "model": "aimv2",
+      "metric": "both",
+      "n": 366,
+      "breeds": 37,
+      "estimate": 0.8018018018,
+      "low": 0.7660660661,
+      "high": 0.8369369369,
+      "adjusted_low": null,
+      "adjusted_high": null
+    },
+    {
+      "suite": "regional",
+      "model": "aimv2",
+      "metric": "animal_cost",
+      "n": 366,
+      "breeds": 37,
+      "estimate": 0.0174174174,
+      "low": -0.0058558559,
+      "high": 0.0417417417,
+      "adjusted_low": null,
+      "adjusted_high": null
+    },
+    {
+      "suite": "regional",
+      "model": "aimv2",
+      "metric": "background_cost",
+      "n": 366,
+      "breeds": 37,
+      "estimate": 0.0204204204,
+      "low": 0.0042042042,
+      "high": 0.0367867868,
+      "adjusted_low": null,
+      "adjusted_high": null
+    },
+    {
+      "suite": "regional",
+      "model": "aimv2",
+      "metric": "animal_minus_background_cost",
+      "n": 366,
+      "breeds": 37,
+      "estimate": -0.003003003,
+      "low": -0.0327327327,
+      "high": 0.027027027,
+      "adjusted_low": -0.036036036,
+      "adjusted_high": 0.0321321321
+    },
+    {
+      "suite": "regional",
+      "model": "aimv2",
+      "metric": "factor_interaction",
+      "n": 366,
+      "breeds": 37,
+      "estimate": -0.0024024024,
+      "low": -0.0294294294,
+      "high": 0.0243318318,
+      "adjusted_low": null,
+      "adjusted_high": null
+    },
+    {
+      "suite": "regional",
+      "model": "dinov2",
+      "metric": "center",
+      "n": 366,
+      "breeds": 37,
+      "estimate": 0.5769197769,
+      "low": 0.5414843415,
+      "high": 0.6105105105,
+      "adjusted_low": null,
+      "adjusted_high": null
+    },
+    {
+      "suite": "regional",
+      "model": "dinov2",
+      "metric": "animal",
+      "n": 366,
+      "breeds": 37,
+      "estimate": 0.6436293436,
+      "low": 0.6073359073,
+      "high": 0.6787644788,
+      "adjusted_low": null,
+      "adjusted_high": null
+    },
+    {
+      "suite": "regional",
+      "model": "dinov2",
+      "metric": "background",
+      "n": 366,
+      "breeds": 37,
+      "estimate": 0.6009438009,
+      "low": 0.5661089661,
+      "high": 0.6345345345,
+      "adjusted_low": null,
+      "adjusted_high": null
+    },
+    {
+      "suite": "regional",
+      "model": "dinov2",
+      "metric": "both",
+      "n": 366,
+      "breeds": 37,
+      "estimate": 0.6742170742,
+      "low": 0.6390819391,
+      "high": 0.7081081081,
+      "adjusted_low": null,
+      "adjusted_high": null
+    },
+    {
+      "suite": "regional",
+      "model": "dinov2",
+      "metric": "animal_cost",
+      "n": 366,
+      "breeds": 37,
+      "estimate": -0.06999142,
+      "low": -0.0943157443,
+      "high": -0.0462891463,
+      "adjusted_low": null,
+      "adjusted_high": null
+    },
+    {
+      "suite": "regional",
+      "model": "dinov2",
+      "metric": "background_cost",
+      "n": 366,
+      "breeds": 37,
+      "estimate": -0.0273058773,
+      "low": -0.0513095238,
+      "high": -0.0042256542,
+      "adjusted_low": null,
+      "adjusted_high": null
+    },
+    {
+      "suite": "regional",
+      "model": "dinov2",
+      "metric": "animal_minus_background_cost",
+      "n": 366,
+      "breeds": 37,
+      "estimate": -0.0426855427,
+      "low": -0.0757185757,
+      "high": -0.0103389103,
+      "adjusted_low": -0.0795795796,
+      "adjusted_high": -0.0057057057
+    },
+    {
+      "suite": "regional",
+      "model": "dinov2",
+      "metric": "factor_interaction",
+      "n": 366,
+      "breeds": 37,
+      "estimate": 0.0065637066,
+      "low": -0.0258687259,
+      "high": 0.0389124839,
+      "adjusted_low": null,
+      "adjusted_high": null
+    }
+  ],
   "clean_loss": {
     "cohort": "primary",
     "fraction": 0.75,
@@ -50991,8 +51257,11 @@
     "results/occlusion_completion/clean_loss.csv": "54c03d23521f9ed3e35f3b37c849e059e6ffc22ef5593988efd29144b2f623b2",
     "results/occlusion_completion/area_matched_patterns.csv": "35d6703ba686aeabc29a506414589c347fb5fd2c02a6940975e752ab6d169621",
     "results/patch_relocation/summary.csv": "458b71767e30791c3398f71dadefeef1fff51afc23983ae6e09579154e6049db",
-    "results/patch_relocation/conditions.csv": "3c8b5ca987c908a5b7e459089eacb91d3c8c1dcd4551a1a361e69a7b57132154"
+    "results/patch_relocation/conditions.csv": "3c8b5ca987c908a5b7e459089eacb91d3c8c1dcd4551a1a361e69a7b57132154",
+    "docs/REGION_SWAP_PROTOCOL.md": "7976d0e8c96300051b4729d9d9c4421f85061a562b3aa9a27adcf04ab643233c",
+    "results/region_swap/summary.csv": "169dbf92631b8bf92497f09efed3585e35567d02269a7d0b5355b339a6a2fece",
+    "results/region_swap/conditions.csv": "72d2c91c22a1f033987934e21927f0a14124f9aafcc368776ebb5e778675873c"
   },
-  "word_count": 978,
-  "seconds_at_90wpm_plus_pauses": 692.0
+  "word_count": 997,
+  "seconds_at_90wpm_plus_pauses": 704.6666666666666
 }
