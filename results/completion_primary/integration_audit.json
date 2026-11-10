@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "images": 740,
+  "conditions_per_model": 17760,
+  "completed_models": [
+    "aimv2",
+    "dinov2"
+  ],
+  "annotations_regenerated": true,
+  "predictions_reconstructed": true
+}

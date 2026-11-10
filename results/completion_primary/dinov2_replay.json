@@ -1,0 +1,17 @@
+{
+  "model": "dinov2",
+  "conditions": 8,
+  "max_absolute_feature_difference": 0.0,
+  "classes_identical": true,
+  "torch_version": "2.14.0",
+  "benchmark": {
+    "images_per_second": 13.153712094400811,
+    "shape": [
+      8,
+      1024
+    ],
+    "all_finite": true,
+    "feature_norm": 1.0
+  },
+  "passed": true
+}

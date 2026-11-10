@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "included_runs": [
+    "extension_v2",
+    "completion_primary",
+    "completion_head"
+  ],
+  "source_conditions_verified": 41622,
+  "independently_reconstructed_summary_cells": 150,
+  "independently_reconstructed_foreground_cells": 1830,
+  "saved_budget_nesting_checks": 11100,
+  "independently_reconstructed_head_cells": 486,
+  "region_measurements_verified": 120,
+  "mask_budgets_and_hashes_verified": true,
+  "new_head_sample": {
+    "images": 185,
+    "per_breed": 5,
+    "prior_ids_and_bytes_disjoint": true,
+    "head_xml_hashes_verified": true
+  },
+  "scope": "Point estimates and data/identity invariants independently reconstructed; bootstrap code separately unit-tested."
+}

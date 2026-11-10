@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "checks": [
+    "visibility_prediction_v1: saved scores, image grouping, encoder pairing and all 30 contrasts verified",
+    "fold_seed_6692029: saved scores, image grouping, encoder pairing and all 30 contrasts verified",
+    "fold_seed_6692030: saved scores, image grouping, encoder pairing and all 30 contrasts verified",
+    "Original condition files, predictions and analysis plan hashes unchanged"
+  ],
+  "unit_tests": 6,
+  "source_sha256": {
+    "scripts/visibility_prediction.py": "9d6688e9a52a5802d4e591da3b19c4af19a197f1f40c6751134b554410609116",
+    "scripts/visibility_prediction_stability.py": "39010a04f1ab9972bdc76a83bb26bcc5684b8fe79b2c9f60983ad97023b36428",
+    "scripts/verify_visibility_prediction.py": "dc010a18dcfb8296c86dc74cc5299d9910f398002c09de00952ec774ed9f00d6",
+    "tests/test_visibility_prediction.py": "fad01d89b7c4a4c67d06882f18bd902af46632d637b3971de5e3fb74793cf1c7"
+  }
+}

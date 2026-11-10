@@ -1,0 +1,15 @@
+{
+  "created_at_utc": "2026-10-22T05:36:24.925582+00:00",
+  "status": "Plan saved before diagnostic fitting; prior experiment outcomes already known",
+  "sha256": {
+    "docs/VISIBILITY_PREDICTION_PROTOCOL.md": "24625ba7ccd2067d87edd249d8b58c39be19efd12cd1252b79cbc5460853069a",
+    "results/extension_v2/conditions.csv": "ccbda272013ad6826bdd91b5a3be092d56e3def8c8364c7fbf37e0a9ee9c69ae",
+    "results/extension_v2/aimv2_predictions.csv": "409449c0c4b32ac496bca6bac670c190b49c61d30434ee81ee315c73ab1acbf6",
+    "results/extension_v2/dinov2_predictions.csv": "1ec9e6fe82b067c4fee012a677c8e6c7d06d04087795b178d2b23c7e4d5c2802"
+  },
+  "post_hoc_fold_sensitivity": {
+    "fold_seed": 6692030,
+    "penalty": 1.0,
+    "source_sha256": "321862005e7534153006907cc45ea811f2ab7700ddd5a1c35e90aabfc05805e3"
+  }
+}

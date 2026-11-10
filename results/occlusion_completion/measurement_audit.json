@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "runs": [
+    "extension_v2",
+    "completion_primary",
+    "completion_head"
+  ],
+  "original_conditions": 41622,
+  "original_images_by_cohort": {
+    "auxiliary_head": 185,
+    "new_head": 185,
+    "primary": 740
+  },
+  "joins_one_to_one": true,
+  "shared_input_metadata_verified": true,
+  "old_headline_estimates_reproduced": true,
+  "bootstrap_repetitions": 10000,
+  "bootstrap_unit": "Original image, resampled within breed",
+  "curve_estimand": "Image-weighted accuracy conditional on foreground bin; random repeats averaged before main binning",
+  "pair_estimand": "Equal represented-breed average among eligible image pairs",
+  "confidence_intervals": "Pointwise except explicit 12-contrast model-ordering families; fixed systems",
+  "source_hashes": {
+    "extension_v2/conditions.csv": "ccbda272013ad6826bdd91b5a3be092d56e3def8c8364c7fbf37e0a9ee9c69ae",
+    "extension_v2/aimv2_predictions.csv": "409449c0c4b32ac496bca6bac670c190b49c61d30434ee81ee315c73ab1acbf6",
+    "extension_v2/dinov2_predictions.csv": "1ec9e6fe82b067c4fee012a677c8e6c7d06d04087795b178d2b23c7e4d5c2802",
+    "completion_primary/conditions.csv": "83d19f381454a9db25635571bbcd9a84600e7fe2be80c1d0a3204d1adce06762",
+    "completion_primary/aimv2_predictions.csv": "5dde200f125933f202cb7a601423643d96eb31b0727fca943045ec05c08b5228",
+    "completion_primary/dinov2_predictions.csv": "b4b66b9aa828a275f6b55a60481ab86b849229a83d663474d381039535d93409",
+    "completion_head/conditions.csv": "b0c4e61245516b71e3d66a98d0bf3b5b0317b3d391b69f5c4f9a5ec8ba56a86e",
+    "completion_head/aimv2_predictions.csv": "637d6bce6ffa978e376c1ff7856df8f8e072557ce6313f54c781146fd85720a6",
+    "completion_head/dinov2_predictions.csv": "6d8f2d89f844fc5c5b924efcefd6fb18f5ae7aca27b214ed6dee0d684bdc5eeb"
+  },
+  "script_sha256": "b733bde2cd48f2de861c5064e100355e25893a722694d240009fa5c3cac1059e"
+}

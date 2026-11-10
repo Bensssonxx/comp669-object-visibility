@@ -1,0 +1,29 @@
+{
+  "run_name": "completion_head",
+  "source_run": "extension_v2",
+  "seed": 6692031,
+  "size": 224,
+  "patch": 14,
+  "fills": [
+    128,
+    0
+  ],
+  "random_seeds": [
+    0,
+    1,
+    2
+  ],
+  "fractions": [
+    0.25,
+    0.5,
+    0.75
+  ],
+  "pair_caliper": 0.03,
+  "minimum_center_distance_patches": 4,
+  "head_minimum_visibility_gap": 0.2,
+  "batch_size": 8,
+  "device": "mps",
+  "dtype": "float32",
+  "completion_runner_sha256": "e65aa5a6a667aa4750a3114c3b8ebbe0e81a55adb892d7cd31f1a861ef2eaeca",
+  "protocol_sha256": "55ccf841d72de9620177f274e230145fd477e33b8ead3977ccd96a4cdfe4b97f"
+}

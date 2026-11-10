@@ -1,0 +1,3702 @@
+[
+  {
+    "image_id": "Abyssinian_118",
+    "label": 0,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "a9b7e4144da06d5806fb05573d4ce8c8cb4d68e9b831f3c3f7a174786e9837ac",
+    "annotation_sha256": "3faabc984ace8f1b6d0b66e9caedf9b5fdda3595a20a59a0a7bc58516f4ef2b5",
+    "xml_sha256": "532d03e0cdf872f14137d18054f5671ea196fc48f70665c01b482012edace942",
+    "original_size": [
+      333,
+      500
+    ],
+    "head_box_pascal": [
+      1,
+      34,
+      257,
+      303
+    ]
+  },
+  {
+    "image_id": "Abyssinian_107",
+    "label": 0,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "2846b5cf41304fb0aaf092578c5855d289803873a1a7ba7fc3853e35ecd4dafc",
+    "annotation_sha256": "5d8d00a57264af3d900a0a4de4246ffc66423dc94359a2a22a3d4ce9af4d0b12",
+    "xml_sha256": "6c277e76478e5b932e6d5159064293071d87e473d5cec802f17b102e97f2ab46",
+    "original_size": [
+      500,
+      448
+    ],
+    "head_box_pascal": [
+      94,
+      76,
+      275,
+      271
+    ]
+  },
+  {
+    "image_id": "Abyssinian_136",
+    "label": 0,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "a750f14f02ea5d160c2b339fa5adacbf75a240c8871c40dc37a8bb01d39068be",
+    "annotation_sha256": "47094db2906fce2bd205c83529925d454bd1f00158a2fb3cd7f5400fef7e582e",
+    "xml_sha256": "28778f8b099a840a0af15bca1ba4736e718ddd8cdeb21ba413be308b191c24c1",
+    "original_size": [
+      333,
+      500
+    ],
+    "head_box_pascal": [
+      105,
+      38,
+      227,
+      157
+    ]
+  },
+  {
+    "image_id": "Abyssinian_122",
+    "label": 0,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "a9e38e201a7aa3943521dbaacf628d276e844540ad87b76cd6e0113be00c09eb",
+    "annotation_sha256": "3f15e90fcaaae7e23f6742fb19d87aba5f35bec2870815e894843d3cd696a0c3",
+    "xml_sha256": "a6d041e5ecfa6b6aa08929c9d3c5a13661969570090cb4e137498811d964c8a5",
+    "original_size": [
+      300,
+      278
+    ],
+    "head_box_pascal": [
+      195,
+      10,
+      278,
+      100
+    ]
+  },
+  {
+    "image_id": "Abyssinian_164",
+    "label": 0,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "cb3cc7b9a2690bce685fd8e3b60da09c1d9d945e4f542a6a7767a2ff1f5000e4",
+    "annotation_sha256": "6f8023f306fd23a61bd5311be2cd30f0a7a330b7d39578fe1742650714cdd2ec",
+    "xml_sha256": "faf6e83906b306b5dcdf1e5078420d555c7717b17430afc68b56f4263dddeedc",
+    "original_size": [
+      500,
+      328
+    ],
+    "head_box_pascal": [
+      189,
+      166,
+      260,
+      235
+    ]
+  },
+  {
+    "image_id": "american_bulldog_10",
+    "label": 1,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "f9814f8d852b38e710e7f4a16bedd5b5b979fe5fec604f75f45d857ff01f6f93",
+    "annotation_sha256": "be0d1255ce67bb85b94c8158d5a2713a091b9d4c3152f7f6e85b754114657bc3",
+    "xml_sha256": "0c4cce66e2e402e098dba5d9ef68b40cdee03600df2dd23864fc87d7d5bee9a6",
+    "original_size": [
+      500,
+      334
+    ],
+    "head_box_pascal": [
+      103,
+      47,
+      330,
+      268
+    ]
+  },
+  {
+    "image_id": "american_bulldog_117",
+    "label": 1,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "f0e7657cc59e7ef2ed1c395a80a76dfa4fe1abfdb1d6e9c192e0e72b19e0cbf4",
+    "annotation_sha256": "cd44d82c827269975d5df7e20a42e517fb07cb6d5d397b0a626290b28e48c395",
+    "xml_sha256": "7e6bfdb49fec2f59a9b4f80efbef74d7e9e0792e5f293bd8c0da3922c4f0dce0",
+    "original_size": [
+      375,
+      500
+    ],
+    "head_box_pascal": [
+      86,
+      68,
+      257,
+      222
+    ]
+  },
+  {
+    "image_id": "american_bulldog_111",
+    "label": 1,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "2fe1fb60602e2b8fc197a456933c34edf779b19f6d15ded643694cae277ab001",
+    "annotation_sha256": "cba1381e6e9946715bbd664be34a8e9ab2192cc22eaf7cfba66b373f3debed42",
+    "xml_sha256": "594e2281cf00404cc7e813f9cf34530531547bfb104ca2758cf57b80ee63b4a7",
+    "original_size": [
+      500,
+      333
+    ],
+    "head_box_pascal": [
+      95,
+      16,
+      341,
+      276
+    ]
+  },
+  {
+    "image_id": "american_bulldog_197",
+    "label": 1,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "e4d314541b5f8995da45786410c7062f75a2985d52e52a977765c6d29e452d24",
+    "annotation_sha256": "fe671a18a776fc2d121c4cf58bf34bec62246e819cb901d29dca8c52ddc9851b",
+    "xml_sha256": "7773689c2cf6826c9fcebcfd83b8c8d5a09806581091d8bfc325865417e2856b",
+    "original_size": [
+      500,
+      335
+    ],
+    "head_box_pascal": [
+      182,
+      94,
+      350,
+      278
+    ]
+  },
+  {
+    "image_id": "american_bulldog_146",
+    "label": 1,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "3d9c0b6b742ccb676164f2e732958617474a75a34f48254cfeda39d03ebfad47",
+    "annotation_sha256": "8b945e5ce0abb20d9d7c4d91c554396c40733dfe68aa71a016e385aebe8c7109",
+    "xml_sha256": "945f14ff1cecd0d9ca17dc36a25f4c54b3ad31256e8a09dc0be6e958825d24bb",
+    "original_size": [
+      375,
+      500
+    ],
+    "head_box_pascal": [
+      24,
+      113,
+      366,
+      388
+    ]
+  },
+  {
+    "image_id": "american_pit_bull_terrier_172",
+    "label": 2,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "c079c79ed8cc561e054ee2d4911cadb83c53e254bad6b851fef035f472231bb7",
+    "annotation_sha256": "3f8aee49c14c41e6f100e465b264d0eb177e06df8bbaa84a975d0cce2327bbc1",
+    "xml_sha256": "ad9c4cdbd68756b992e9fe12b2f77b2fa7258092ee074b5832dbb8d95be5b9c1",
+    "original_size": [
+      239,
+      300
+    ],
+    "head_box_pascal": [
+      47,
+      103,
+      198,
+      224
+    ]
+  },
+  {
+    "image_id": "american_pit_bull_terrier_175",
+    "label": 2,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "c98a598029f47a7baf1bc5b10c6781da5f46b16e12b4d359cda5b1c60e3e7a9e",
+    "annotation_sha256": "680f488d34672c20e7368ceb6decf23c5f5130805fa6844ff1d278b40d1a73dd",
+    "xml_sha256": "dd011459e173d1873cb44584c78cbb466182c664060be937f917db68d8410807",
+    "original_size": [
+      223,
+      300
+    ],
+    "head_box_pascal": [
+      94,
+      41,
+      188,
+      176
+    ]
+  },
+  {
+    "image_id": "american_pit_bull_terrier_177",
+    "label": 2,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "0efd67d27e537e60f565492ce3046ea77f4e21ed342fe01e0761d24fe534ddfb",
+    "annotation_sha256": "b082e64a587ddbbf2ff1dc3e15b32b26c4f62489155e5a8219c0a848543708c8",
+    "xml_sha256": "8c1e8d6eddf71912d78edb111d09d7df4cc57fa8a0a06af675dcea4c6a01bdea",
+    "original_size": [
+      300,
+      225
+    ],
+    "head_box_pascal": [
+      90,
+      72,
+      171,
+      155
+    ]
+  },
+  {
+    "image_id": "american_pit_bull_terrier_101",
+    "label": 2,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "5ca5668d9a21b349a77d8e0155b1af30f9e93922b25209caf615ba8eb582be5d",
+    "annotation_sha256": "37a2e01cc8b995c0cea5f07852684a0f43babd39b30f6caefb3c88391f62dbdc",
+    "xml_sha256": "da9e8bf20c1cfcbf820de20475cdb6611057329a9b8982924eb022b921eba0a4",
+    "original_size": [
+      397,
+      500
+    ],
+    "head_box_pascal": [
+      119,
+      157,
+      276,
+      309
+    ]
+  },
+  {
+    "image_id": "american_pit_bull_terrier_162",
+    "label": 2,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "3106ac6c2886a540c34b0cdd4e281e80bfbbb758c95887f0c56a68aef7ec78b2",
+    "annotation_sha256": "a005cde0f88cbd0ed0746babdf9abb38f7b6d30d1362ff120650c62f026937a8",
+    "xml_sha256": "f0c221e20c1e9f4aa791bdf1fde0f27762aa94a25f10d40d2bf5ea39a88bef85",
+    "original_size": [
+      300,
+      225
+    ],
+    "head_box_pascal": [
+      134,
+      32,
+      232,
+      162
+    ]
+  },
+  {
+    "image_id": "basset_hound_133",
+    "label": 3,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "b388858e1c2101270219b7bdb4000265d092f50d7aa0c831508d2b21855a8f43",
+    "annotation_sha256": "99b61639787ba19cf397021823f9c33631238b5e7c5c9a0c979357b132d55671",
+    "xml_sha256": "d5279a2109eee729d8b7fc19a7772dedbe967ad9273b6885ef389b82edb9ddfa",
+    "original_size": [
+      500,
+      393
+    ],
+    "head_box_pascal": [
+      1,
+      6,
+      494,
+      393
+    ]
+  },
+  {
+    "image_id": "basset_hound_149",
+    "label": 3,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "a0d0a399d53100539bf18cba9995546e8b074453b236d10057bf82f3a581d2cf",
+    "annotation_sha256": "ea9218e77fc65824e7e5bf264bab81bae82b4057f4cf6a15d1805ad2bc75e0b9",
+    "xml_sha256": "5fd2e9caec1e8354f5769064f866d17f34e3fc432d0ecaa9bcb90d28ff6851fc",
+    "original_size": [
+      288,
+      360
+    ],
+    "head_box_pascal": [
+      57,
+      53,
+      203,
+      194
+    ]
+  },
+  {
+    "image_id": "basset_hound_130",
+    "label": 3,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "e37ebb3c4b3e81df048f3efb1b76a8928a0ca40c4a20ef13ae7ca70bd892b81f",
+    "annotation_sha256": "26bb4d2facc1121531776bfd4c792952509ce0c21d9154fca2f0c5d9dad35bba",
+    "xml_sha256": "1ee8fac3baa6b102a71e2ebc2226da00f985011c0466f6288e00a89f7f1f592f",
+    "original_size": [
+      500,
+      375
+    ],
+    "head_box_pascal": [
+      37,
+      1,
+      397,
+      375
+    ]
+  },
+  {
+    "image_id": "basset_hound_11",
+    "label": 3,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "72bed15b950397ad120eebda26857d6c3ce7efc7bc8bda58838ad8fabc81f49f",
+    "annotation_sha256": "ae3eadd2c92b017c8caf384c3d4d1b857263af892f80df011a4d4f6ace07c254",
+    "xml_sha256": "8b0343677e18b3645ef4bdf18807570f603134495f6c05914a058b0c64317fe2",
+    "original_size": [
+      375,
+      500
+    ],
+    "head_box_pascal": [
+      77,
+      43,
+      276,
+      269
+    ]
+  },
+  {
+    "image_id": "basset_hound_172",
+    "label": 3,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "b20571204efa4a8f57f67dd2b0e0fc90ea176fbef8ec7a4b51f9d110d79b6ab2",
+    "annotation_sha256": "02d7b878c87c220ba7c5a59bb9e79ce6e4df4183d27ade9ab9de33fa6f176fc7",
+    "xml_sha256": "b95c7cb7ed0d0ed9735f1a134a46bd6e3fb9a8138b4425bf68a39f9b5bba0dc5",
+    "original_size": [
+      500,
+      333
+    ],
+    "head_box_pascal": [
+      48,
+      76,
+      184,
+      235
+    ]
+  },
+  {
+    "image_id": "beagle_104",
+    "label": 4,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "7db5c72e707a4f16f0d4f273b3c719d662269aa39873345e9d9897738eca7151",
+    "annotation_sha256": "eea8d8ce5fe91106ebc11c0c827dab7e77b885e220a17cf057ea93a0ed5cc01d",
+    "xml_sha256": "a073047e28698566ffdc4a2ccc98bd7c121f842169654c92ffb37827b4c96e4b",
+    "original_size": [
+      500,
+      333
+    ],
+    "head_box_pascal": [
+      46,
+      33,
+      181,
+      157
+    ]
+  },
+  {
+    "image_id": "beagle_183",
+    "label": 4,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "52cabb3d9efbe32d328e39b740e4dfe5117eff03849ff3a41b13352e46799de0",
+    "annotation_sha256": "e03f3150d41fe983b7f765178bed88f15363bc252758dd27d1d3bb9d25c6a73d",
+    "xml_sha256": "18bc2f88011e927e50b43437f9ad49c8bab3e314432d740333f587a721ce2692",
+    "original_size": [
+      500,
+      400
+    ],
+    "head_box_pascal": [
+      256,
+      138,
+      438,
+      255
+    ]
+  },
+  {
+    "image_id": "beagle_15",
+    "label": 4,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "7db43ab01c086ea91654489d390b1350eef9d591b2920cf2237edf0759169572",
+    "annotation_sha256": "d10e37fbc784a49acbcad100fb4f3c95375a3a0de0f5bcc0f46e515bec826af0",
+    "xml_sha256": "62ed36a4247dd24e0e2476f208a8cd48dce23a0fee934e6128903a27eb08f441",
+    "original_size": [
+      500,
+      334
+    ],
+    "head_box_pascal": [
+      169,
+      124,
+      282,
+      214
+    ]
+  },
+  {
+    "image_id": "beagle_101",
+    "label": 4,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "ba16f93703b364e0c4a510f5d94ce99c2b5b0fa906b6a2aeb3bd9dc82b81f943",
+    "annotation_sha256": "aab7f433ef473b2ee038092dcd88f0544d199d380e592ea24349a84754e31db3",
+    "xml_sha256": "46723c03c968b02e65b99862c7fda95a4f186546901828044f9861a3f33e86c2",
+    "original_size": [
+      500,
+      334
+    ],
+    "head_box_pascal": [
+      187,
+      64,
+      319,
+      178
+    ]
+  },
+  {
+    "image_id": "beagle_184",
+    "label": 4,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "3d20878f71ec95e0d29169460ffa0e2d6c7b77ec13056f2ae20c7b81e88fc18d",
+    "annotation_sha256": "ec254a823c482291a244dc24c4a65de2d05e2dcfa38c412f199e638d20ed18e6",
+    "xml_sha256": "981d10690e9b9d25dda80b6de2e7d901e22b907297699ebf4d70b667340da909",
+    "original_size": [
+      500,
+      375
+    ],
+    "head_box_pascal": [
+      210,
+      137,
+      362,
+      259
+    ]
+  },
+  {
+    "image_id": "Bengal_152",
+    "label": 5,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "295a8c2bd0c54ea0a1b10fe6958a76d0b27b88d8edff70a091c269a14e7d70e4",
+    "annotation_sha256": "053a8721dc87e1965df89b868062a5c96de85e32b5c539328fd8c22d8e9b863f",
+    "xml_sha256": "b68cf697d9ec4822dd56ac4fefe4d8a0b61666898d971b119df6dceef6dd488a",
+    "original_size": [
+      300,
+      225
+    ],
+    "head_box_pascal": [
+      84,
+      8,
+      271,
+      209
+    ]
+  },
+  {
+    "image_id": "Bengal_189",
+    "label": 5,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "a001f6c37b494e7f6aa99e51229cc0644ef866fe3f86087c3d2437affad70624",
+    "annotation_sha256": "0666d3710211c9de920857a7cb4aca2ac0ef54b0c9b770e84bdadfae11eaecbc",
+    "xml_sha256": "b46d7b73886c5c68256aa28a0aaa0e18b77015c107d369b62f4483e33a04f7a9",
+    "original_size": [
+      320,
+      240
+    ],
+    "head_box_pascal": [
+      212,
+      86,
+      289,
+      176
+    ]
+  },
+  {
+    "image_id": "Bengal_172",
+    "label": 5,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "c4edc372c83125df313914424b1a05f7f7f8e7e3c5a21af68143f323fdfdd078",
+    "annotation_sha256": "b08fd02cde5fdc870838abf5269579d36c4593583632613617ca3eb3044091a6",
+    "xml_sha256": "47f7b690e8ad66b80c9ab73f71a63e910600a10b7ed18bd7eed20e31c2327572",
+    "original_size": [
+      300,
+      269
+    ],
+    "head_box_pascal": [
+      60,
+      90,
+      122,
+      159
+    ]
+  },
+  {
+    "image_id": "Bengal_186",
+    "label": 5,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "a518db3242977f5f022cbb042932586373bdadbefe4551e83b969dc050826eb6",
+    "annotation_sha256": "a5e5cad2f561c075bd499bf9a673c89c52fcf3875e3b0af2f5febe3cc6ab88f4",
+    "xml_sha256": "212400127e79aa175bd73d80647337e4a7950386b71e96dfe2192ea02800d553",
+    "original_size": [
+      470,
+      300
+    ],
+    "head_box_pascal": [
+      46,
+      22,
+      301,
+      291
+    ]
+  },
+  {
+    "image_id": "Bengal_12",
+    "label": 5,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "b2282f6083788b27d5b6443ae0829058f3333f5f7b27e313fc05a019862c4d62",
+    "annotation_sha256": "df32f916f652b0473a257a4dc61d6111d801b806e50eea576b3fd99526bcc4d6",
+    "xml_sha256": "c25e3fa561dd901a19daccd7fba0ddff08fb19793282f0a3c511f64ef8b696cb",
+    "original_size": [
+      500,
+      335
+    ],
+    "head_box_pascal": [
+      28,
+      34,
+      210,
+      239
+    ]
+  },
+  {
+    "image_id": "Birman_118",
+    "label": 6,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "bb537a50d40e77188795798d2c1b75cb0fcdb0a902e4f9273ff079ac19a0ba4e",
+    "annotation_sha256": "62ac8799b26477490329bceffc194df0ebc1acc69b03a3f8461755ab0736808e",
+    "xml_sha256": "754dce43b7630ede84fc921f93e8f81886bfae49cb3fdeca056564db27c307cf",
+    "original_size": [
+      375,
+      500
+    ],
+    "head_box_pascal": [
+      49,
+      35,
+      317,
+      320
+    ]
+  },
+  {
+    "image_id": "Birman_142",
+    "label": 6,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "e7c39812068824a5be2a323f528775fba41dbfc0b00f5a60596cc01854b5c565",
+    "annotation_sha256": "b7515e3305b2cfdd75666b4511eb6ddb464a6d451f223048727f564a7681cd3a",
+    "xml_sha256": "ccf07063b478e1c4dbe4c8ae80045cfff7414d15eabd9a6847efd4f4404f1b24",
+    "original_size": [
+      500,
+      333
+    ],
+    "head_box_pascal": [
+      233,
+      62,
+      435,
+      249
+    ]
+  },
+  {
+    "image_id": "Birman_153",
+    "label": 6,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "07af2acbe9ef535bd494de777cad9cc0557aef8a01f4c2f731caa5ad62e01855",
+    "annotation_sha256": "57b88106123fea946d18fef6a556ab1a2c218c9bda74f70f4350ef7daecfb12d",
+    "xml_sha256": "53af6148dbb3a7a6d9d7610e2f5ed9342f2c14a364f84c823be0069e225b109d",
+    "original_size": [
+      500,
+      407
+    ],
+    "head_box_pascal": [
+      59,
+      42,
+      381,
+      343
+    ]
+  },
+  {
+    "image_id": "Birman_134",
+    "label": 6,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "4114977c457125da85018a9ec55fdd2542d5e60db859fb4a4aa426ffd51621e2",
+    "annotation_sha256": "b834ada4849934ada368230ee4101ed604bc28ad4babb1ebedb93f45cfa40ded",
+    "xml_sha256": "6f13cbdcdb2fedadb52c3c2fdc8c2a792f1859e155fcb3cf3264d570773e08a4",
+    "original_size": [
+      375,
+      500
+    ],
+    "head_box_pascal": [
+      103,
+      238,
+      267,
+      425
+    ]
+  },
+  {
+    "image_id": "Birman_140",
+    "label": 6,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "34420401523bda7dee018413287f9fac919a80aa05c943700db88655b41445f4",
+    "annotation_sha256": "23a274c6aca75b80b517ecb0276a2540e9be7edf420740d6082c04efc443ae20",
+    "xml_sha256": "f30ab3b49ff45ebfdb1f331a9a1aedae79435de5273423d4cf63b3b95c1a1edc",
+    "original_size": [
+      500,
+      333
+    ],
+    "head_box_pascal": [
+      46,
+      67,
+      232,
+      226
+    ]
+  },
+  {
+    "image_id": "Bombay_19",
+    "label": 7,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "d4776e5debece309101ea79ab4a592d43612f6f38da76f20fe315a7111d4e3c1",
+    "annotation_sha256": "7a80c86dba1c2960172957045d7ac6102e90c27faf98e3935c71d45a1578cda2",
+    "xml_sha256": "351b3b8acefca0e208ee504021647b079516c7502bb0ac74bfc98b75d25ee2f4",
+    "original_size": [
+      420,
+      315
+    ],
+    "head_box_pascal": [
+      117,
+      25,
+      314,
+      227
+    ]
+  },
+  {
+    "image_id": "Bombay_120",
+    "label": 7,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "7f3e3a3381c654dcc00b6dad1d05661db1dc737f50cfb182ee886fbcd1f19165",
+    "annotation_sha256": "8f0053ace5319e02dead47977a1f42d4311b3de6c1b9647564314ebf8182428a",
+    "xml_sha256": "304cfdf772881ef72d6d0012a43032439e10d6f52a18fe4bd40b992265addc23",
+    "original_size": [
+      140,
+      134
+    ],
+    "head_box_pascal": [
+      11,
+      11,
+      95,
+      96
+    ]
+  },
+  {
+    "image_id": "Bombay_131",
+    "label": 7,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "a202d2982419e7d7f9e8b2646c973a0489dbc795e7cc4b2ae8717d22198eb3d5",
+    "annotation_sha256": "326c75750968f10d51adea04cac3bb06074e13c449348f9ba2459330f57d47cd",
+    "xml_sha256": "6af5e8da2cbb30de80011171715b8de068d54f9d14f4abb3aff35cf54ff86291",
+    "original_size": [
+      300,
+      293
+    ],
+    "head_box_pascal": [
+      79,
+      14,
+      244,
+      211
+    ]
+  },
+  {
+    "image_id": "Bombay_173",
+    "label": 7,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "5220a315411a825496776c2639c478da4ade1368ea52cbb2929ee4b42f048849",
+    "annotation_sha256": "f37eb5cc9fde4fd22aab7540e36b94b5fa4b3f9044c04c5d771e68454f84c253",
+    "xml_sha256": "b0d996c18d00339c08148d0bc1c250d2df78cac8a45de4ec6a1027f7d0885866",
+    "original_size": [
+      334,
+      500
+    ],
+    "head_box_pascal": [
+      135,
+      104,
+      253,
+      225
+    ]
+  },
+  {
+    "image_id": "Bombay_112",
+    "label": 7,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "628e07524fea89c7f5ba80a2bac3e7ea7c115b7530572665a899daf88e5ab362",
+    "annotation_sha256": "7eb19e4261434d0d0647ab846b673e48c45a4254a9f98a060498682e1ceb10da",
+    "xml_sha256": "1a31a37420704feba5c5cb880241e581bd9f83b3a9fe0c134424a9bf21baf2f6",
+    "original_size": [
+      190,
+      168
+    ],
+    "head_box_pascal": [
+      126,
+      32,
+      175,
+      86
+    ]
+  },
+  {
+    "image_id": "boxer_17",
+    "label": 8,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "548fb07cf738724e73d4fa613e197c76c4d4962620553809ebc33fed70a1a7f5",
+    "annotation_sha256": "d67f51b815ba4bb21017a7597372fc6934a6cbec55b0a6f124c31c749de400b4",
+    "xml_sha256": "c01f4c233a3fef75a929fb1a9dcbce82f3c393f61897a28e3cfa0f84b375468e",
+    "original_size": [
+      400,
+      500
+    ],
+    "head_box_pascal": [
+      122,
+      59,
+      375,
+      309
+    ]
+  },
+  {
+    "image_id": "boxer_181",
+    "label": 8,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "956040dbf50902f0ecf57d6fbd99e16ae800d6dfe2f8a98a8c81716cb2f2e634",
+    "annotation_sha256": "27c044468170754c4ff21c256261f8070cb47f948674c92f342e66893139ac55",
+    "xml_sha256": "087297a39c485fa6331b3dfabd774621835690b7ace4ea68d9b769844a993277",
+    "original_size": [
+      500,
+      333
+    ],
+    "head_box_pascal": [
+      259,
+      8,
+      362,
+      112
+    ]
+  },
+  {
+    "image_id": "boxer_15",
+    "label": 8,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "c728393432be17792ef59a785fd355adc6aa95e0c8413b0003ed01d58e4dd4a6",
+    "annotation_sha256": "888f32ed9b47280a3cb5c8acd7dece3d464112dfde881e91f856c813802a6759",
+    "xml_sha256": "d02da6ed553fee78bbca4117140b1b7c13bbe754b94246a18a350db8dac6388a",
+    "original_size": [
+      500,
+      333
+    ],
+    "head_box_pascal": [
+      193,
+      45,
+      377,
+      262
+    ]
+  },
+  {
+    "image_id": "boxer_100",
+    "label": 8,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "fb5e92447ca29e7e94ae08644ff9960e13546bc092c2f6d2bd8a7555b67431ed",
+    "annotation_sha256": "1908c8d2b178e7ecbdb7bb0f7c0f6020f089b8a2b25d5116b3960374bfd0fc0a",
+    "xml_sha256": "4cb798e5b5ab41999b820e686c7f04bd25c2263882b91ad512d24d9a32ff3258",
+    "original_size": [
+      500,
+      332
+    ],
+    "head_box_pascal": [
+      63,
+      52,
+      213,
+      170
+    ]
+  },
+  {
+    "image_id": "boxer_126",
+    "label": 8,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "0ded586f8af26b4ccece7c3a3b60656b58b18a6dffa5f84cd18220b0657fa5ec",
+    "annotation_sha256": "3b4f02f4e09cb46547b3710a3286f57dc19ef397e337359bcf88c8a93a2ec98f",
+    "xml_sha256": "9c164032b2bf42ac96f7a4360aef6ff7848abba321854bde8daa1d28a24f1bc8",
+    "original_size": [
+      500,
+      309
+    ],
+    "head_box_pascal": [
+      169,
+      6,
+      377,
+      212
+    ]
+  },
+  {
+    "image_id": "British_Shorthair_130",
+    "label": 9,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "3eecce90452492ceb98057d5ded0a77524c80cce61bffae4a95e254372f9dda4",
+    "annotation_sha256": "0942a0864464865f45d78eeabd95dfca76a7e1cc8806e8beee30f272de39102e",
+    "xml_sha256": "17ab443108898d025128aa1e32aa32d515340aa5f61df9e3fe52878a5a2b0005",
+    "original_size": [
+      500,
+      333
+    ],
+    "head_box_pascal": [
+      135,
+      30,
+      378,
+      243
+    ]
+  },
+  {
+    "image_id": "British_Shorthair_137",
+    "label": 9,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "2106351bbe5d22126ffb68ebd9312ac8c42440821e07f5c59fe660acb1bcc130",
+    "annotation_sha256": "8ae59f8ccdcad3d75e3d88ce763d2d18bb9ab826e82b0d68a6007f67514cd209",
+    "xml_sha256": "4dd92bf3fb8718f0385c4da27f3af0429084315e50a74b0316eed982c3e6f3fa",
+    "original_size": [
+      333,
+      500
+    ],
+    "head_box_pascal": [
+      11,
+      94,
+      231,
+      306
+    ]
+  },
+  {
+    "image_id": "British_Shorthair_120",
+    "label": 9,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "115577dd5f9e4eaecfac46d632501266f286349ed87feb3200f8253b55f2e59d",
+    "annotation_sha256": "0a8cf7912f75c5b0ed6848d2cbb8cb2c68b4a87577b3f406af6ff98d41150e8a",
+    "xml_sha256": "e7b8656b6d452320a430fca6a598fac393e0e8fa345ce42d13935dfa128d513f",
+    "original_size": [
+      500,
+      375
+    ],
+    "head_box_pascal": [
+      162,
+      70,
+      363,
+      218
+    ]
+  },
+  {
+    "image_id": "British_Shorthair_15",
+    "label": 9,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "7444ad519c9d284d8021952c50d878286a3b65d05451b5ae6644cdc5624da968",
+    "annotation_sha256": "cca05cff7c42205224324951b47f2f74c03657f2ccde3b2eb8500246b05c467d",
+    "xml_sha256": "f1455e0f731e33f0bd6def0a240836714f36e6e465e2cf6e5cb48debd77961f3",
+    "original_size": [
+      600,
+      434
+    ],
+    "head_box_pascal": [
+      73,
+      13,
+      216,
+      154
+    ]
+  },
+  {
+    "image_id": "British_Shorthair_145",
+    "label": 9,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "c1123fd9a1c5c7969a6b2f794c1832b077cfd372d5036941ab3e246585002e5a",
+    "annotation_sha256": "2fad30ac13499accd52c561bb41b6772559badbc8c7b43ef3518ec3835a7f690",
+    "xml_sha256": "cd7d0469a2995119bd91920ab215bf5b4cbe4cd9b74b0cf7758fb19086802e76",
+    "original_size": [
+      375,
+      500
+    ],
+    "head_box_pascal": [
+      37,
+      71,
+      261,
+      281
+    ]
+  },
+  {
+    "image_id": "chihuahua_101",
+    "label": 10,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "0b481bff9d7f57d736961f1a22967b2abc36f52d270a0b03c75e33b0aa5b2706",
+    "annotation_sha256": "bf64e84fb89527f259601b8f9bad9b8c9c04a7c0182fcaae0b6e1e077caab1f4",
+    "xml_sha256": "f62e527dc28c3971c7ae32a9592eff8510485ea6f44f813d43200852c0964433",
+    "original_size": [
+      500,
+      334
+    ],
+    "head_box_pascal": [
+      255,
+      30,
+      354,
+      111
+    ]
+  },
+  {
+    "image_id": "chihuahua_128",
+    "label": 10,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "74505136464bb71cdd69a0a1fbf2da8d462a09d2139cc40a698e4511f7d03be3",
+    "annotation_sha256": "5eaa3a09fe848d14bcb3dd8be2b2d056c854894e25e9deece24bae23210e586e",
+    "xml_sha256": "b25f54bc028c422e7906686a96de4e6ba5a4be1a11d4364721b26868d5de8750",
+    "original_size": [
+      300,
+      225
+    ],
+    "head_box_pascal": [
+      94,
+      35,
+      235,
+      136
+    ]
+  },
+  {
+    "image_id": "chihuahua_152",
+    "label": 10,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "5cf9c0e4ca81cde06ba8954340849218d825be28305a303d8659c46a1cdc84b6",
+    "annotation_sha256": "c9a677b82588507d6b79190ee9e2952c9ce72c144c60f08a4e0f2395bbe521d6",
+    "xml_sha256": "b56ab315ca52248f8a5ac1f44a17a1449392e3441d65aa35535b7151f9ff7f5b",
+    "original_size": [
+      300,
+      225
+    ],
+    "head_box_pascal": [
+      94,
+      31,
+      209,
+      125
+    ]
+  },
+  {
+    "image_id": "chihuahua_100",
+    "label": 10,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "27e95b0572e50dc42895c37795f5042efe9dbae9e9f541559a4b1cad9d112a54",
+    "annotation_sha256": "abbaa5cb3e27268f44099302317199f406cf82894beec5ba8fcc24567bd1bcf5",
+    "xml_sha256": "27188e87419f2d682910c9369dfa2646b2e2e701cbdd9d69581eae862fe7f86a",
+    "original_size": [
+      500,
+      375
+    ],
+    "head_box_pascal": [
+      95,
+      20,
+      299,
+      290
+    ]
+  },
+  {
+    "image_id": "chihuahua_108",
+    "label": 10,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "cf2e7527b7ad6b1c446e37609165b5212853b714afeda0cec16d9964204c6d87",
+    "annotation_sha256": "d0900aa74dd99be414231d7cd43ee7d52d415cb75276ccbe4e5e204e12726ecb",
+    "xml_sha256": "49c0e5faac399e18550c9d8bca29ec2dfe6966254eb1e6f7d7f9ed1653f381f4",
+    "original_size": [
+      265,
+      300
+    ],
+    "head_box_pascal": [
+      34,
+      1,
+      259,
+      205
+    ]
+  },
+  {
+    "image_id": "Egyptian_Mau_134",
+    "label": 11,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "15494ee16d71ca2f4e707d53c25bd924a3735ebad01821d892f9198820348097",
+    "annotation_sha256": "c6bc7d3d5cad5a18968304aea3ae0d0f54d83cfa2c418f88a64b55426b3e8aa3",
+    "xml_sha256": "255f5c1f5f8f10274ebdcd9d4792ac3e5110d24c84351d9e90970eaa8b1df9c9",
+    "original_size": [
+      400,
+      420
+    ],
+    "head_box_pascal": [
+      17,
+      1,
+      102,
+      81
+    ]
+  },
+  {
+    "image_id": "Egyptian_Mau_15",
+    "label": 11,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "4546d9713d8aa82aba7b1dc3c85aef58b9948f9911e1924019b0eec2b08bb9ed",
+    "annotation_sha256": "e511969c2ade2bb0940d0d05333fc9ddcacac85dc8cfac9a9bfe9ff80f2911a2",
+    "xml_sha256": "385a03e1aeafc4a7c9dd8164115ef629de55c72a4e59527f8f1f22cfc318faf2",
+    "original_size": [
+      500,
+      334
+    ],
+    "head_box_pascal": [
+      243,
+      93,
+      338,
+      191
+    ]
+  },
+  {
+    "image_id": "Egyptian_Mau_179",
+    "label": 11,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "f4fa9a005fcd277d9f3d54ca80238237e52fa96d56d8d635026ed5639e553fe0",
+    "annotation_sha256": "f72821c49f59f8ec7e348dfec8bca23d006eac92143560524ed8dfcbf5dffbc4",
+    "xml_sha256": "68a0a18351445e83efc45aa3364375218e462d87b39427adc5346cb557d11dab",
+    "original_size": [
+      1024,
+      768
+    ],
+    "head_box_pascal": [
+      595,
+      86,
+      867,
+      346
+    ]
+  },
+  {
+    "image_id": "Egyptian_Mau_115",
+    "label": 11,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "cd51ca3fcc839eb19dde7a3b55a574a47ee14d961871d43d020f82de8d27b12d",
+    "annotation_sha256": "eda43f61fcb4a14a4ed899f490b2ec22db2be627a294b677927d105696152cc8",
+    "xml_sha256": "d720b87bbf8d6da76a43fdbed636caa56eedd9da377de920b82b6ad35f4c3439",
+    "original_size": [
+      386,
+      417
+    ],
+    "head_box_pascal": [
+      188,
+      20,
+      287,
+      122
+    ]
+  },
+  {
+    "image_id": "Egyptian_Mau_105",
+    "label": 11,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "72af56f448783f4458f3b47503428d9b7254cbe8580cbd2195e33b57d3b73d80",
+    "annotation_sha256": "35a15a59b9b08dce1001d8b7975fd50b2df6f35724888e0b732af6be8c028670",
+    "xml_sha256": "2ed84f755788e9b1ad10b94b7933b700da049ac5c263e3c7628cb1368c87a672",
+    "original_size": [
+      450,
+      427
+    ],
+    "head_box_pascal": [
+      177,
+      1,
+      336,
+      160
+    ]
+  },
+  {
+    "image_id": "english_cocker_spaniel_140",
+    "label": 12,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "440125fe496cf6af97504bac039500a76ceadb0aef0133c25f37f82a51a3f91a",
+    "annotation_sha256": "779b3a0ffb0723c72fba4aa42ca5cda90125286fb16de4cf5d0f91c9f1f259f0",
+    "xml_sha256": "b335d897a11e5c4d88b2e341d8ed162f9e3f2ae56cdc9f5300aae7e9f49b0b38",
+    "original_size": [
+      401,
+      500
+    ],
+    "head_box_pascal": [
+      68,
+      51,
+      367,
+      367
+    ]
+  },
+  {
+    "image_id": "english_cocker_spaniel_158",
+    "label": 12,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "0f36ec9754c05cb47859e285b78d92fc28ac5234fda3e377e5f8fa2add044277",
+    "annotation_sha256": "2c563dd54b32a099ef06fa798cc81b1c0a66f79df9e831b51e06c412fb6a9fce",
+    "xml_sha256": "de900a46bd8a2eccfda262a96d687c2ae9ac2e1022972c574b2643a9b08a6123",
+    "original_size": [
+      372,
+      500
+    ],
+    "head_box_pascal": [
+      80,
+      37,
+      281,
+      214
+    ]
+  },
+  {
+    "image_id": "english_cocker_spaniel_166",
+    "label": 12,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "a2d5b4d18f4f1cf045776ecd261531f691df3e487f563e949291ad520e5b8828",
+    "annotation_sha256": "90abbe6e14cadb4e94659d55e90c844eb882e37b96cde1c02f3b3639b15248f8",
+    "xml_sha256": "d955823fa6e6277231ee11619bdc8532d8d6722515c8a8c9af8289c005cfb8bd",
+    "original_size": [
+      500,
+      375
+    ],
+    "head_box_pascal": [
+      47,
+      31,
+      371,
+      319
+    ]
+  },
+  {
+    "image_id": "english_cocker_spaniel_107",
+    "label": 12,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "75fe003568c236128ec952001ad16a793152225d677b6403e99a51aa8fc29011",
+    "annotation_sha256": "3b80ce5ddadbef0457443cd87bb3e6bc98e3d5d0d577b906646b5c42c218eac6",
+    "xml_sha256": "49ef770359852f286ed9621066fa7ed3c239c387031abe57c2f5b501ce577a21",
+    "original_size": [
+      500,
+      380
+    ],
+    "head_box_pascal": [
+      237,
+      72,
+      368,
+      214
+    ]
+  },
+  {
+    "image_id": "english_cocker_spaniel_101",
+    "label": 12,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "6be8938229a007e5d6e4ab1790fed9d990f0f854b40f5e8962c325f086f15ea3",
+    "annotation_sha256": "c413fa63271beec78b4b5c0ecf5ad7b3cb9a91f7932d950c496dccb929c4fffb",
+    "xml_sha256": "d459b1d02abb024f21412229e415da251f1877b3b7ec5cd0ad84539df37fc33c",
+    "original_size": [
+      375,
+      500
+    ],
+    "head_box_pascal": [
+      131,
+      37,
+      269,
+      205
+    ]
+  },
+  {
+    "image_id": "english_setter_106",
+    "label": 13,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "6dd47852e8fa3eebe34821c7fd97d7fd8662ec3435c0388049d97fc6fa3d50e9",
+    "annotation_sha256": "8f472651fb20e9849153c24c3becd070aef1305de042e5b86a325c25cb173ac1",
+    "xml_sha256": "3aac134b5abe21d1f07f3f9ab51f0cff6e7ca55c6fc6549dac6e6d0681575a42",
+    "original_size": [
+      500,
+      333
+    ],
+    "head_box_pascal": [
+      158,
+      113,
+      267,
+      231
+    ]
+  },
+  {
+    "image_id": "english_setter_16",
+    "label": 13,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "3bf844bd9657bbca2e634e9532bc3c8445c32f2f5269c3199e4d471c1b0ecef0",
+    "annotation_sha256": "40d33cbc6f2c0ca489ca8ce6e2deabec3a44a566c2ca0c16310f286032ee5440",
+    "xml_sha256": "d651bc58ed4823d10aae418083f3129cc45c9ee7196e96cc8c68e4a954f37669",
+    "original_size": [
+      500,
+      333
+    ],
+    "head_box_pascal": [
+      50,
+      1,
+      353,
+      315
+    ]
+  },
+  {
+    "image_id": "english_setter_187",
+    "label": 13,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "204e62295ac0617db05decbe18cb725a211970506cbe2bf7fc7eb28713d2cab6",
+    "annotation_sha256": "141ae6bd688c2f79ec25a9fc8790010f76e9bb19ce557f704e606b7b333d8094",
+    "xml_sha256": "6d543be56043359559f2dcdbd1bf9ec23b580bc9b925da156bf730b7781348aa",
+    "original_size": [
+      375,
+      500
+    ],
+    "head_box_pascal": [
+      80,
+      14,
+      225,
+      160
+    ]
+  },
+  {
+    "image_id": "english_setter_184",
+    "label": 13,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "e0decd2c77cc9d3c65ef2328c5072a5845a42c3a84d32290e57a986baa7953f5",
+    "annotation_sha256": "d426ddccbeef21027592b6eb12d6e024ffa76d4ea0251f25a2cc6ae491eecc59",
+    "xml_sha256": "c82af12cd028cb28610e3ae8928958dd525cf519f4af5a591ed7a9d327e9ec71",
+    "original_size": [
+      500,
+      333
+    ],
+    "head_box_pascal": [
+      155,
+      107,
+      337,
+      257
+    ]
+  },
+  {
+    "image_id": "english_setter_159",
+    "label": 13,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "3ade4dcdbee288357c0638d769d487b614856b8b78262c0ea3eae88b661c8065",
+    "annotation_sha256": "c7ca1a50cf20fe86265ae763d56870b9067d59c990e34f9b97906e052926d1c7",
+    "xml_sha256": "41dceb347c06b85cf5e101be5c5c211f4749411e05bd3b91b81cdc754f6d0c37",
+    "original_size": [
+      500,
+      375
+    ],
+    "head_box_pascal": [
+      259,
+      58,
+      410,
+      231
+    ]
+  },
+  {
+    "image_id": "german_shorthaired_123",
+    "label": 14,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "61b9a74a2c757e79f68f17d80f467fc72d139ee26b75807a38e0b2452b0a9cd0",
+    "annotation_sha256": "c2a220881b5df439304675216db98701d99ef38a67bde14b19044a4ebbd4bcce",
+    "xml_sha256": "02138d82dc1c05b31e18512493f5bd2443c0e80b03cd2712712d799cdeb04162",
+    "original_size": [
+      375,
+      500
+    ],
+    "head_box_pascal": [
+      172,
+      23,
+      277,
+      105
+    ]
+  },
+  {
+    "image_id": "german_shorthaired_109",
+    "label": 14,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "88debea0b376d067611876823e07ae1d625a3201388132591637bce78d783346",
+    "annotation_sha256": "cf1d1a141c24f12a3ebd5e15c65b03518d9a80eb685261121db56fe8561de112",
+    "xml_sha256": "17b1eddef605898ce1bd5be18379b5bfc2d259b7b0b4ca319e026b058955d1fe",
+    "original_size": [
+      500,
+      335
+    ],
+    "head_box_pascal": [
+      311,
+      25,
+      390,
+      97
+    ]
+  },
+  {
+    "image_id": "german_shorthaired_175",
+    "label": 14,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "7f0af8ba6da58945e5eda037f056ea8cad2a05f1a273bb1015aa3e001dfe85b6",
+    "annotation_sha256": "a840c9fe838329deddfbd66c05908187288f15458832c730ceebe78f10ad360e",
+    "xml_sha256": "c1b9a9108f7e138f6117d77f41de60fe7625e3fe68bbb7be2d57a37f5cc7c2ed",
+    "original_size": [
+      500,
+      417
+    ],
+    "head_box_pascal": [
+      47,
+      19,
+      457,
+      357
+    ]
+  },
+  {
+    "image_id": "german_shorthaired_137",
+    "label": 14,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "2f1675eb823dc6b39178a4f0d0aef228cfc27503b5f44637f421b360e07bcf46",
+    "annotation_sha256": "a629536625b3eb6828bfaecb1d019a345732e99799f0a7273e11292bb97fc649",
+    "xml_sha256": "e0013119b78aa7a9cf16bbeea294a970a144cba882c243c7cd458a2537935be5",
+    "original_size": [
+      332,
+      500
+    ],
+    "head_box_pascal": [
+      53,
+      76,
+      318,
+      300
+    ]
+  },
+  {
+    "image_id": "german_shorthaired_148",
+    "label": 14,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "9b4a1c6b634015405307d49bc183332256684308d00bf130515107d4845c5958",
+    "annotation_sha256": "423240e385ddcabd8bad2445cfe01194b9a579cce31d46215e631a84258603ad",
+    "xml_sha256": "796cd055854483c58ae4f199eb2ca23db99c22122419a9fad25cfb9dd5f291e8",
+    "original_size": [
+      500,
+      306
+    ],
+    "head_box_pascal": [
+      235,
+      114,
+      293,
+      163
+    ]
+  },
+  {
+    "image_id": "great_pyrenees_156",
+    "label": 15,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "ec674623e11d24ffb629cc924cb06b3f90e5ca7cf10a1dd4084496cf5bbe15c4",
+    "annotation_sha256": "0be30e13cff6eed990ec38b82dd9d60e6e74680b2a17bf82be00be58d3838e3b",
+    "xml_sha256": "c2d2f4ea8de1c6f4b30f4df1e5a70cdaa3b8723ad167285c02d047f7f1b5ac11",
+    "original_size": [
+      375,
+      500
+    ],
+    "head_box_pascal": [
+      182,
+      40,
+      303,
+      153
+    ]
+  },
+  {
+    "image_id": "great_pyrenees_176",
+    "label": 15,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "70b56b05f9934b22550b8c76a2a889578d103544c655493e54ddede0af00f326",
+    "annotation_sha256": "a207b6dfbf0a03e23727b2c5ab6a03641d565b5efd795cf8d66ab0574dcccddc",
+    "xml_sha256": "7be5ca32d1d6afe31554bc792532a14da394efe51a6d0f31617b8ee7b8e60a6b",
+    "original_size": [
+      357,
+      500
+    ],
+    "head_box_pascal": [
+      11,
+      51,
+      200,
+      211
+    ]
+  },
+  {
+    "image_id": "great_pyrenees_122",
+    "label": 15,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "c330da3506a5756766b90ba0cab7ef78f9dfb8b8ecb080eacd2caf8987a6c424",
+    "annotation_sha256": "0d2031d79e45c87939d968ef51616a87a754bfe804dd246b58acaff4ae621ea3",
+    "xml_sha256": "e8ae23cdfa52a1bdb4fef09f6142ef77a69b9ecfb0aaf0454e1cae12966eb269",
+    "original_size": [
+      330,
+      500
+    ],
+    "head_box_pascal": [
+      89,
+      49,
+      178,
+      128
+    ]
+  },
+  {
+    "image_id": "great_pyrenees_123",
+    "label": 15,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "7c9371997706fe82af177b4ee9f540abe1c01c2a02c8bef9a49ca8d669186569",
+    "annotation_sha256": "c7daeda8a125273bcc8ce751a5dc27060a2cbfeb0892795e6ce1919734be51e2",
+    "xml_sha256": "31e1cba857a0757088dfea5daa302c6b88188e69195e1850cda2982e1cafd3d6",
+    "original_size": [
+      500,
+      400
+    ],
+    "head_box_pascal": [
+      88,
+      35,
+      185,
+      121
+    ]
+  },
+  {
+    "image_id": "great_pyrenees_11",
+    "label": 15,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "513353a11fb9fd7bf349f35d44b41702a27c79ad9848383be6be36345a5a9679",
+    "annotation_sha256": "9e9eb380244b36ea363973254901457823bed11a0b62cc2a9a72b425e6fcf72a",
+    "xml_sha256": "2a19ba509b414c384641e11081ba161667e08c589e184480b1acb30454d4cd72",
+    "original_size": [
+      383,
+      480
+    ],
+    "head_box_pascal": [
+      101,
+      127,
+      213,
+      234
+    ]
+  },
+  {
+    "image_id": "havanese_133",
+    "label": 16,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "1e9df1fb87ce1d44680c0c8b6401b84eb7d845061996605fba0944567b6960ab",
+    "annotation_sha256": "031ce45544077680a130e7720aa1698efe2a0deba0667255acec2be992d45504",
+    "xml_sha256": "359627e732cdba68b5805d2ad9621b7b6733db2c072da3612f525bf4205f94ba",
+    "original_size": [
+      500,
+      408
+    ],
+    "head_box_pascal": [
+      139,
+      133,
+      271,
+      247
+    ]
+  },
+  {
+    "image_id": "havanese_132",
+    "label": 16,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "34c08c835677f43a2935c8f189e74b49b34cc3f30dc47ac829a03c9517145679",
+    "annotation_sha256": "9129dc8bd0da013412485f6d21b91acdb414a23f906d611c1b6bd515607cabf1",
+    "xml_sha256": "a404a4eea6ce793ac2f6ae35f438a3076b4ed5be9d0011431ed0f581a69fbad8",
+    "original_size": [
+      500,
+      400
+    ],
+    "head_box_pascal": [
+      54,
+      104,
+      360,
+      394
+    ]
+  },
+  {
+    "image_id": "havanese_151",
+    "label": 16,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "2c0f00ebba12f8453ca3c591a1bb0686a82879cc8975e52f2e85e4c748f84074",
+    "annotation_sha256": "91600e38d70d79c430fe8f7ee7b48d001e12f00635528ea63999bac3624fa7ef",
+    "xml_sha256": "63a759361208c0b9a401c79223c30ebcaca5d619819f96522dbc339e0eed7604",
+    "original_size": [
+      500,
+      333
+    ],
+    "head_box_pascal": [
+      252,
+      92,
+      347,
+      179
+    ]
+  },
+  {
+    "image_id": "havanese_123",
+    "label": 16,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "89486075e8bcc15925dbde0a8d626d5f4d18ebc531d3e7a480bfaf85a0fc083a",
+    "annotation_sha256": "e305f54aa0562540cf0dfa89f7ae9d36b5480fc44233d0073e8a92cf00578364",
+    "xml_sha256": "98e5beefca6468bf2c00885992afdd52491c76561b64952f1efa6ead4cda9f55",
+    "original_size": [
+      361,
+      500
+    ],
+    "head_box_pascal": [
+      20,
+      52,
+      347,
+      352
+    ]
+  },
+  {
+    "image_id": "havanese_178",
+    "label": 16,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "c1504492cda303f3a9da36ab9a0f5c8551e2f85ba7173c8f5db51d157032860c",
+    "annotation_sha256": "55c806db14276d32c812051021f3535833590640bb59ed8f8c9434ca56add6d7",
+    "xml_sha256": "97bc67a7d0e0a1dbdbdfc1f22e68df7590533c1d1a3623d314abf62368ebd759",
+    "original_size": [
+      500,
+      455
+    ],
+    "head_box_pascal": [
+      47,
+      23,
+      386,
+      295
+    ]
+  },
+  {
+    "image_id": "japanese_chin_117",
+    "label": 17,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "00ab671e24fd150f84b6cf779abf5e527efcbdad9e00992aa73a227083a3be28",
+    "annotation_sha256": "a1e21639b3cdd6143cd69ace8229b05a453a5aba0f44c92703a88cf30775f05e",
+    "xml_sha256": "7a6b8c6c4c1f6aa5dc05f92b039405500587ec325121e9c3b32e691f557beada",
+    "original_size": [
+      500,
+      375
+    ],
+    "head_box_pascal": [
+      236,
+      48,
+      390,
+      160
+    ]
+  },
+  {
+    "image_id": "japanese_chin_144",
+    "label": 17,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "71ab876d9ad3f4e386d300f1745315c7a8f1ead1207d8fa8f9855dcbf43d3c8d",
+    "annotation_sha256": "9dbcf6c60740226af5e51f10737573c1d9857af732b95ba4b06af7478e71aa67",
+    "xml_sha256": "b9f990cc335c96278cb720913f1be3e7866be20653022dd36f24b5289c19f629",
+    "original_size": [
+      500,
+      375
+    ],
+    "head_box_pascal": [
+      135,
+      38,
+      418,
+      305
+    ]
+  },
+  {
+    "image_id": "japanese_chin_170",
+    "label": 17,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "5fd5c47657eb2cf0f5927480ba32f8071f2b7597456464489c3085b07b135aac",
+    "annotation_sha256": "a989dd1cd06fc4a9f701e7d9c23e9aaed12c883d1e1441ab406ed2e5960d410b",
+    "xml_sha256": "90afba4ac2d9fc2495dc12c856f1b9305127ac0f3936b0656ccb3eebe1d31266",
+    "original_size": [
+      500,
+      333
+    ],
+    "head_box_pascal": [
+      77,
+      36,
+      270,
+      193
+    ]
+  },
+  {
+    "image_id": "japanese_chin_110",
+    "label": 17,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "bb7cb6edf51d69050de8ffe3f7932ea818e172631fe9346b690eae5afd008021",
+    "annotation_sha256": "15d96ea686deb1930536a54ad62c716a593b8377e0ce3c27112310578ca6f1e9",
+    "xml_sha256": "4a44c4ea26b8a81891d0d145fc2fc2dbacbe0099274b0138d54485000349bcf1",
+    "original_size": [
+      500,
+      490
+    ],
+    "head_box_pascal": [
+      37,
+      32,
+      383,
+      299
+    ]
+  },
+  {
+    "image_id": "japanese_chin_167",
+    "label": 17,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "da47b13032b37dbdb59ba65fa0a3d44d8bdea3a842ff12744c673b89838eb6e0",
+    "annotation_sha256": "887180f0c6a4a5637bb5e1a75a425aa7e047710b869af6920a3d1346920b7461",
+    "xml_sha256": "2f099a6ada1b0da0dfebc984af9f1d84d182a19f8e34894373b4657396e0ebb2",
+    "original_size": [
+      500,
+      375
+    ],
+    "head_box_pascal": [
+      210,
+      52,
+      367,
+      177
+    ]
+  },
+  {
+    "image_id": "keeshond_146",
+    "label": 18,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "3e6087e991d9b0d1bd57c324b7ab2ee01ef0d66d299c09f4f30bd1455e948879",
+    "annotation_sha256": "8ab73275651648eb0041ca83e302bb3e4fa1589e603fa60c443eeef8ee218c64",
+    "xml_sha256": "f8f3e4eb92bad0a8c1bfb041dfd48e3d27a35a1f7726042fd657695a55e9afb0",
+    "original_size": [
+      500,
+      333
+    ],
+    "head_box_pascal": [
+      160,
+      1,
+      390,
+      294
+    ]
+  },
+  {
+    "image_id": "keeshond_147",
+    "label": 18,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "4dbad8407896239aa56759c34c1566cd61ca4831e9d77f7f0266a83898e0a7ec",
+    "annotation_sha256": "ad17cd4f43081e53544297b02c1b25e90856503f0663dbfc7677a4cb201c61c1",
+    "xml_sha256": "008cc19445de25422603d42edd31add2558b58a11b078bf34a97d31f8bd9514e",
+    "original_size": [
+      500,
+      372
+    ],
+    "head_box_pascal": [
+      36,
+      25,
+      319,
+      301
+    ]
+  },
+  {
+    "image_id": "keeshond_128",
+    "label": 18,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "09fa5a2f1e6e8a7e1364d843ba2ef2da853b90c6a9b0bfb7cf072049eda960ad",
+    "annotation_sha256": "5cd5d868e819ca34c04e0cf8e7392d7a129b72c3b1873a92a061983ba3ba6904",
+    "xml_sha256": "6fb4f522c3c1d3116385d7853766e309e52d17982afdfe7cf73b02f04414c75d",
+    "original_size": [
+      500,
+      333
+    ],
+    "head_box_pascal": [
+      244,
+      80,
+      343,
+      152
+    ]
+  },
+  {
+    "image_id": "keeshond_131",
+    "label": 18,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "e20fb0bd402dab3dc89c1ac98638397c7a63b88b40624e508471ab2648862aec",
+    "annotation_sha256": "9d68b9d7d4360382cb7a8212d8dee5b43b25a33d1e4b9b88af3082aceb36131a",
+    "xml_sha256": "e7a4ab9a99af7f508ce616426abc5b43555d8a746dd7cce3cb1fa269296097cd",
+    "original_size": [
+      500,
+      333
+    ],
+    "head_box_pascal": [
+      130,
+      1,
+      274,
+      180
+    ]
+  },
+  {
+    "image_id": "keeshond_156",
+    "label": 18,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "fd80086109d37a504881f779b9d81275dfe7a80aea9a30da76f251d0eed8847c",
+    "annotation_sha256": "fc8ebc65da44772a806a6d80843534475d27122f74e5779ef50d38c9bbb31baf",
+    "xml_sha256": "c8103a1024dc6afe4066869af7d07584ce5469d9da193f0bf2fdf3af71775e0f",
+    "original_size": [
+      500,
+      375
+    ],
+    "head_box_pascal": [
+      137,
+      83,
+      304,
+      276
+    ]
+  },
+  {
+    "image_id": "leonberger_180",
+    "label": 19,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "f2730b308be55055a52820caeaf16db6af68ac3d656de4b1396ef81736231628",
+    "annotation_sha256": "39b2d2fb9c7587d54cc0176e61b45af7fcca4a4127c16107193ffbc958433e8f",
+    "xml_sha256": "6fe50eec7fa28d48488617a490e3d7faedafb621bab76663251c92ec36a1afdf",
+    "original_size": [
+      333,
+      500
+    ],
+    "head_box_pascal": [
+      103,
+      110,
+      254,
+      284
+    ]
+  },
+  {
+    "image_id": "leonberger_166",
+    "label": 19,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "a0c41197ee9e8e7ddd64d08ebf0971f859dce62352df7c44445f86dc67cc3b3b",
+    "annotation_sha256": "a7ccfc38cab0d959a3c2cae582c616b93f320956c378e03d7422537ca12b3b23",
+    "xml_sha256": "66a8e9e709c47e88b41d822d8488375a06a4795307c8b0824e3d53131f9b83c9",
+    "original_size": [
+      500,
+      362
+    ],
+    "head_box_pascal": [
+      41,
+      22,
+      241,
+      217
+    ]
+  },
+  {
+    "image_id": "leonberger_130",
+    "label": 19,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "9b7070170d38753270998894e132a7639234aca196758c74c286badca42c0e14",
+    "annotation_sha256": "1125e4084374766a8818bcdf8a35889c513d8d7106d9e0b7f5a6ebd59e5b1cb7",
+    "xml_sha256": "5e6477099796860d8246e5a4c9493f64343757d6b9214f88e4457ea616163216",
+    "original_size": [
+      500,
+      333
+    ],
+    "head_box_pascal": [
+      99,
+      47,
+      205,
+      133
+    ]
+  },
+  {
+    "image_id": "leonberger_120",
+    "label": 19,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "9f3e9064dd154560da84e320214ca0205c7b3a2af39a6dfc984e12df25ddbae6",
+    "annotation_sha256": "0190dea7db33c099559813ea620ddc6e175826863132af551e34286d18b770d0",
+    "xml_sha256": "d38826fd3abc486f23fd7fc58b4a2ccdf3c5bea19d5d71c7a23efe5d88f0b273",
+    "original_size": [
+      500,
+      375
+    ],
+    "head_box_pascal": [
+      163,
+      91,
+      348,
+      242
+    ]
+  },
+  {
+    "image_id": "leonberger_134",
+    "label": 19,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "29093ec5331a21a2efc4f971568e1cf896b84cef46be9b5e597c53d4734bab8a",
+    "annotation_sha256": "fad506a6d60c710d3eb72dc5ee99e53ccdd5afe80d86da34c9e2a68d25282cc5",
+    "xml_sha256": "faa27dc6ed25cb6ca6a674b317c3823bb952dd85685fcf9ff64146ff8a4fa7bf",
+    "original_size": [
+      500,
+      333
+    ],
+    "head_box_pascal": [
+      103,
+      68,
+      356,
+      284
+    ]
+  },
+  {
+    "image_id": "Maine_Coon_175",
+    "label": 20,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "cb5348137c08d79cde2d6361ab284bc1c8e94ee856cffd917db1087cc872e340",
+    "annotation_sha256": "20c01a0e83f1713d08027d43e59bc7754f3fa720ed57d4a0e9f31cdd6a7a043d",
+    "xml_sha256": "a77374ee8179a4a0383d90939619905b2db6e2e64e51668f72452c1456711520",
+    "original_size": [
+      375,
+      500
+    ],
+    "head_box_pascal": [
+      102,
+      15,
+      272,
+      204
+    ]
+  },
+  {
+    "image_id": "Maine_Coon_161",
+    "label": 20,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "67f291acdbf1edc4ff9c353bb343963854af27a41d86c8d0ed24b1c50f30cce7",
+    "annotation_sha256": "83c4d625b758afe235bad83ccb8c0f252210a842382ea6d55df076fa1a2b3df2",
+    "xml_sha256": "cb83e467b7ac3317c30418bf0cd1117a04e012adab814ece678fa69173808cab",
+    "original_size": [
+      500,
+      333
+    ],
+    "head_box_pascal": [
+      165,
+      31,
+      356,
+      235
+    ]
+  },
+  {
+    "image_id": "Maine_Coon_157",
+    "label": 20,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "9d684ea6cd6b5b652195655cc495dc92f45da4595e22cb26d05ff5a39a89b42f",
+    "annotation_sha256": "05ea93267dff56e1c2fe536cf303c4b5b7630e863b800950e7bc73628bc1504d",
+    "xml_sha256": "668b12c718df6c5016e1bd727bff8fdc32fb06f980f3d45c6f6261f7f9fa4d24",
+    "original_size": [
+      333,
+      500
+    ],
+    "head_box_pascal": [
+      112,
+      1,
+      235,
+      138
+    ]
+  },
+  {
+    "image_id": "Maine_Coon_134",
+    "label": 20,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "f9ff73f70d99389a24409c438ce81ff9e33a53ffcf57c1712872e39f8d71460c",
+    "annotation_sha256": "3c46603c4c9eeb90fc86aa4ffefa3d86a694ab56ec7a471e25880daa3634d865",
+    "xml_sha256": "83b66f8bb91221c6d3e53847a5241097b8dbaa1c06fc7537d6ae563bfc62fb7e",
+    "original_size": [
+      333,
+      500
+    ],
+    "head_box_pascal": [
+      88,
+      42,
+      194,
+      166
+    ]
+  },
+  {
+    "image_id": "Maine_Coon_159",
+    "label": 20,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "c7b773b82ec4369897fceebc547378af117d6f304ef22ab84ba8efd191ec2b7d",
+    "annotation_sha256": "285c4ba0c0a04fd87f88fd5245aa363104a77247d55a699bc9b7d93283324e91",
+    "xml_sha256": "7fba6f97287b36c09d1b8b2ddde3f0e94476095368cfc30780fd53ad34baf32f",
+    "original_size": [
+      500,
+      375
+    ],
+    "head_box_pascal": [
+      209,
+      35,
+      314,
+      155
+    ]
+  },
+  {
+    "image_id": "miniature_pinscher_145",
+    "label": 21,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "4b37836566196c38a183b5b31bcd43c7d1bbaa9985ff2a9cf1d24104e45fe215",
+    "annotation_sha256": "39082e2f51265fc338d1e1d6fe08a13dde153aff999ea19ffd761df851ec86b3",
+    "xml_sha256": "9585f9aef3fd2ce5c05325d1190354556f9146993432b6c161db788deb85e6f1",
+    "original_size": [
+      300,
+      220
+    ],
+    "head_box_pascal": [
+      93,
+      49,
+      288,
+      188
+    ]
+  },
+  {
+    "image_id": "miniature_pinscher_134",
+    "label": 21,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "306729e87152664d96db011a0e9300fbbc1ddfd5f640525959f1022465f7bbfd",
+    "annotation_sha256": "73c6ae75d782f162bd1f805521b48b40445e3bd211648bbb326fcedbea7a1717",
+    "xml_sha256": "5513a31ee7c3cc614d48e42b4160d3cfda275b63598d991b7fcc6c134049cab8",
+    "original_size": [
+      300,
+      225
+    ],
+    "head_box_pascal": [
+      101,
+      35,
+      231,
+      130
+    ]
+  },
+  {
+    "image_id": "miniature_pinscher_126",
+    "label": 21,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "dab2c0e82708dfb0eb23f5efdfd29e9ff7ff6a935ba52529c4db359f379725f9",
+    "annotation_sha256": "df373841f568f42dcd108ba4409c0dac039de24d544d507bae3d9d458a5635d1",
+    "xml_sha256": "167804571b3b0465ef9d72e01626f00cd4392ccc99f189a137ef900f17a70f4b",
+    "original_size": [
+      211,
+      300
+    ],
+    "head_box_pascal": [
+      39,
+      82,
+      169,
+      186
+    ]
+  },
+  {
+    "image_id": "miniature_pinscher_12",
+    "label": 21,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "8c8f46c2c6973c0371acae817387c71e363cc730f32c64a8a9c936743dbf2aad",
+    "annotation_sha256": "305f00fa6bf91474300716de8d0fcebcfa38b45f2433171e7af6caf57807d04f",
+    "xml_sha256": "484035dd82e43851dbe058a01f7acf72fcad3669e4421aa55475d09063c128c7",
+    "original_size": [
+      500,
+      375
+    ],
+    "head_box_pascal": [
+      169,
+      25,
+      336,
+      216
+    ]
+  },
+  {
+    "image_id": "miniature_pinscher_162",
+    "label": 21,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "4116c21dc0d5aa0ce43bde19eacbeb22e6ca6637c6f3b169dbefec3f836167b0",
+    "annotation_sha256": "4bcd74a48891edc23759b3dfa331ff8dc675a1a3dffdf8fcecb857a76e520cef",
+    "xml_sha256": "e32f6b49599481ffa92226a2c72012a7a3c852c5df4d698b06102de050e47b80",
+    "original_size": [
+      300,
+      255
+    ],
+    "head_box_pascal": [
+      117,
+      6,
+      260,
+      151
+    ]
+  },
+  {
+    "image_id": "newfoundland_185",
+    "label": 22,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "cc2f424c9375145a4d822068eeed7ae6d1af1f9a5b08b7bcc5a12ec31fec0193",
+    "annotation_sha256": "63127160755e1c4cd6c378f461890827918743e9debb37cf7a6e8ac7fb081263",
+    "xml_sha256": "d4a0e33aefcbbf23bfd748e2b51daecf145841d03df5aa78e7b2a19599ebca83",
+    "original_size": [
+      500,
+      375
+    ],
+    "head_box_pascal": [
+      144,
+      62,
+      448,
+      339
+    ]
+  },
+  {
+    "image_id": "newfoundland_137",
+    "label": 22,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "452ed5f70cebc99ee967c185fda46fb8d7f6965707a0bfc4f4c352f4ae409092",
+    "annotation_sha256": "db7b275327ec9dd185ace2a7493c8b2dfaeb6963912bb7e703958ee2db4ea593",
+    "xml_sha256": "765a5e271fc6666ef8204181c054308bd622a1b7b738362f9ce778cb539e4b2a",
+    "original_size": [
+      500,
+      333
+    ],
+    "head_box_pascal": [
+      105,
+      30,
+      362,
+      286
+    ]
+  },
+  {
+    "image_id": "newfoundland_174",
+    "label": 22,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "468669310f3734581e0c744a856b49c6b98f4e7d178fcf83f75710d77a6138a7",
+    "annotation_sha256": "72567e1fccf2377f4c260f963673e2721c3422a1826db17c85e5f8e70e6db958",
+    "xml_sha256": "11af5176068aeb6260d9860ec463db390e6b0bcbb642609a66ad32bc03583e9a",
+    "original_size": [
+      500,
+      375
+    ],
+    "head_box_pascal": [
+      238,
+      25,
+      425,
+      210
+    ]
+  },
+  {
+    "image_id": "newfoundland_126",
+    "label": 22,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "2ea40eeb9c29ba1a4dec7488f464ea255df061bab61fa3ad06c2a91dfec8628f",
+    "annotation_sha256": "d38ac516c8f94c7207291989167dde600936534093a3dce27f86a7731a6e3c99",
+    "xml_sha256": "348108e55cd27578a9dd5e0cf0ba5de1f950cc5e4e5e12121001671b105b2080",
+    "original_size": [
+      443,
+      500
+    ],
+    "head_box_pascal": [
+      227,
+      52,
+      380,
+      217
+    ]
+  },
+  {
+    "image_id": "newfoundland_164",
+    "label": 22,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "16d05675b77e45b5faffaffa41d49d903533394ee8a2f4dba01a87e4f5be8cc2",
+    "annotation_sha256": "d6f10a8b8977ada89a938a3ecd6ebafac7d914b3262169ded4721f19c924c9bf",
+    "xml_sha256": "1da83d07fa725fa4a2847b1611347ed6404af75680d46f38e5cbc2a19c1d96a4",
+    "original_size": [
+      500,
+      333
+    ],
+    "head_box_pascal": [
+      360,
+      66,
+      450,
+      159
+    ]
+  },
+  {
+    "image_id": "Persian_190",
+    "label": 23,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "989bf77155f9bae86a97209bdcd1c9ddbcfc6c4d98c46b939f5d43abbe0f84a3",
+    "annotation_sha256": "cd7e9c57815c06f41557a3b59b958fd1ef9587ac3ea44d45d528ae6d316c5e0a",
+    "xml_sha256": "3e8629aaf4e0e0d2616c62a552132d992ea2cfb5099564ba312413e107d5962c",
+    "original_size": [
+      333,
+      500
+    ],
+    "head_box_pascal": [
+      128,
+      13,
+      296,
+      142
+    ]
+  },
+  {
+    "image_id": "Persian_161",
+    "label": 23,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "51a17945f223ecf8e09121e720765680314ed8f9a49b5df70f1d5ed0969c3cfa",
+    "annotation_sha256": "795bf089ddd1413084aba66cb6ecc97cf039dffa384505e857cf78352d6d87b5",
+    "xml_sha256": "1c74dd7f87051af99344a53268e0cef81e029836296a4168ffa20ad0a90aea9f",
+    "original_size": [
+      500,
+      395
+    ],
+    "head_box_pascal": [
+      147,
+      12,
+      348,
+      204
+    ]
+  },
+  {
+    "image_id": "Persian_120",
+    "label": 23,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "d189c0ac703ae4c034d770aea96a0958582b2cf1669e201b3ee7bf1a1fa0974d",
+    "annotation_sha256": "648343a9acb192fb042e9b22a31b33ffebb0c2cccc207b0d6bbe5a33ae376c71",
+    "xml_sha256": "157d220ca759fce720149080202778c3b440b652c2fb654250460bfe5bf85848",
+    "original_size": [
+      375,
+      500
+    ],
+    "head_box_pascal": [
+      112,
+      64,
+      217,
+      164
+    ]
+  },
+  {
+    "image_id": "Persian_194",
+    "label": 23,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "8f9a51e39a9f9fcd36772f3521fb6ffddbbb31296bccb5cfc8466a621316b312",
+    "annotation_sha256": "d0ff93dffbb3e217a9618307360fb9e24ce20229ab3686f63855aeeb850472f6",
+    "xml_sha256": "46af48b355df8fc94179162107ed2a7a7710131c651b59720ab98966692f9917",
+    "original_size": [
+      500,
+      335
+    ],
+    "head_box_pascal": [
+      322,
+      32,
+      469,
+      164
+    ]
+  },
+  {
+    "image_id": "Persian_187",
+    "label": 23,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "b226e4c313d5d1c95b4cd0aea102c608259b980ea0067147b86f04145acc178e",
+    "annotation_sha256": "4aa962a4930ea6d4e76d3dea7a51010b283ee3005729606391c43923f2c2717c",
+    "xml_sha256": "30268465e8075fe53a3e491786a39f56c2363709061364e1e223397a90e19dd9",
+    "original_size": [
+      500,
+      375
+    ],
+    "head_box_pascal": [
+      162,
+      16,
+      392,
+      283
+    ]
+  },
+  {
+    "image_id": "pomeranian_117",
+    "label": 24,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "486d12c560cc103c87b872dceb70c5d403ba90f74b187e581485589062d1fc6a",
+    "annotation_sha256": "476f61d9e52c8b2e4172f36f0be8df51e74e15df030d3ac8b9cadbdccc072d14",
+    "xml_sha256": "61a6610b5c616cb799e7d77966901965fa0a1949fd20121046d84918bb311c08",
+    "original_size": [
+      255,
+      300
+    ],
+    "head_box_pascal": [
+      140,
+      4,
+      236,
+      128
+    ]
+  },
+  {
+    "image_id": "pomeranian_116",
+    "label": 24,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "4769b6b7bdf1c287a6309d5fa4583b82d6a0ef5355b54a5cc8a13b18b5b84753",
+    "annotation_sha256": "73b894ab9347f5815dd9bac71807676812209f9c56bd63037fc1b3b6165fab68",
+    "xml_sha256": "4710d4b037aec8fdedf38f708b54f560d7ca8edd8959ec5eb22d44cf90bb957b",
+    "original_size": [
+      225,
+      300
+    ],
+    "head_box_pascal": [
+      47,
+      85,
+      101,
+      155
+    ]
+  },
+  {
+    "image_id": "pomeranian_123",
+    "label": 24,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "a76c358f3b29a25d8d6819f5339cbfd5ebc6498735b84cf214c2d60168cb9e07",
+    "annotation_sha256": "8ab8f0683fbb22c5b2ebec3bbc171e3039830ac0d5a2a91cfa367651c40ad513",
+    "xml_sha256": "f9ac86a045a3461cfd60bb1d300d7dc271388d6b463b331106483635ca2c82e7",
+    "original_size": [
+      300,
+      225
+    ],
+    "head_box_pascal": [
+      87,
+      22,
+      213,
+      150
+    ]
+  },
+  {
+    "image_id": "pomeranian_135",
+    "label": 24,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "e897af20f737d582d058d2ccb67f021f0013e272d5d5b1c15a8ce0b249ccc799",
+    "annotation_sha256": "caebc1092e4d395baf03af1387bcf8f77c7e15b3516ae03069764d04e6f321a9",
+    "xml_sha256": "33be4c3ac3d4d2530dc84ba360bfd6cbcc8cdba73143881ff13cc5f94c98b8de",
+    "original_size": [
+      218,
+      300
+    ],
+    "head_box_pascal": [
+      57,
+      18,
+      174,
+      158
+    ]
+  },
+  {
+    "image_id": "pomeranian_180",
+    "label": 24,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "74a21a3c1d93f06355c16bc6c68d893e81c46726c2cd1fca69c606bb21b78478",
+    "annotation_sha256": "09c1d83f3e2de8b8285be0ac5faeda96d8979473df735c994ff7879533455e15",
+    "xml_sha256": "26510fe1c30265f53ea6edbb5b4f64585b7c7551099ed575f2e4c30893beee84",
+    "original_size": [
+      203,
+      300
+    ],
+    "head_box_pascal": [
+      28,
+      1,
+      155,
+      143
+    ]
+  },
+  {
+    "image_id": "pug_111",
+    "label": 25,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "d117e9e474bd291e266a54949bfd897265c823529ce2609b0840368f81a3aac8",
+    "annotation_sha256": "136afca9c37ab1cecb801bdce21c30aa1f84f85737af020fcc2c49438235c875",
+    "xml_sha256": "e193324f0cd1f2b3ba0daf6abd4a3e2109ad70f894c0e40e829b28e12ada6590",
+    "original_size": [
+      445,
+      500
+    ],
+    "head_box_pascal": [
+      26,
+      44,
+      328,
+      318
+    ]
+  },
+  {
+    "image_id": "pug_171",
+    "label": 25,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "766c384104402e3e10ec7c0aa05191eea7292a93a0b26ae1609a9b7cf4e52730",
+    "annotation_sha256": "fffa9b466532fb4739e8450a3f03db0450c2d246d1f86b68868b3da4c281b7cf",
+    "xml_sha256": "a68e000c7abb531e297aaa284407d7724dc3660a47071ef3a9a980c87d3d2354",
+    "original_size": [
+      300,
+      219
+    ],
+    "head_box_pascal": [
+      89,
+      24,
+      217,
+      140
+    ]
+  },
+  {
+    "image_id": "pug_145",
+    "label": 25,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "f3f22460ba8f6dea96b162395e09bed2d1bbfbca2fc8055a643f419e1181b74e",
+    "annotation_sha256": "aaab16a7491dd91b0f0ff2db3f20e05555d446272f999d01ed4098416e8155c6",
+    "xml_sha256": "addba1a178c247c04ec1c2ec62964f555a66d4c383c2440a524697d492d146b9",
+    "original_size": [
+      300,
+      225
+    ],
+    "head_box_pascal": [
+      102,
+      1,
+      289,
+      153
+    ]
+  },
+  {
+    "image_id": "pug_12",
+    "label": 25,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "32324c44b46136baf157fd25a48166b0c42faf238d65118e8d2f8c28de22581d",
+    "annotation_sha256": "9431e121b6d07668c52ae4acfbb4d998d6ee7745970eaf3e2ddd038e9224f5bf",
+    "xml_sha256": "f0130301e65df6d16d3b138fbc60733b018292b784520740cde278540a307774",
+    "original_size": [
+      500,
+      333
+    ],
+    "head_box_pascal": [
+      92,
+      1,
+      446,
+      310
+    ]
+  },
+  {
+    "image_id": "pug_127",
+    "label": 25,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "d3f0736181950dd60c4bbb3ec4738d22f384c4ebe228b936e20ce46aa4aeb5dc",
+    "annotation_sha256": "52b50b046c4638119cdf0f729770be2651eb1c74685ea0de6f2fe786620463b6",
+    "xml_sha256": "d82fdae0451da0c10ea46dc1576b23488ab7a6a15c9ab1f209678c48ad072575",
+    "original_size": [
+      300,
+      269
+    ],
+    "head_box_pascal": [
+      29,
+      23,
+      252,
+      219
+    ]
+  },
+  {
+    "image_id": "Ragdoll_166",
+    "label": 26,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "643de1771425d623f3f6dff33b726dba4cd53ffde287e1ee0c79754234cc4a6e",
+    "annotation_sha256": "aa4623886ef142e196c075c7c3626e645cbe3d1833755e165b681c40fe19b7ac",
+    "xml_sha256": "dc21230b4eec67532d9a75580b8720c0a4e26b66c4e269c066bdaf58ef0755c8",
+    "original_size": [
+      500,
+      382
+    ],
+    "head_box_pascal": [
+      137,
+      93,
+      284,
+      243
+    ]
+  },
+  {
+    "image_id": "Ragdoll_127",
+    "label": 26,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "a73a61d134a605d926cdf98b8cbeb14c0e93503e164b0a82a11c0b42ded8e5db",
+    "annotation_sha256": "98c0987d0169b4199481f4b2423381d9577943c2aed59d26fd4ba47d0ddcd84d",
+    "xml_sha256": "6c51f1420f85597e223fe34b1a21b0db993eae47b151d1a87f9ee13827d961e2",
+    "original_size": [
+      500,
+      375
+    ],
+    "head_box_pascal": [
+      135,
+      29,
+      369,
+      317
+    ]
+  },
+  {
+    "image_id": "Ragdoll_180",
+    "label": 26,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "e948a00c0ae165fb417629cc1f6103641c116171168e64944b6654c52840906a",
+    "annotation_sha256": "3d2bea916716d2ad8f8116c5a6bd8716565a319b773ce08b1fabcccc9b6ce2db",
+    "xml_sha256": "9c40eb97c451ee264742ed2bdada9bc5cf265c1958a69e2d1659128f8a0a843f",
+    "original_size": [
+      375,
+      500
+    ],
+    "head_box_pascal": [
+      96,
+      65,
+      238,
+      221
+    ]
+  },
+  {
+    "image_id": "Ragdoll_185",
+    "label": 26,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "9a0c36744bdb88e7b18a1aadda520131a246d38d97505020102ac34c4e4a3ee9",
+    "annotation_sha256": "78cb69cc19529c5a22222952d16f260f795d8cd4db6d8e1c53bd59c5f5f1a704",
+    "xml_sha256": "38c1d3802c97e0893cbf02f1878d66f6692e2abfe7630b8ca38adac51ac6ca41",
+    "original_size": [
+      333,
+      500
+    ],
+    "head_box_pascal": [
+      133,
+      203,
+      188,
+      264
+    ]
+  },
+  {
+    "image_id": "Ragdoll_100",
+    "label": 26,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "0a3e59345910d9c0e7d9d4e49c0049e58e79fde07463a351cdc31e3cd20963ab",
+    "annotation_sha256": "6518560e31f2c6d1333bf6fd4133ac64d4a6abbb1c065022488e83c4594ada1f",
+    "xml_sha256": "d8a87896062ce26f29679005abe546ade08bd2245ef86d930757de53764c48f5",
+    "original_size": [
+      461,
+      364
+    ],
+    "head_box_pascal": [
+      170,
+      15,
+      402,
+      269
+    ]
+  },
+  {
+    "image_id": "Russian_Blue_148",
+    "label": 27,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "f66feb51d468947dc53e1734da5d585471cafc4d88a9900923cd56969c4e0f4e",
+    "annotation_sha256": "895220f400ea8db4fc97a8b1b37efca86bf20a25671eaedfbc4aa8c92668d511",
+    "xml_sha256": "ddb94b0aeed63e490ea98428345658c55358e0e20f209c24c39bb32449fb849a",
+    "original_size": [
+      500,
+      333
+    ],
+    "head_box_pascal": [
+      173,
+      35,
+      336,
+      241
+    ]
+  },
+  {
+    "image_id": "Russian_Blue_144",
+    "label": 27,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "e21017aa73efa10c45bb816f7d2beb604f7c49d506e3abd78f34c7b2a1a998a5",
+    "annotation_sha256": "44e3ccd6467b3a40463c2abfd549e500ebf60408b666d654383699e520f0414e",
+    "xml_sha256": "1dd242156e20e5fbf82dccab4395e20acd48b23d1cec70fd5d40ba32963373aa",
+    "original_size": [
+      374,
+      500
+    ],
+    "head_box_pascal": [
+      37,
+      16,
+      227,
+      208
+    ]
+  },
+  {
+    "image_id": "Russian_Blue_110",
+    "label": 27,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "00b3b2998605449135bb5b4968342ce74a7d2ebb2020ba5cd0eb12c0df34a173",
+    "annotation_sha256": "d7bb0b36baaa1914d2fa04612224203060802fc4444f9fbdb502e7496e927b5e",
+    "xml_sha256": "0961d32a851574d05899989ec54e36eb2a67592cbfbf81723b9b8f7c9453e280",
+    "original_size": [
+      500,
+      333
+    ],
+    "head_box_pascal": [
+      143,
+      11,
+      440,
+      300
+    ]
+  },
+  {
+    "image_id": "Russian_Blue_101",
+    "label": 27,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "0f25cd056b9a45736bb437cd4efe47cf09634fee315fda557800f37762137105",
+    "annotation_sha256": "b817316b25cf72e813fa416dd021ca5866f947a28af351a4c42c1069f4070545",
+    "xml_sha256": "4637e1fa9b1639766a50711bdbc264808bdf52048fc45a275b528aad2293e743",
+    "original_size": [
+      500,
+      400
+    ],
+    "head_box_pascal": [
+      44,
+      21,
+      181,
+      159
+    ]
+  },
+  {
+    "image_id": "Russian_Blue_154",
+    "label": 27,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "1960ac2603bc55f7dc26fc88fb514e858c694f9300463bd21d67d9047a10fdd4",
+    "annotation_sha256": "e3b988305467a5b3bcef9567131cbc6e155515123f45c3d9b1826f4c70dff77b",
+    "xml_sha256": "d3b731325fe447d83bf1135a077ab673b79a86ec580497d394adb01ebe79396a",
+    "original_size": [
+      334,
+      500
+    ],
+    "head_box_pascal": [
+      192,
+      44,
+      275,
+      153
+    ]
+  },
+  {
+    "image_id": "saint_bernard_178",
+    "label": 28,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "2921f9de8fd2549c2b3129edfa25f25b71b53feb83d7aa284bdd8f0aa6d82d0e",
+    "annotation_sha256": "c36ff1ae4bcdf456fe9e595b98803ed8c50fee4fd8895f42fb7f931220fbbecf",
+    "xml_sha256": "cf0745e85f4ec47704c196ebd2f89eacac36b22ecc44a464ad4015498511149c",
+    "original_size": [
+      500,
+      500
+    ],
+    "head_box_pascal": [
+      126,
+      36,
+      484,
+      378
+    ]
+  },
+  {
+    "image_id": "saint_bernard_123",
+    "label": 28,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "524a4787d2620b6c1798e93ced29c910e7ac06a89e2be5dcb16f8b2218262a4b",
+    "annotation_sha256": "28264ebd88f8b810d9c5f263a639281cc41bd89ed7874fb23a8459fc1177afdf",
+    "xml_sha256": "1bd00cb956b64a325626f7d8de42785c96cf4d0a3b0e250420af3e82ca29c229",
+    "original_size": [
+      500,
+      331
+    ],
+    "head_box_pascal": [
+      194,
+      134,
+      256,
+      189
+    ]
+  },
+  {
+    "image_id": "saint_bernard_12",
+    "label": 28,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "22282e42db4687d9218b001f5eeb6a04a0492510bb3cd7a30f33eb66feb31c1f",
+    "annotation_sha256": "8382be6222ba4d193003c74b799fa81e1c44f655606d7188102254e43c5c2d1c",
+    "xml_sha256": "88f11e8a3e7c11d86143d0a4d06726d790368f21257fed06939bb2442426aecf",
+    "original_size": [
+      500,
+      375
+    ],
+    "head_box_pascal": [
+      126,
+      25,
+      379,
+      267
+    ]
+  },
+  {
+    "image_id": "saint_bernard_168",
+    "label": 28,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "cafb2d57f43a69c6c5cc9a87f3163ee5776134e18c8fdfb23bd79684f39e7dd0",
+    "annotation_sha256": "10904122404143493c1ac20157f4512fd57fb58bb1d76d49c7bb03af0066db28",
+    "xml_sha256": "a5b13a3824fbfc25e58ee348f9e47c729949aca480f4e7518ba67941ed37003f",
+    "original_size": [
+      375,
+      500
+    ],
+    "head_box_pascal": [
+      34,
+      57,
+      287,
+      314
+    ]
+  },
+  {
+    "image_id": "saint_bernard_17",
+    "label": 28,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "c61c3f2b863da14f23b3cf8e807cb171834c1ef3b7526f37757dd57520a32f96",
+    "annotation_sha256": "a0ec52f1dbfad28e31dfaf9b31f64176d3c6ad5a7d7b66671c02a7a68627ab60",
+    "xml_sha256": "9b35a85d6466b0dc57be8378ac571885cbd6e1dd265374f650fef48d93f72a8f",
+    "original_size": [
+      500,
+      375
+    ],
+    "head_box_pascal": [
+      142,
+      23,
+      386,
+      234
+    ]
+  },
+  {
+    "image_id": "samoyed_115",
+    "label": 29,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "56efdf19247aa106eee346b24178b3d960f7bac73d4ff967b68ee05122963598",
+    "annotation_sha256": "b98b8a6d09942a3f01259bd2024e9044162c3e5f65154acf3c627c1b47f0c759",
+    "xml_sha256": "004b2155d3316e173d51a980e0de03e0bf33e4b9962d72b680abda6db9e14a91",
+    "original_size": [
+      500,
+      333
+    ],
+    "head_box_pascal": [
+      177,
+      75,
+      262,
+      206
+    ]
+  },
+  {
+    "image_id": "samoyed_190",
+    "label": 29,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "79bd4e2305621f4350e86fd5dbbbbf48f5fca5d3d38b3322b8615c78d49f009a",
+    "annotation_sha256": "1ce24d905622997a15867b400d68a59215cc382b5fd95299b63e4ccf4158fa19",
+    "xml_sha256": "3e723fdf3a62d106ebd0f9c0c41252500f245b8f68aa6ad2f6cee97729f92e49",
+    "original_size": [
+      375,
+      500
+    ],
+    "head_box_pascal": [
+      142,
+      141,
+      223,
+      256
+    ]
+  },
+  {
+    "image_id": "samoyed_11",
+    "label": 29,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "0091d8060bc5460c57de0308ed666a79487f94c83475ec61438b68c380e08913",
+    "annotation_sha256": "88325fa404b765f962046d0f177ca49f55427fc244df6bf7db3eb3cb6429d183",
+    "xml_sha256": "4fa27d570c793513036599a8d81ee3e22ecf8a4c0a9f40f3d8785df13d498b9a",
+    "original_size": [
+      325,
+      500
+    ],
+    "head_box_pascal": [
+      69,
+      42,
+      239,
+      224
+    ]
+  },
+  {
+    "image_id": "samoyed_113",
+    "label": 29,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "a1cf2f981ba80fd7ed5b932199542064af14e639f97be00c8c517485a91e9300",
+    "annotation_sha256": "c3ba9420528608a4c09bfaab6d638a2110023c249abb3157b3e5c8a44acb37b4",
+    "xml_sha256": "b69b197a5dd52a62da13814f880b05dce9b2fc8be4be47d2238aec52118bfc9e",
+    "original_size": [
+      500,
+      375
+    ],
+    "head_box_pascal": [
+      222,
+      74,
+      302,
+      186
+    ]
+  },
+  {
+    "image_id": "samoyed_118",
+    "label": 29,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "9aeeb6eaf6f36808dee34bda7100be49f2cb1ddcce31d4fb2c7e6b9533c53c72",
+    "annotation_sha256": "d1554711398eef33196c047d67996557f6fea312f17610194b18e5d673c5761e",
+    "xml_sha256": "617b1e26bca5fe1515108fd4b6fc3ef64498f6ca809f1734997259b92ef46751",
+    "original_size": [
+      500,
+      375
+    ],
+    "head_box_pascal": [
+      148,
+      128,
+      210,
+      220
+    ]
+  },
+  {
+    "image_id": "scottish_terrier_149",
+    "label": 30,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "2e39efc96c10a316e4fcf52e6f5bdbc342bb271defa18e43a33cf446bc349433",
+    "annotation_sha256": "af30388068fa48d8157151544e7b3d359c9edc9d7ea5ff3fc1f1bb6138fce799",
+    "xml_sha256": "013c598cfa3f1e7153b5e0aa52c6ef9e91e3ee75d5ce61031bb159c5cb16b683",
+    "original_size": [
+      500,
+      375
+    ],
+    "head_box_pascal": [
+      176,
+      31,
+      320,
+      265
+    ]
+  },
+  {
+    "image_id": "scottish_terrier_109",
+    "label": 30,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "741fac0a2f7b63eb0019cf4a9304486773ae34975571ad1a32f3c0063794f5dd",
+    "annotation_sha256": "ec02133547db66cdfa6b677bcf439a1eb884b8c58711542e56850ed09bb7a727",
+    "xml_sha256": "0fa3b7e1a3a2c2b2a1af2144e56978f4cac3cb4919b3aa1fb328599b6889b4d7",
+    "original_size": [
+      500,
+      375
+    ],
+    "head_box_pascal": [
+      332,
+      191,
+      407,
+      304
+    ]
+  },
+  {
+    "image_id": "scottish_terrier_147",
+    "label": 30,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "65e36619fa70010680a5288b51d93812b17cc6f4ab42ac46b6b710dbaab85fd9",
+    "annotation_sha256": "9b3a6d8e59c742a4c77dbe4db1807226d5aa988d50896b2bc65d9d7fac599237",
+    "xml_sha256": "74d4f49ae07e9127cff3000706f71cdcbf39149f7ba95c3f97a6b72d96e7a39f",
+    "original_size": [
+      500,
+      375
+    ],
+    "head_box_pascal": [
+      259,
+      50,
+      381,
+      235
+    ]
+  },
+  {
+    "image_id": "scottish_terrier_121",
+    "label": 30,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "bec690312b674e625b43d11fc87861b826c545c7391137dc8bf4a175d3593caf",
+    "annotation_sha256": "90e33b7a7326614c95fb0bf1b66e5ba73f51deb11bfcedaa4003e93b1ccfeadf",
+    "xml_sha256": "809de2a50c6fe0dd4308b1960aaefa2abecc3f3c3d4e4ca8a30d917897e63c07",
+    "original_size": [
+      344,
+      500
+    ],
+    "head_box_pascal": [
+      93,
+      41,
+      272,
+      348
+    ]
+  },
+  {
+    "image_id": "scottish_terrier_104",
+    "label": 30,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "ee253c148890870102ba0344a8cc8006d3cbd36c3fa8460de4b365c67ae6ddb3",
+    "annotation_sha256": "625514f3e1d2a98e8a967a25a503fffd5b3dd1bae29e55faaef71899596f27af",
+    "xml_sha256": "e20558fd0428b8edf4f901053c5e4352f1e7cba0c531b0e62fc3477120675744",
+    "original_size": [
+      480,
+      360
+    ],
+    "head_box_pascal": [
+      92,
+      34,
+      187,
+      189
+    ]
+  },
+  {
+    "image_id": "shiba_inu_104",
+    "label": 31,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "9933a0eda41a1805443d43ef593bfbcac992a79066e10de431c5d8be7c067d19",
+    "annotation_sha256": "035bc2090858e794e4aafbf506943f549c1633224090cde782908d47d125ad37",
+    "xml_sha256": "b572a13fc773e438af6fa489b36c859c6955003f963615f85a972952abebc472",
+    "original_size": [
+      500,
+      333
+    ],
+    "head_box_pascal": [
+      181,
+      1,
+      397,
+      242
+    ]
+  },
+  {
+    "image_id": "shiba_inu_190",
+    "label": 31,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "d25dcbe775298967809c4d1ee3682d23dd4fa6852ad4916af756fd92fd01fcc9",
+    "annotation_sha256": "628bb57eda4351aa1e0ef8222508f1af124e618c4b216323040e3dfaf3b13361",
+    "xml_sha256": "96420e7f13c6a90eb6e1675fdcf8ffaaf0bdef20be02173d906296abd945d7a0",
+    "original_size": [
+      333,
+      500
+    ],
+    "head_box_pascal": [
+      63,
+      146,
+      174,
+      307
+    ]
+  },
+  {
+    "image_id": "shiba_inu_170",
+    "label": 31,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "e80c1b84120da8d96441d08d84bbbd4a52b01ee611769210125d8ab71cd3bab5",
+    "annotation_sha256": "9ea17aa8ac8d2eaacb947d429edeea8918d652853105c1ec07c4e149d0a68b56",
+    "xml_sha256": "5613ee6ab7967620075227fbc150aed1cffc279780930921a075dcb8bd3910aa",
+    "original_size": [
+      500,
+      422
+    ],
+    "head_box_pascal": [
+      45,
+      72,
+      251,
+      306
+    ]
+  },
+  {
+    "image_id": "shiba_inu_105",
+    "label": 31,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "d6c3d70ad8d82aa12f4b567ee8168002f7f3deb65ea2750ae5a269b84106e3fc",
+    "annotation_sha256": "62dd8a7c77cca2f6af2564457ea33416e1a949c3f64d6cae41b77a6ebf36b04e",
+    "xml_sha256": "fd1cdf9d7f30e80316d2d3a2b6a36cb5408a8c30fd04b21c4d21f22f60246911",
+    "original_size": [
+      500,
+      375
+    ],
+    "head_box_pascal": [
+      1,
+      50,
+      169,
+      226
+    ]
+  },
+  {
+    "image_id": "shiba_inu_113",
+    "label": 31,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "10010a07ab26dd9f4e0202c2ac62fffd08c77ac0a976bde4041ea4974c142c3d",
+    "annotation_sha256": "60e4bcf819a28054e26e5d2a1bf19bfe71775ea87ab7772944ddaa9968977b1b",
+    "xml_sha256": "6c7cb32278e88a22d421d6dd79d479be020147efa54faccaa786041e8c3965a2",
+    "original_size": [
+      375,
+      500
+    ],
+    "head_box_pascal": [
+      44,
+      200,
+      136,
+      301
+    ]
+  },
+  {
+    "image_id": "Siamese_110",
+    "label": 32,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "75ebc99bb455eca35a29d502d50cdcb9ac7c2ee3e6677c4e44d0895c9db981ea",
+    "annotation_sha256": "c7420e977ee92e2517e71c0243cbe79752de32b25f820269e1b95c850b163049",
+    "xml_sha256": "6dc034fe474ed7c812cfc1f922ad6f8c1fd7205271fd2d19671d7bc32f0ca3cc",
+    "original_size": [
+      375,
+      500
+    ],
+    "head_box_pascal": [
+      102,
+      1,
+      307,
+      170
+    ]
+  },
+  {
+    "image_id": "Siamese_193",
+    "label": 32,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "f43162f71ecb02166d11931cc5b81f8100a8e8568fc351e963a8e051499ebcd4",
+    "annotation_sha256": "19a19c0503b933f9fa95b4a85975964f588d7cc7bf3347795749456d00c7db7c",
+    "xml_sha256": "93b8c857147aacd6e91f2ec825dd52bb85efb71146ee685bcf780c757097e25d",
+    "original_size": [
+      333,
+      500
+    ],
+    "head_box_pascal": [
+      125,
+      68,
+      282,
+      236
+    ]
+  },
+  {
+    "image_id": "Siamese_152",
+    "label": 32,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "a751b703171d3bf966e2411ace7b2d85a8e9978f42bdcbaff5754fa2e4d363ad",
+    "annotation_sha256": "4939f852a5eedd1f7dfce4dfd435000ef77bbe4de8d606f6e3ea47a35378ca3d",
+    "xml_sha256": "8a354dce0b1c62d1d997738f96a64d8b5ac89521cc21ff2efd5c7c85eb7b5114",
+    "original_size": [
+      333,
+      500
+    ],
+    "head_box_pascal": [
+      60,
+      7,
+      325,
+      284
+    ]
+  },
+  {
+    "image_id": "Siamese_191",
+    "label": 32,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "c2e08d8b22a1fdc8ff88652da24432f0fd2e2aab2b175e7863682251e6938107",
+    "annotation_sha256": "a78a7c3f0b2749f845d719b81282da4e9360b67a3d9d19099e5973e1af8c940e",
+    "xml_sha256": "87d0368af9edc2f8902b5de107a874f5f8a7843e61d56b3ce1303151c17404d4",
+    "original_size": [
+      317,
+      500
+    ],
+    "head_box_pascal": [
+      12,
+      11,
+      314,
+      274
+    ]
+  },
+  {
+    "image_id": "Siamese_196",
+    "label": 32,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "c5695856540a2914ecbb02a1b76aabe453b43d75e057a790cab5ebd2229283dd",
+    "annotation_sha256": "1c393b638f084cd415398edced0a302ee290e44829ca7871ccd6ada14b695552",
+    "xml_sha256": "ab291752c67c1eb3f000b7f561330328e7b85e73b968787af79ad6997b9abe01",
+    "original_size": [
+      500,
+      334
+    ],
+    "head_box_pascal": [
+      258,
+      89,
+      393,
+      246
+    ]
+  },
+  {
+    "image_id": "Sphynx_173",
+    "label": 33,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "7e1ad3e5b0e1dc94668a64b34909cf2131a1ec553d8d22520edb0442a020b833",
+    "annotation_sha256": "a5c3b4e93fbd0bcf1dd25eb168de50edc3fdf021dcb52c7491cd9d83e8adbf70",
+    "xml_sha256": "8ceec092e9be5f043f12067c3d255927349ab36520a071ae1d6b7c59b5eb903f",
+    "original_size": [
+      500,
+      375
+    ],
+    "head_box_pascal": [
+      94,
+      14,
+      447,
+      330
+    ]
+  },
+  {
+    "image_id": "Sphynx_105",
+    "label": 33,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "af6e69544a5db89b8c4b8b98335e9c6ee6e377f56dda3e6033ed0a67a36c58f8",
+    "annotation_sha256": "9548f08e8de32264e23bae305c0f382c8c90f77d9cfb45fa31d8f803e2b27b62",
+    "xml_sha256": "9e28951033144a998492b352434c28790c01fe71dc6ade586b572061af744d87",
+    "original_size": [
+      481,
+      500
+    ],
+    "head_box_pascal": [
+      107,
+      51,
+      441,
+      407
+    ]
+  },
+  {
+    "image_id": "Sphynx_14",
+    "label": 33,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "526bee52224ee2298fd93368a9361d78e2c487b4cc0ac910c1bcf17597b8424d",
+    "annotation_sha256": "2bd5fd16ea2e555096de42b3e33e2c138c303570b448f963b1b2f0947f3e8ccd",
+    "xml_sha256": "2a6cd4892eb80d2216a291455497d348395b99b7554ab077e8856048fd891afb",
+    "original_size": [
+      500,
+      333
+    ],
+    "head_box_pascal": [
+      147,
+      1,
+      407,
+      261
+    ]
+  },
+  {
+    "image_id": "Sphynx_189",
+    "label": 33,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "9022edd70af6c7098fdade91a5e2fddf80d4163d1f40c35cda5d7ed8729b2a40",
+    "annotation_sha256": "1d5ad0dd621a9c21cd3327a8f27c8197f047010836c909648380454f7306ca90",
+    "xml_sha256": "c8505e17de46b3e2cde7ce08da49ec1bcdd32c7563e643b7cc2fea7dcd4cbb91",
+    "original_size": [
+      333,
+      500
+    ],
+    "head_box_pascal": [
+      59,
+      36,
+      277,
+      266
+    ]
+  },
+  {
+    "image_id": "Sphynx_104",
+    "label": 33,
+    "species": 1,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "21910270212d4afd494b812600f21017aea384c90581487b094a8ba400e23be5",
+    "annotation_sha256": "28af04b23c96ce08b51622538fcf34debd801547f0baa0e9c392205edfab6a7e",
+    "xml_sha256": "e384066335019a6b0249f4a0054c9bd2bca1a7f715286fd70693c0a6a7f269f0",
+    "original_size": [
+      500,
+      334
+    ],
+    "head_box_pascal": [
+      187,
+      88,
+      281,
+      190
+    ]
+  },
+  {
+    "image_id": "staffordshire_bull_terrier_106",
+    "label": 34,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "09b4df33976cccb9fcce72123ff04e0227a8ee549f45b32a094f76387e1e0940",
+    "annotation_sha256": "a4fbee5bfc77accfe399045a1910f77f164208ffbd870afa913be90095d64f64",
+    "xml_sha256": "b54c40258b5a20d70372f36d1c0db4aa8a9336d2ba73b16f8f286c21684a840f",
+    "original_size": [
+      333,
+      500
+    ],
+    "head_box_pascal": [
+      116,
+      95,
+      221,
+      201
+    ]
+  },
+  {
+    "image_id": "staffordshire_bull_terrier_130",
+    "label": 34,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "5bd23b4f36f4162c95df6337cccf40c76b1717171d47b7de03f13f151de7e8e9",
+    "annotation_sha256": "5f35893ea34fafec10bb1f7599facdf14dc7ebd8b940416dc45f686642ff640d",
+    "xml_sha256": "75a65ab17cd0372924d513a5710ada93d56a2635d6fe54706e51b824cd332cad",
+    "original_size": [
+      500,
+      375
+    ],
+    "head_box_pascal": [
+      214,
+      148,
+      300,
+      243
+    ]
+  },
+  {
+    "image_id": "staffordshire_bull_terrier_129",
+    "label": 34,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "91faa54263999112f61e45c31c1b57493a088b31205429077d4426e602f822aa",
+    "annotation_sha256": "6af02259882ad80b1b905713d6085442a11c64f87a5a43f0e824c18bfbe0dcb8",
+    "xml_sha256": "fea532dee50ae6d5aed4dc6a25a0e994b3cb11ea1018ebb053c75288452dd63d",
+    "original_size": [
+      500,
+      433
+    ],
+    "head_box_pascal": [
+      109,
+      127,
+      217,
+      293
+    ]
+  },
+  {
+    "image_id": "staffordshire_bull_terrier_111",
+    "label": 34,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "d54183c98f7b3f1e7f72a79c6a9ecf566a2622bae4c9ead2d5eed0af6de21072",
+    "annotation_sha256": "62f6d7801505bffd51be4fadc4f136f1e544266f9ea008e89b05ff7c14cb6b60",
+    "xml_sha256": "656e629401414a5312ad3bf8f8ff0bf3b262f8f63f758b382d86772b7069b613",
+    "original_size": [
+      500,
+      376
+    ],
+    "head_box_pascal": [
+      83,
+      20,
+      282,
+      219
+    ]
+  },
+  {
+    "image_id": "staffordshire_bull_terrier_134",
+    "label": 34,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "9dd2e06866a287b8076def5e4a1d825ec8bbf29d3d31f80e81d9f42c0e4e132a",
+    "annotation_sha256": "513db78f8390b5248658c8bb880aac40e1cd19e60650a43c4eb36b226ddb782d",
+    "xml_sha256": "e910d95c7877132609242130936f6d0bb92bb7df0bec3648147efadd159bd66a",
+    "original_size": [
+      500,
+      375
+    ],
+    "head_box_pascal": [
+      165,
+      85,
+      348,
+      247
+    ]
+  },
+  {
+    "image_id": "wheaten_terrier_181",
+    "label": 35,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "157000312f974ae053a8d819bcadabb516524b2a1e1a5aa823f8a1e15897df59",
+    "annotation_sha256": "0defb4367eb3afd2a2aefab9e356dabf0664e0648782977cd3d9a3d4dccbaca7",
+    "xml_sha256": "ef32f056836ba8e25b813e6e61e55d846fac48614c5d3a71b8c0e34835223ade",
+    "original_size": [
+      500,
+      330
+    ],
+    "head_box_pascal": [
+      120,
+      1,
+      331,
+      222
+    ]
+  },
+  {
+    "image_id": "wheaten_terrier_154",
+    "label": 35,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "e895a46f67614bfb68ef6aa68a396babac60198aeef957d32b14be1243d631fa",
+    "annotation_sha256": "b7d430e4bd6321087fd5e1fd51262bb1aa3681dab0a048d23118c5d7e1f7fbf1",
+    "xml_sha256": "cee2cc77d9ec71e813957addb5445d91c18a1cdccbf615b486c89d6c1c55aa21",
+    "original_size": [
+      500,
+      375
+    ],
+    "head_box_pascal": [
+      104,
+      28,
+      249,
+      172
+    ]
+  },
+  {
+    "image_id": "wheaten_terrier_170",
+    "label": 35,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "3d12cb14a2ee8021a78df041dad50daad748752f5700677acefee64bd14c721a",
+    "annotation_sha256": "5833d90dec537830f19cd9880c90083e4a5e7407cbf164ef5971b0c4d3819f05",
+    "xml_sha256": "8cc3d082b4b0dc2a1a2990604a39709d807acb3e7800d7b11fdaa26bf55613cf",
+    "original_size": [
+      500,
+      330
+    ],
+    "head_box_pascal": [
+      181,
+      126,
+      299,
+      239
+    ]
+  },
+  {
+    "image_id": "wheaten_terrier_110",
+    "label": 35,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "70d11f58cb91c8d3540c449d300c6304fc84b64f5654b6e849275f927b5fe8b8",
+    "annotation_sha256": "cfadedc49011bb6dfb92df364d063afe249b9e9d8fd8533a37286be8b8ff050e",
+    "xml_sha256": "9b28439f257c4c353ef5345d308c04d92ae41874228f3df0c5b1f6c85ccb99ec",
+    "original_size": [
+      333,
+      500
+    ],
+    "head_box_pascal": [
+      54,
+      25,
+      299,
+      283
+    ]
+  },
+  {
+    "image_id": "wheaten_terrier_183",
+    "label": 35,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "dda856678672cb34b1265432f1e9ef45a6e6c01c33e6aff93f7b7765d4151d4f",
+    "annotation_sha256": "747b5bede053b197cf0e4cff004d590a3af7430fe2674a5c3ff261078b4ee247",
+    "xml_sha256": "beaf02e4d66c954a9a5e574ac2766f7d003dab17d97f11387a87eaee3e811af8",
+    "original_size": [
+      500,
+      330
+    ],
+    "head_box_pascal": [
+      152,
+      72,
+      222,
+      135
+    ]
+  },
+  {
+    "image_id": "yorkshire_terrier_119",
+    "label": 36,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "7002e35aa5e9d108ed2ff9c8cf2b3434d2c7e50dabdaaeca4050229665a4364a",
+    "annotation_sha256": "f0d4d70c1d9c3f174bde1e0d9c5e4cfe3d267ab3994fe3ddeed907674bbc09d1",
+    "xml_sha256": "623216103075e9bb300da41f8b24808bb13438b65c35351419c965c22c46bd97",
+    "original_size": [
+      300,
+      199
+    ],
+    "head_box_pascal": [
+      160,
+      34,
+      222,
+      111
+    ]
+  },
+  {
+    "image_id": "yorkshire_terrier_127",
+    "label": 36,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "ba6e89defc91cba3f85916c45814f9742dbd4588eaf978a67601599c53f89771",
+    "annotation_sha256": "aa81f3c95e8865776520ad0b9c5c35b6525c8f96481e6b08ce806e96a526df25",
+    "xml_sha256": "5a45c921bbaf13e04faebd521443eb2ec870f99bf513b81104300333ed3ea2ec",
+    "original_size": [
+      251,
+      300
+    ],
+    "head_box_pascal": [
+      16,
+      20,
+      235,
+      173
+    ]
+  },
+  {
+    "image_id": "yorkshire_terrier_178",
+    "label": 36,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "c2fdce4de9c29eff915bb1ce50392008d02fc3b3d97b0b17d94677afef9a1539",
+    "annotation_sha256": "2c92cf3a6c93bea38d952273817b612f3a87a8b6d4f7104e7cbc1e5849b80158",
+    "xml_sha256": "136ef2da20b4cfa9ab964167e21c674bdd372f8b64574db77c1ae1574d56245f",
+    "original_size": [
+      375,
+      500
+    ],
+    "head_box_pascal": [
+      44,
+      229,
+      219,
+      358
+    ]
+  },
+  {
+    "image_id": "yorkshire_terrier_17",
+    "label": 36,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "6b4130e9831e35da7c1b1f00f2678e7e02386854210e15226397aa1d0245597b",
+    "annotation_sha256": "507afd44e6a17701cc147b7d41b99c23aeb1060636478789644b35c8a88c8040",
+    "xml_sha256": "4bf23b835ce1bd6f9cecf852cab39d2c4aacd74a3db82c815ab90ed480c30750",
+    "original_size": [
+      500,
+      332
+    ],
+    "head_box_pascal": [
+      110,
+      23,
+      389,
+      221
+    ]
+  },
+  {
+    "image_id": "yorkshire_terrier_150",
+    "label": 36,
+    "species": 2,
+    "cohort": "new_head",
+    "official_split": "trainval",
+    "image_sha256": "6fc96c8c04fd541f7f1a9b6b48517d189300fe10946a17790d2d3be7eedec0b8",
+    "annotation_sha256": "8487dccac04162e01640f29da88f0c1b404c5964fe7258179749d9badb0da4a4",
+    "xml_sha256": "754e0b26c6c1b48386de63761efe2c1a0ee69c1a5b89af9eed77ce0139075bc0",
+    "original_size": [
+      300,
+      199
+    ],
+    "head_box_pascal": [
+      110,
+      47,
+      173,
+      99
+    ]
+  }
+]

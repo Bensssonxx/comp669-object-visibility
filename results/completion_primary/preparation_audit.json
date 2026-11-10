@@ -1,0 +1,21 @@
+{
+  "images": 740,
+  "rows_per_model": 17760,
+  "frozen_probes": {
+    "aimv2": {
+      "sha256": "bbae76c22459dfe643b36796a67e27578903ddf2c41eca1d730f686e0eea23c7",
+      "C": 10
+    },
+    "dinov2": {
+      "sha256": "3bddc55fc6b6f79589b78cda8f34b94f71d2ce110bff75300cf7d93a30c06345",
+      "C": 10
+    }
+  },
+  "eligible_head_pairs": 0,
+  "candidate_pool_by_breed": {},
+  "distinct_image_hashes": 740,
+  "previous_manifest_sha256": {
+    "pilot_v1": "b68fac2cf686fcae942ba6e55865247cdd321ba67a6c9f0f611c9e8471286fc6",
+    "extension_v2": "de0b0ee82abef9ae3b022dc0ace90f3c99a92d83bd8c490feebae7ad363b7eae"
+  }
+}

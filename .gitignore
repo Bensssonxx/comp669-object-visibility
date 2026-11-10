@@ -20,4 +20,5 @@ docs/*-source.py
 docs/*-source.toml
 
 .build-presentation/
+.chart-data-*/
 .codex-finalizer/

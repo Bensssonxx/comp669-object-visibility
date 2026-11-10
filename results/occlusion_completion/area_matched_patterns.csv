@@ -1,0 +1,13 @@
+cohort,fraction,fill,eligible,total,represented_breeds,mean_abs_area_difference,aimv2_center,aimv2_random,dinov2_center,dinov2_random,interaction,ci_low,ci_high
+new_head,0.25,0,1,185,1,0.02708538993,,,,,,,
+new_head,0.25,128,1,185,1,0.02708538993,,,,,,,
+new_head,0.5,0,2,185,2,0.00914747493,,,,,,,
+new_head,0.5,128,2,185,2,0.00914747493,,,,,,,
+new_head,0.75,0,4,185,4,0.01713432424,,,,,,,
+new_head,0.75,128,4,185,4,0.01713432424,,,,,,,
+primary,0.25,0,8,740,7,0.0124078863,,,,,,,
+primary,0.25,128,8,740,7,0.0124078863,,,,,,,
+primary,0.5,0,2,740,2,0.02182261465,,,,,,,
+primary,0.5,128,2,740,2,0.02182261465,,,,,,,
+primary,0.75,0,14,740,11,0.01292107043,,,,,,,
+primary,0.75,128,14,740,11,0.01292107043,,,,,,,

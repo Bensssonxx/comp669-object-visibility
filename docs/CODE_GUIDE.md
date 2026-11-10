@@ -2,6 +2,24 @@
 
 This guide explains the actual implemented evaluation. Read it before the full script inventory. The project adds an evaluation pipeline around official pretrained encoders; it does not implement AIMv2 or DINOv2 from scratch.
 
+## Current follow-up
+
+The November completion work keeps the encoder and classifier code below unchanged. These are the main new files to read:
+
+| File | What to look for |
+| --- | --- |
+| [complete_occlusion.py](../scripts/complete_occlusion.py) | `config_for()` fixes the conditions; `choose_head()` selects unused annotated images; `conditions()` builds masks and region measurements; `replay()` checks old features before new inference. The runner reuses `extension_v2.run()` with the original probes. |
+| [analyze_completion.py](../scripts/analyze_completion.py) | `read_paired()` verifies shared conditions; `image_average()` keeps visibility budgets separate; `ImageBootstrap` resamples original images; `bins()` computes accuracy by visible animal area; `support_table()` reports where patterns overlap. |
+| [completion_examples.py](../scripts/completion_examples.py) | Shows actual inputs and measured visibility. The saved selection record distinguishes annotation-selected examples from outcome-selected illustrations. |
+| [verify_completion.py](../scripts/verify_completion.py) | Reconstructs point estimates independently, checks image disjointness and mask budgets, and validates source hashes. |
+| [run_completion.sh](../scripts/run_completion.sh) | Runs preparation, inference, audits, analysis, and the English report in order. Completed feature caches are reusable only when their bindings match. |
+
+New prediction files go in `results/completion_primary/` and `results/completion_head/`. Combined tables and figures go in `results/occlusion_completion/`; the readable interpretation is [OCCLUSION_COMPLETION_EN.md](../reports/OCCLUSION_COMPLETION_EN.md). The report's status section says which complete runs are included. Earlier outputs remain separate. The fixed design is [OCCLUSION_COMPLETION_PROTOCOL.md](OCCLUSION_COMPLETION_PROTOCOL.md).
+
+## Final comparisons
+
+[final_sensitivity.py](../scripts/final_sensitivity.py) reconstructs clean-to-masked changes and checks which existing masks match within the same photo. [patch_relocation.py](../scripts/patch_relocation.py) creates and evaluates the annotation-guided masks. In the reference environment, source `scripts/env.sh`, then run the script with `prepare`, `aimv2`, `dinov2`, and `analyze` in that order. Preparation requires the original photos and annotations. Inference reuses the verified completion run, upstream weights, clean classifiers and Apple GPU. To check the saved findings on another computer, run `python3 scripts/check_final_results.py` from the repository root (Python 3.10+).
+
 ## Start with these files
 
 | Order | File | Question it answers |

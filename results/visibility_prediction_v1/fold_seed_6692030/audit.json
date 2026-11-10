@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "seed": 6692030,
+  "outer_folds": 5,
+  "penalties": [
+    1.0
+  ],
+  "fit_count": 150,
+  "all_fits_converged": true,
+  "max_gradient": 9.774599118994587e-08,
+  "original_images": {
+    "primary": 740,
+    "auxiliary_head": 159
+  },
+  "source_sha256_unchanged": true,
+  "image_group_leakage": false,
+  "out_of_fold_for_every_row": true,
+  "bootstrap_repetitions": 10000,
+  "simultaneous_contrast_count": 30,
+  "scope": "Exploratory reuse of known data. CIs conditional on OOF predictions, not refit uncertainty."
+}
