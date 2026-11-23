@@ -328,4 +328,4 @@ OPENBLAS_NUM_THREADS=4 .reference-conda/bin/python scripts/analyze_completion.py
 .reference-conda/bin/python scripts/report_completion.py
 ```
 
-The fixed design is in `docs/OCCLUSION_COMPLETION_PROTOCOL.md`; stage planning is in `docs/OCCLUSION_COMPLETION_PLAN.md`. Source tables and figures are under `results/occlusion_completion/`. Codex assisted protocol implementation, execution, analysis, and documentation under the existing AI-use disclosure.
+The fixed design is in `docs/OCCLUSION_COMPLETION_PROTOCOL.md`. Source tables and figures are under `results/occlusion_completion/`. Codex assisted protocol implementation, execution, analysis, and documentation under the existing AI-use disclosure.

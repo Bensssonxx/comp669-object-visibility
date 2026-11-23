@@ -1,4 +1,4 @@
-"""Write an English report from complete, audited saved result tables."""
+"""Write the report from complete, audited saved result tables."""
 import json
 from pathlib import Path
 import pandas as pd
@@ -113,14 +113,14 @@ def main():
                   '## Reproduction and checks','',
                   'Use the decoder-pinned reference environment from the repository. The completion runner refuses changed preparation locks, replays eight original conditions per model, verifies transformed-input fingerprints, binds caches to models/classifiers/configuration, and reconstructs predictions from saved features. The analysis independently reproduces the previous headline scores and validates one-to-one shared-condition joins.','',
                   '```bash\nsource scripts/env.sh\n.reference-conda/bin/python scripts/complete_occlusion.py prepare --cohort primary\n.reference-conda/bin/python scripts/complete_occlusion.py prepare --cohort head\n# For each cohort and each model, run and audit as in scripts/run_completion.sh.\nOPENBLAS_NUM_THREADS=4 .reference-conda/bin/python scripts/analyze_completion.py\n.reference-conda/bin/python scripts/completion_examples.py\n.reference-conda/bin/python scripts/verify_completion.py\n.reference-conda/bin/python scripts/report_completion.py\n```','',
-                  'The fixed design is in `docs/OCCLUSION_COMPLETION_PROTOCOL.md`; stage planning is in `docs/OCCLUSION_COMPLETION_PLAN.md`. Source tables and figures are under `results/occlusion_completion/`. Codex assisted protocol implementation, execution, analysis, and documentation under the existing AI-use disclosure.'])
+                  'The fixed design is in `docs/OCCLUSION_COMPLETION_PROTOCOL.md`. Source tables and figures are under `results/occlusion_completion/`. Codex assisted protocol implementation, execution, analysis, and documentation under the existing AI-use disclosure.'])
     if (ROOT/'results/patch_relocation/summary.csv').exists():
         extra = final_comparisons()
         if (ROOT/'results/region_swap/summary.csv').exists():
             extra.extend(region_results())
         lines[lines.index('## Accuracy across masking conditions'):lines.index('## Accuracy across masking conditions')] = extra
-    (ROOT/'reports/OCCLUSION_COMPLETION_EN.md').write_text('\n'.join(lines)+'\n')
-    print('Saved reports/OCCLUSION_COMPLETION_EN.md')
+    (ROOT/'reports/OCCLUSION_COMPLETION.md').write_text('\n'.join(lines)+'\n')
+    print('Saved reports/OCCLUSION_COMPLETION.md')
 
 
 def final_comparisons():

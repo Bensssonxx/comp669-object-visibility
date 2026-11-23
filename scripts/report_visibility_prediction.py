@@ -1,4 +1,4 @@
-"""Write the English diagnostic report from saved results, without refitting."""
+"""Write the diagnostic report from saved results, without refitting."""
 import csv
 import json
 import re
@@ -104,7 +104,7 @@ python scripts/report_visibility_prediction.py
 ```
 
 The stability script refuses to overwrite existing sensitivity-run directories. Preserve or move those two directories before an intentional rerun. The original plan is in `docs/VISIBILITY_PREDICTION_PROTOCOL.md`; the separately declared post-hoc check is in `docs/VISIBILITY_PREDICTION_STABILITY.md`. Raw results and verification are under `results/visibility_prediction_v1/`. Codex assisted this analysis under the project's existing AI-use disclosure.''']
-report = ROOT / 'reports/VISIBILITY_PREDICTION_EN.md'
+report = ROOT / 'reports/VISIBILITY_PREDICTION.md'
 text = '\n\n'.join(lines) + '\n'
 text = re.sub(r'(?m)^(\|[^\n]*)\n\n(?=\|)', r'\1\n', text)
 report.write_text(text)

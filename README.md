@@ -1,21 +1,45 @@
-# Object visibility and occlusion robustness
+# Does the mask pattern change which model looks more robust?
 
-COMP 669 project by Boshen Yang.
+COMP 669 (Fall 2026) final project, Boshen Yang.
 
-I compare AIMv2 and DINOv2 on Oxford-IIIT Pet to study how masking patterns affect image classification. Both models stay frozen, with classifiers trained on clean images, and receive the same masked inputs.
+I compared two frozen vision transformers, AIMv2-L/14 and DINOv2-L/14, on Oxford-IIIT Pet images with parts of the image hidden. Each model gets a linear classifier trained on clean images, and both models see exactly the same masked pixels.
 
-With 25% of each image visible, AIMv2 performs better when the center remains visible, while DINOv2 performs better when random patches remain visible. At 75% visibility on the main sample, AIMv2 leads under both patterns. Both findings hold with gray and black fill. We also measure visible animal area and regions to describe how the test inputs differ.
+## Main results
 
-The results apply to these models and test conditions. They do not establish which differences in training or architecture cause the observed behavior.
+- With 25% of the image visible, AIMv2 wins with a center mask (87.0% vs 63.1%) and DINOv2 wins with random patches (69.6% vs 33.6%). Black fill gives the same flip.
+- The flip goes away as more of the image is visible. At 75% visible, AIMv2 is ahead with both masks.
+- Center and random masks show very different amounts of the animal, so I also ran controlled tests on the same photos. When I move the visible patches but keep the animal area within 3 percentage points, AIMv2 drops 14.6 points and DINOv2 gains 12.5. The same thing happened on 364 test photos I hadn't used before.
 
-## Code and results
+These results are for two fixed models, one dataset and square masks. They don't tell us which part of training causes the difference.
 
-- [Core code](src/occlusion_visibility/): data processing, masks, model features and classifiers.
-- [Follow-up experiments](scripts/complete_occlusion.py) and [analysis](scripts/analyze_completion.py).
-- [Results report](reports/OCCLUSION_COMPLETION_EN.md) and [controlled animal and background swaps](docs/REGION_SWAP_PROTOCOL.md).
-- [Code guide](docs/CODE_GUIDE.md): where to start reading the implementation.
-- [Pilot protocol](docs/PROTOCOL.md) and [current follow-up protocol](docs/OCCLUSION_COMPLETION_PROTOCOL.md).
+## What's where
 
-Run `python3 scripts/check_final_results.py` to verify the final comparisons from the saved predictions. It uses the Python standard library.
+| Folder | Contents |
+| --- | --- |
+| `src/occlusion_visibility/` | Data loading, masks, frozen encoders, linear classifiers |
+| `scripts/` | Experiment runners, analysis, report generation and checks |
+| `results/` | Saved predictions and summary tables for every run |
+| `reports/` | Written results. Start with [OCCLUSION_COMPLETION.md](reports/OCCLUSION_COMPLETION.md) |
+| `docs/` | Experiment protocols, data and model sources, and reproducibility checks (`*_CHECK.json`) |
+| `final/` | Final presentation slides and speaker notes |
+| `milestone/` | Milestone slides and speaker notes |
+| `tests/` | Unit tests |
 
-AI assistance is described in [docs/AI_USE.md](docs/AI_USE.md). Dataset and model sources are listed in [docs/SOURCES.json](docs/SOURCES.json).
+[docs/CODE_GUIDE.md](docs/CODE_GUIDE.md) walks through the code in reading order.
+
+## Checking the numbers
+
+`python3 scripts/check_final_results.py` recomputes the final comparisons from the saved predictions. It only needs the Python standard library.
+
+Running the unit tests:
+
+```bash
+source scripts/env.sh
+.reference-conda/bin/python -m pytest -q
+```
+
+Rerunning the models needs the checkpoints and the Pet images; the setup steps are in the code guide. Dataset and model sources are listed in [docs/SOURCES.json](docs/SOURCES.json).
+
+## AI use
+
+I used AI tools for much of this project. Details are in [docs/AI_USE.md](docs/AI_USE.md).

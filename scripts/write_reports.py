@@ -1,4 +1,4 @@
-"""Generate English milestone briefs from completed real prediction analyses."""
+"""Generate the pilot reports from completed real prediction analyses."""
 import json
 from pathlib import Path
 import pandas as pd
@@ -111,5 +111,5 @@ The original images use the Conda Pillow 10.4.0 build with libjpeg 9e. A pip whe
 ![Foreground coverage distributions](../results/pilot_v1/figures/object_visibility_distributions.png)
 ![Same-image paired diagnostics](../results/pilot_v1/figures/paired_diagnostics.png)
 """
-(reports / "PILOT_REPORT_EN.md").write_text(en)
-print("Wrote English reports from actual saved results")
+(reports / "PILOT_REPORT.md").write_text(en)
+print("Wrote reports from saved results")

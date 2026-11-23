@@ -12,9 +12,9 @@ The November completion work keeps the encoder and classifier code below unchang
 | [analyze_completion.py](../scripts/analyze_completion.py) | `read_paired()` verifies shared conditions; `image_average()` keeps visibility budgets separate; `ImageBootstrap` resamples original images; `bins()` computes accuracy by visible animal area; `support_table()` reports where patterns overlap. |
 | [completion_examples.py](../scripts/completion_examples.py) | Shows actual inputs and measured visibility. The saved selection record distinguishes annotation-selected examples from outcome-selected illustrations. |
 | [verify_completion.py](../scripts/verify_completion.py) | Reconstructs point estimates independently, checks image disjointness and mask budgets, and validates source hashes. |
-| [run_completion.sh](../scripts/run_completion.sh) | Runs preparation, inference, audits, analysis, and the English report in order. Completed feature caches are reusable only when their bindings match. |
+| [run_completion.sh](../scripts/run_completion.sh) | Runs preparation, inference, audits, analysis, and the report in order. Completed feature caches are reusable only when their bindings match. |
 
-New prediction files go in `results/completion_primary/` and `results/completion_head/`. Combined tables and figures go in `results/occlusion_completion/`; the readable interpretation is [OCCLUSION_COMPLETION_EN.md](../reports/OCCLUSION_COMPLETION_EN.md). The report's status section says which complete runs are included. Earlier outputs remain separate. The fixed design is [OCCLUSION_COMPLETION_PROTOCOL.md](OCCLUSION_COMPLETION_PROTOCOL.md).
+New prediction files go in `results/completion_primary/` and `results/completion_head/`. Combined tables and figures go in `results/occlusion_completion/`; the readable interpretation is [OCCLUSION_COMPLETION.md](../reports/OCCLUSION_COMPLETION.md). The report's status section says which complete runs are included. Earlier outputs remain separate. The fixed design is [OCCLUSION_COMPLETION_PROTOCOL.md](OCCLUSION_COMPLETION_PROTOCOL.md).
 
 ## Final comparisons
 
@@ -47,7 +47,7 @@ flowchart TD
     F --> G[Fixed logistic classifier]
     G --> H[Per-condition prediction CSV]
     H --> I[Per-image aggregation and paired statistics]
-    I --> J[Tables, figures and English reports]
+    I --> J[Tables, figures and reports]
 ```
 
 Only the small logistic classifier learns from the pilot clean-training features. Neither pretrained encoder updates its weights. The extension performs no classifier fitting.
@@ -169,15 +169,14 @@ The report prints the saved aggregate; it does not invent or fit the 87.0% score
 | Statistics | `analyze.py`, `analyze_extension.py`, `probe_sensitivity.py` | Estimates, intervals, labeled post-hoc probe sensitivity |
 | Reproduction | `setup_reference.sh`, `env.sh`, `download_assets.py`, `import_pet_mirror.py` | Reference environment, official assets and verified mirror import |
 | Verification | `audit_run.py`, `verify_preprocessing.py`, `verify_extension_provenance.py`, `replay_extension_encoder.py` | Inputs, provenance, reconstruction and limited feature replay |
-| Reports | `write_reports.py`, `report_extension.py` | English reports and research figures from completed results |
-| Presentation support | `preview_inputs.py`, `qualitative_cases.py`, `prepare_slide_assets.py`, `build_milestone.mjs`, the `*_milestone_v6.*` scripts (current) and earlier v5 builders | Input examples, cases, slide data, PPTX build and content verification |
+| Reports | `write_reports.py`, `report_extension.py`, `report_completion.py` | Written reports and figures from completed results |
+| Example figures | `preview_inputs.py`, `qualitative_cases.py` | Masked input examples and qualitative cases |
 | Runner commands | `run_pilot.sh`, `run_extension.sh` | Execute the stages in the intended order |
 | Generic setup | `setup.sh` | Development setup; use the reference setup for exact JPEG decoding |
 | Tests | `tests/` | Budgets, unchanged visible pixels, annotations, deterministic pairs, sampling/condition rules and known synthetic analysis contrasts |
 
-`results/` holds data products, `reports/` holds readable interpretations, `milestone/` holds presentation files, and `docs/` holds protocols and evidence. `data/raw/`, `models/`, `vendor/`, feature caches and environments are local/downloaded dependencies excluded from Git.
+`results/` holds data products, `reports/` holds readable interpretations, `milestone/` and `final/` hold the presented slides, and `docs/` holds protocols and evidence. `data/raw/`, `models/`, `vendor/`, feature caches and environments are local/downloaded dependencies excluded from Git.
 
-`check_repository_language.py` checks current publishable text and presentation XML for study translations. It does not change experiment data or rewrite Git history.
 
 ## Reading versus running
 

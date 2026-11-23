@@ -1,4 +1,4 @@
-"""Research figures and English report; refuse incomplete extension evidence."""
+"""Research figures and report; refuse incomplete extension evidence."""
 from __future__ import annotations
 import json
 from pathlib import Path
@@ -223,7 +223,7 @@ Evidence: [protocol](../docs/EXTENSION_V2_PROTOCOL.md), [primary contrasts](../r
 '''
     destination = ROOT / 'reports'
     destination.mkdir(exist_ok=True)
-    (destination / 'EXTENSION_V2_EN.md').write_text(en)
+    (destination / 'EXTENSION_V2.md').write_text(en)
     print('Wrote audited extension reports and research figures')
 
 

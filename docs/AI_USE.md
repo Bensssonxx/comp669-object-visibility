@@ -1,3 +1,9 @@
-# AI assistance disclosure
+# AI use
 
-OpenAI Codex assisted project scoping, literature/source inspection, experimental protocol design, code implementation, debugging, tests, experiment execution, analysis drafting, slides and speaker-note drafting. The project owner must review the implementation and claims before presenting them. The material does not claim that this independent review has already happened. Model predictions and metrics must come from saved executable runs, never generated examples. For the final extension, Codex also implemented the area-matched masks, ran both encoder evaluations and checked the reported comparisons against the prediction files. Exact executed configurations, source revisions and result tables accompany each reported run. No private Canvas comments, tokens or course-account data belong in this code repository.
+I used two AI tools on this project.
+
+OpenAI Codex helped me scope the project, read papers and model code, design the experiment protocols, write and debug the code and tests, run the experiments, draft the analysis and reports, and draft the slides and speaker notes.
+
+Claude (Anthropic) helped me revise the final slides and speaker script, explain parts of the analysis to me while I prepared the talk, and tidy this repository's documentation.
+
+Every reported number comes from saved model predictions in `results/`, not from generated examples. `scripts/check_final_results.py` recomputes the main comparisons from those files. I'm responsible for the claims in the reports and slides.

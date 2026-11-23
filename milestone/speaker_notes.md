@@ -144,7 +144,7 @@ The public repository contains our code and results. Codex helped with the work 
 
 ## Source appendix (not spoken)
 
-Slide 1: docs/EXTENSION_V2_PROTOCOL.md; reports/EXTENSION_V2_EN.md
+Slide 1: docs/EXTENSION_V2_PROTOCOL.md; reports/EXTENSION_V2.md
 
 Slide 2: docs/RELATED_WORK.md; Naseer et al., https://arxiv.org/abs/2105.10497; Xiao et al., https://arxiv.org/abs/2006.09994
 
@@ -152,7 +152,7 @@ Slide 3: results/extension_v2/design_example_selection.json; results/extension_v
 
 Slide 4: docs/PROTOCOL.md; docs/EXTENSION_V2_PROTOCOL.md; results/extension_v2/preparation_audit.json; pre-inference commit 815a33b
 
-Slide 5: docs/EXTENSION_V2_PROTOCOL.md; reports/EXTENSION_V2_EN.md, Motivation and limits
+Slide 5: docs/EXTENSION_V2_PROTOCOL.md; reports/EXTENSION_V2.md, Motivation and limits
 
 Slide 6: results/extension_v2/summary.csv; results/extension_v2/primary_contrasts.csv; results/extension_v2/analysis_audit.json
 
@@ -164,6 +164,6 @@ Slide 9: docs/EXTENSION_V2_PROTOCOL.md; results/extension_v2/paired_summary.csv;
 
 Slide 10: results/extension_v2/preparation_audit.json; results/extension_v2/paired_summary.csv; results/extension_v2/design_example_selection.json; Oxford-IIIT Pet, https://www.robots.ox.ac.uk/~vgg/data/pets/
 
-Slide 11: reports/EXTENSION_V2_EN.md; docs/EXTENSION_V2_PROTOCOL.md
+Slide 11: reports/EXTENSION_V2.md; docs/EXTENSION_V2_PROTOCOL.md
 
 Slide 12: https://github.com/Bensssonxx/comp669-object-visibility; docs/AI_USE.md; docs/RELATED_WORK.md

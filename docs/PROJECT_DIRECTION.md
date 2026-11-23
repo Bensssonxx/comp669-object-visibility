@@ -20,4 +20,4 @@ Cross-model pretraining remains uncontrolled. These results do not identify the 
 
 Current priorities are an understandable milestone presentation and student review of the implementation and claims. A further study should use a separately fixed protocol for readout/pooling sensitivity, then consider another dataset or natural occluders.
 
-Start with the [code guide](CODE_GUIDE.md), [pilot protocol](PROTOCOL.md), [follow-up protocol](EXTENSION_V2_PROTOCOL.md), and [follow-up report](../reports/EXTENSION_V2_EN.md). AI assistance is disclosed in [AI_USE.md](AI_USE.md).
+Start with the [code guide](CODE_GUIDE.md), [pilot protocol](PROTOCOL.md), [follow-up protocol](EXTENSION_V2_PROTOCOL.md), and [follow-up report](../reports/EXTENSION_V2.md). AI assistance is disclosed in [AI_USE.md](AI_USE.md).
