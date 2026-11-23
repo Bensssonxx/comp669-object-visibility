@@ -22,3 +22,5 @@ docs/*-source.toml
 .build-presentation/
 .chart-data-*/
 .codex-finalizer/
+
+final/speaker_notes.md
