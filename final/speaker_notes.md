@@ -1,6 +1,6 @@
-# Final presentation v5 speaker notes
+# Final presentation speaker notes
 
-1001 spoken words. About 9.8 min at 110 words/min, 11.2 min at 95 words/min (both including 40 s of pauses). Estimate only; rehearse with a timer. Limit: 12 min.
+1030 spoken words. About 10.0 min at 110 words/min, 11.5 min at 95 words/min (both including 40 s of pauses). Estimate only; rehearse with a timer. Limit: 12 min.
 
 ## 1. Comparing AIMv2 and DINOv2 under occlusion  (40 words)
 
@@ -38,6 +38,6 @@ This is the test I care about most. On the left is the center mask. On the right
 
 The last question is whether it's the animal patches or the background patches that matter. On 366 new photos I start again from the center mask. In the second picture I change only the animal: four visible animal patches get hidden and four hidden ones get shown. The third picture does the same in the background, and the last one does both. I only use patches that are entirely animal or entirely background, so the visible pixel counts are exactly the same in all four. I fixed the swap at four patches before running and didn't try other sizes. For DINOv2, changing animal patches raises accuracy from 57.7 to 64.4 percent, while changing background patches only gets it to 60.1. AIMv2 hardly moves either way. That suggests DINOv2's gain on the last slide comes mostly from which parts of the animal it can see, though a four-patch swap is too small to explain the whole effect.
 
-## 10. Conclusions  (105 words)
+## 10. Which model does better depends on what stays visible  (134 words)
 
-To wrap up. Which model looks more robust depends on how the image is hidden. The flip only shows up when most of the image is gone; at 75 percent visible, AIMv2 leads with both masks. And with the animal area held fixed, moving the visible patches pushes the two models in opposite directions, which held up on new photos. All of this is for two fixed models, one dataset and artificial square masks. Next I'd like to try real occluders, like objects in front of the animal, and a second dataset. The code and predictions are on GitHub. Thanks, I'm happy to take questions.
+To wrap up, here's when each model does better in these tests. AIMv2 wins when the visible part is one connected block, like the center mask, when most of the image is visible, and when the head is visible. DINOv2 wins when only scattered patches are left, and when the visible patches are spread out, even at the same animal area. It also loses less from its clean accuracy. So there's no single winner: the ranking depends on how much is hidden and how the visible part is arranged. All of this is for two fixed models, one dataset and artificial square masks. Next I'd like to try real occluders, like objects in front of the animal, and a second dataset. The code and predictions are on GitHub. Thanks, I'm happy to take questions.
